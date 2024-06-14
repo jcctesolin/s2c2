@@ -1,0 +1,1851 @@
+@prefix : <http://www.w3.org/2002/07/owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix gufo: <http://purl.org/nemo/gufo#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix miscon: <https://purl.org/s2c2/miscon/> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+<https://purl.org/s2c2/miscon/> rdf:type owl:Ontology ;
+                                 owl:versionIRI <https://purl.org/s2c2/miscon/0.0.1> ;
+                                 owl:imports <http://purl.org/nemo/gufo#/1.0.0> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/nemo/gufo#categorizes
+gufo:categorizes rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/nemo/gufo#isDerivedFrom
+gufo:isDerivedFrom rdf:type owl:AnnotationProperty .
+
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/nemo/gufo#inheresIn
+gufo:inheresIn rdf:type owl:ObjectProperty ;
+               rdfs:range miscon:CommDeviceCarrier .
+
+
+###  http://purl.org/nemo/gufo#mediates
+gufo:mediates rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://purl.org/s2c2/miscon/MOTypeIsSubordinateTo
+miscon:MOTypeIsSubordinateTo rdf:type owl:ObjectProperty ;
+                             rdfs:domain miscon:MilitaryOrganizationPowerType ;
+                             rdfs:range miscon:MilitaryOrganizationPowerType .
+
+
+###  https://purl.org/s2c2/miscon/ProtocolOf
+miscon:ProtocolOf rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf gufo:inheresIn ;
+                  rdfs:domain miscon:Protocol ;
+                  rdfs:range miscon:Interface .
+
+
+###  https://purl.org/s2c2/miscon/belongsTo
+miscon:belongsTo rdf:type owl:ObjectProperty ;
+                 rdfs:domain miscon:MilitaryPlatform ;
+                 rdfs:range miscon:MilitaryOrganization .
+
+
+###  https://purl.org/s2c2/miscon/carries
+miscon:carries rdf:type owl:ObjectProperty ;
+               rdfs:domain miscon:CommDeviceCarrier ;
+               rdfs:range miscon:CommDevice ;
+               rdfs:label "carries"@en .
+
+
+###  https://purl.org/s2c2/miscon/hasDirectRelationshipWith
+miscon:hasDirectRelationshipWith rdf:type owl:ObjectProperty ,
+                                          owl:SymmetricProperty ;
+                                 rdfs:domain miscon:MilitaryOrganization ;
+                                 rdfs:range miscon:MilitaryOrganization ;
+                                 rdfs:label "hasDirectRelationshipWith"@en .
+
+
+###  https://purl.org/s2c2/miscon/hasInterfPowerType
+miscon:hasInterfPowerType rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          rdfs:domain miscon:Interface .
+
+
+###  https://purl.org/s2c2/miscon/hasInterface
+miscon:hasInterface rdf:type owl:ObjectProperty ;
+                    rdfs:domain miscon:CommDevice ;
+                    rdfs:range miscon:Interface ;
+                    rdfs:label "hasInterface"@en .
+
+
+###  https://purl.org/s2c2/miscon/hasMOPowerType
+miscon:hasMOPowerType rdf:type owl:ObjectProperty ;
+                      rdfs:domain miscon:MilitaryOrganization .
+
+
+###  https://purl.org/s2c2/miscon/hasVehiclePowerType
+miscon:hasVehiclePowerType rdf:type owl:ObjectProperty .
+
+
+###  https://purl.org/s2c2/miscon/hierarchicallyEquivalentWith
+miscon:hierarchicallyEquivalentWith rdf:type owl:ObjectProperty ;
+                                    rdfs:domain miscon:HierarchicallyEquivalent ;
+                                    rdfs:range miscon:HierarchicallyEquivalent ;
+                                    rdfs:label "HierarchicallyEquivalentWith"@en .
+
+
+###  https://purl.org/s2c2/miscon/isCommanderOf
+miscon:isCommanderOf rdf:type owl:ObjectProperty ;
+                     owl:inverseOf miscon:isSubordinateTo ;
+                     rdfs:label "isCommanderOf"@pt .
+
+
+###  https://purl.org/s2c2/miscon/isLocatedIn
+miscon:isLocatedIn rdf:type owl:ObjectProperty ;
+                   rdfs:domain miscon:MilitaryPersonAsPassenger ;
+                   rdfs:range miscon:Vehicle ;
+                   rdfs:label "isLocatedIn"@en .
+
+
+###  https://purl.org/s2c2/miscon/isSubordinateTo
+miscon:isSubordinateTo rdf:type owl:ObjectProperty ;
+                       rdfs:domain miscon:Subordinate ;
+                       rdfs:range miscon:Commander ;
+                       rdfs:label "isSubordinateTo"@en .
+
+
+###  https://purl.org/s2c2/miscon/mayTalkTo
+miscon:mayTalkTo rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:SymmetricProperty ;
+                 rdfs:domain miscon:Ue ;
+                 rdfs:range miscon:Ue .
+
+
+###  https://purl.org/s2c2/miscon/militaryPersonHasMilitaryOrganization
+miscon:militaryPersonHasMilitaryOrganization rdf:type owl:ObjectProperty ;
+                                             rdfs:domain miscon:MilitaryPerson ;
+                                             rdfs:range miscon:MilitaryOrganization .
+
+
+###  https://purl.org/s2c2/miscon/militaryScenarioHasInstitutionalElement
+miscon:militaryScenarioHasInstitutionalElement rdf:type owl:ObjectProperty ;
+                                               rdfs:domain miscon:MilitaryScenario ;
+                                               rdfs:range miscon:InstitutionalElement .
+
+
+###  https://purl.org/s2c2/miscon/militaryScenarioHasOperationalElement
+miscon:militaryScenarioHasOperationalElement rdf:type owl:ObjectProperty ;
+                                             rdfs:domain miscon:MilitaryScenario ;
+                                             rdfs:range miscon:OperationalElement .
+
+
+###  https://purl.org/s2c2/miscon/networkHasInterface
+miscon:networkHasInterface rdf:type owl:ObjectProperty ;
+                           rdfs:domain miscon:WirelessNetwork ;
+                           rdfs:range miscon:Interface .
+
+
+###  https://purl.org/s2c2/miscon/operates
+miscon:operates rdf:type owl:ObjectProperty ;
+                rdfs:domain miscon:Operator ;
+                rdfs:range miscon:Ue ;
+                rdfs:label "operates"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/nemo/gufo#hasQualityValue
+gufo:hasQualityValue rdf:type owl:DatatypeProperty .
+
+
+###  https://purl.org/s2c2/miscon/amphibiousSpeed
+miscon:amphibiousSpeed rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf gufo:hasQualityValue ;
+                       rdfs:domain miscon:Armored ;
+                       rdfs:range rdfs:Literal .
+
+
+###  https://purl.org/s2c2/miscon/antennaGain
+miscon:antennaGain rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf gufo:hasQualityValue ;
+                   rdfs:domain miscon:Interface ;
+                   rdfs:range rdfs:Literal .
+
+
+###  https://purl.org/s2c2/miscon/channelValue
+miscon:channelValue rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf gufo:hasQualityValue ;
+                    rdfs:domain miscon:AccessPoint ;
+                    rdfs:range xsd:int .
+
+
+###  https://purl.org/s2c2/miscon/coverage
+miscon:coverage rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf gufo:hasQualityValue ;
+                rdfs:domain miscon:Interface ;
+                rdfs:range rdfs:Literal .
+
+
+###  https://purl.org/s2c2/miscon/frequency
+miscon:frequency rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf gufo:hasQualityValue ;
+                 rdfs:domain miscon:Interface ;
+                 rdfs:range rdfs:Literal .
+
+
+###  https://purl.org/s2c2/miscon/frequencyRange
+miscon:frequencyRange rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf gufo:hasQualityValue ;
+                      rdfs:range xsd:string .
+
+
+###  https://purl.org/s2c2/miscon/ip
+miscon:ip rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf gufo:hasQualityValue ;
+          rdfs:domain miscon:Interface ;
+          rdfs:range xsd:string .
+
+
+###  https://purl.org/s2c2/miscon/mac
+miscon:mac rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf gufo:hasQualityValue ;
+           rdfs:domain miscon:CommDevice ;
+           rdfs:range xsd:string .
+
+
+###  https://purl.org/s2c2/miscon/maxPassengers
+miscon:maxPassengers rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf gufo:hasQualityValue ;
+                     rdfs:domain miscon:Vehicle ;
+                     rdfs:range xsd:int .
+
+
+###  https://purl.org/s2c2/miscon/maxSpeedLand
+miscon:maxSpeedLand rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf gufo:hasQualityValue ;
+                    rdfs:domain miscon:CommDeviceCarrier ;
+                    rdfs:range rdfs:Literal .
+
+
+###  https://purl.org/s2c2/miscon/maxStrength
+miscon:maxStrength rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf gufo:hasQualityValue ;
+                   rdfs:domain miscon:MilitaryOrganizationPowerType ;
+                   rdfs:range xsd:int .
+
+
+###  https://purl.org/s2c2/miscon/minPassengers
+miscon:minPassengers rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf gufo:hasQualityValue .
+
+
+###  https://purl.org/s2c2/miscon/minSpeed
+miscon:minSpeed rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf gufo:hasQualityValue ;
+                rdfs:domain miscon:CommDeviceCarrier ;
+                rdfs:range rdfs:Literal .
+
+
+###  https://purl.org/s2c2/miscon/minStrength
+miscon:minStrength rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf gufo:hasQualityValue ;
+                   rdfs:domain miscon:MilitaryOrganizationPowerType ;
+                   rdfs:range xsd:int .
+
+
+###  https://purl.org/s2c2/miscon/modeValue
+miscon:modeValue rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf gufo:hasQualityValue ;
+                 rdfs:domain miscon:AccessPoint ;
+                 rdfs:range xsd:string .
+
+
+###  https://purl.org/s2c2/miscon/ssid
+miscon:ssid rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf gufo:hasQualityValue ;
+            rdfs:domain miscon:AccessPoint ;
+            rdfs:range xsd:string .
+
+
+###  https://purl.org/s2c2/miscon/strenght
+miscon:strenght rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf gufo:hasQualityValue ;
+                rdfs:domain miscon:MilitaryOrganization ;
+                rdfs:range xsd:integer .
+
+
+###  https://purl.org/s2c2/miscon/txPower
+miscon:txPower rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf gufo:hasQualityValue ;
+               rdfs:domain miscon:Interface ;
+               rdfs:range xsd:integer .
+
+
+###  https://purl.org/s2c2/miscon/txPowerRange
+miscon:txPowerRange rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf gufo:hasQualityValue ;
+                    rdfs:range xsd:string .
+
+
+###  https://purl.org/s2c2/miscon/visibilityRange
+miscon:visibilityRange rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf gufo:hasQualityValue ;
+                       rdfs:domain miscon:CommDeviceCarrier ;
+                       rdfs:range rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/nemo/gufo#Category
+gufo:Category rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#EndurantType
+gufo:EndurantType rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#FunctionalComplex
+gufo:FunctionalComplex rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#IntrinsicMode
+gufo:IntrinsicMode rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#Kind
+gufo:Kind rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#MaterialRelationshipType
+gufo:MaterialRelationshipType rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#Mixin
+gufo:Mixin rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#Phase
+gufo:Phase rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#Quality
+gufo:Quality rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#Relator
+gufo:Relator rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#Role
+gufo:Role rdf:type owl:Class .
+
+
+###  http://purl.org/nemo/gufo#SubKind
+gufo:SubKind rdf:type owl:Class .
+
+
+###  https://purl.org/s2c2/miscon/AccessPoint
+miscon:AccessPoint rdf:type owl:Class ;
+                   rdfs:subClassOf miscon:Interface .
+
+
+###  https://purl.org/s2c2/miscon/Armored
+miscon:Armored rdf:type owl:Class ;
+               rdfs:subClassOf miscon:Vehicle .
+
+
+###  https://purl.org/s2c2/miscon/Battalion
+miscon:Battalion rdf:type owl:Class ;
+                 rdfs:subClassOf miscon:MilitaryOrganization .
+
+
+###  https://purl.org/s2c2/miscon/BattleTeam
+miscon:BattleTeam rdf:type owl:Class ;
+                  rdfs:subClassOf miscon:MilitaryOrganization .
+
+
+###  https://purl.org/s2c2/miscon/Brigade
+miscon:Brigade rdf:type owl:Class ;
+               rdfs:subClassOf miscon:MilitaryOrganization .
+
+
+###  https://purl.org/s2c2/miscon/Cascavel
+miscon:Cascavel rdf:type owl:Class ;
+                rdfs:subClassOf miscon:Armored .
+
+
+###  https://purl.org/s2c2/miscon/CommDevice
+miscon:CommDevice rdf:type owl:Class ;
+                  rdfs:subClassOf miscon:OperationalElement .
+
+
+###  https://purl.org/s2c2/miscon/CommDeviceCarrier
+miscon:CommDeviceCarrier rdf:type owl:Class ;
+                         rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  https://purl.org/s2c2/miscon/Commander
+miscon:Commander rdf:type owl:Class ;
+                 rdfs:subClassOf miscon:MilitaryOrganization .
+
+
+###  https://purl.org/s2c2/miscon/Company
+miscon:Company rdf:type owl:Class ;
+               rdfs:subClassOf miscon:MilitaryOrganization .
+
+
+###  https://purl.org/s2c2/miscon/Guarani
+miscon:Guarani rdf:type owl:Class ;
+               rdfs:subClassOf miscon:Armored .
+
+
+###  https://purl.org/s2c2/miscon/HierarchicallyEquivalent
+miscon:HierarchicallyEquivalent rdf:type owl:Class ;
+                                rdfs:subClassOf miscon:MilitaryOrganization ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty miscon:hierarchicallyEquivalentWith ;
+                                                  owl:someValuesFrom miscon:HierarchicallyEquivalent
+                                                ] .
+
+
+###  https://purl.org/s2c2/miscon/InstitutionalElement
+miscon:InstitutionalElement rdf:type owl:Class ;
+                            rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  https://purl.org/s2c2/miscon/Interface
+miscon:Interface rdf:type owl:Class ;
+                 rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryEmployment
+miscon:MilitaryEmployment rdf:type owl:Class ;
+                          rdfs:subClassOf gufo:Relator ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty gufo:mediates ;
+                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass miscon:MilitaryOrganization
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty gufo:mediates ;
+                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass miscon:MilitaryPerson
+                                          ] .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryOrganization
+miscon:MilitaryOrganization rdf:type owl:Class ;
+                            rdfs:subClassOf miscon:InstitutionalElement ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty [ owl:inverseOf gufo:mediates
+                                                             ] ;
+                                              owl:someValuesFrom miscon:MilitaryEmployment
+                                            ] .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryOrganizationPowerType
+miscon:MilitaryOrganizationPowerType rdf:type owl:Class ;
+                                     rdfs:subClassOf gufo:EndurantType ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty miscon:MOTypeIsSubordinateTo ;
+                                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass miscon:MilitaryOrganizationPowerType
+                                                     ] .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryPerson
+miscon:MilitaryPerson rdf:type owl:Class ;
+                      rdfs:subClassOf miscon:OperationalElement ,
+                                      miscon:Person ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty miscon:militaryPersonHasMilitaryOrganization ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass miscon:MilitaryOrganization
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty [ owl:inverseOf gufo:mediates
+                                                       ] ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass miscon:MilitaryEmployment
+                                      ] .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryPersonAsDismounted
+miscon:MilitaryPersonAsDismounted rdf:type owl:Class ;
+                                  rdfs:subClassOf miscon:MilitaryPerson ;
+                                  owl:disjointWith miscon:MilitaryPersonAsPassenger .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryPersonAsPassenger
+miscon:MilitaryPersonAsPassenger rdf:type owl:Class ;
+                                 rdfs:subClassOf miscon:MilitaryPerson ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty miscon:isLocatedIn ;
+                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onClass miscon:Vehicle
+                                                 ] .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryPlatform
+miscon:MilitaryPlatform rdf:type owl:Class ;
+                        rdfs:subClassOf miscon:CommDeviceCarrier ,
+                                        miscon:OperationalElement .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryScenario
+miscon:MilitaryScenario rdf:type owl:Class ;
+                        rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  https://purl.org/s2c2/miscon/OperationalElement
+miscon:OperationalElement rdf:type owl:Class ;
+                          rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  https://purl.org/s2c2/miscon/Operator
+miscon:Operator rdf:type owl:Class ;
+                rdfs:subClassOf miscon:MilitaryPerson .
+
+
+###  https://purl.org/s2c2/miscon/Person
+miscon:Person rdf:type owl:Class ;
+              rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  https://purl.org/s2c2/miscon/Platoon
+miscon:Platoon rdf:type owl:Class ;
+               rdfs:subClassOf miscon:MilitaryOrganization .
+
+
+###  https://purl.org/s2c2/miscon/Protocol
+miscon:Protocol rdf:type owl:Class ;
+                rdfs:subClassOf gufo:IntrinsicMode .
+
+
+###  https://purl.org/s2c2/miscon/Subordinate
+miscon:Subordinate rdf:type owl:Class ;
+                   rdfs:subClassOf miscon:MilitaryOrganization ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty miscon:isSubordinateTo ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass miscon:Commander
+                                   ] .
+
+
+###  https://purl.org/s2c2/miscon/Ue
+miscon:Ue rdf:type owl:Class ;
+          rdfs:subClassOf miscon:Interface .
+
+
+###  https://purl.org/s2c2/miscon/UeDown
+miscon:UeDown rdf:type owl:Class ;
+              rdfs:subClassOf miscon:Ue .
+
+
+###  https://purl.org/s2c2/miscon/UeUp
+miscon:UeUp rdf:type owl:Class ;
+            rdfs:subClassOf miscon:Ue .
+
+
+###  https://purl.org/s2c2/miscon/Urutu
+miscon:Urutu rdf:type owl:Class ;
+             rdfs:subClassOf miscon:Armored .
+
+
+###  https://purl.org/s2c2/miscon/Vehicle
+miscon:Vehicle rdf:type owl:Class ;
+               rdfs:subClassOf miscon:MilitaryPlatform .
+
+
+###  https://purl.org/s2c2/miscon/VehiclePowerType
+miscon:VehiclePowerType rdf:type owl:Class ;
+                        rdfs:subClassOf gufo:EndurantType .
+
+
+###  https://purl.org/s2c2/miscon/WirelessNetwork
+miscon:WirelessNetwork rdf:type owl:Class ;
+                       rdfs:subClassOf miscon:OperationalElement .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://purl.org/s2c2/miscon/AccessPoint
+miscon:AccessPoint rdf:type owl:NamedIndividual ,
+                            gufo:Role .
+
+
+###  https://purl.org/s2c2/miscon/Armored
+miscon:Armored rdf:type owl:NamedIndividual ,
+                        gufo:Kind .
+
+
+###  https://purl.org/s2c2/miscon/Battalion
+miscon:Battalion rdf:type owl:NamedIndividual ,
+                          gufo:SubKind ,
+                          miscon:MilitaryOrganizationPowerType ;
+                 miscon:MOTypeIsSubordinateTo miscon:Brigade ;
+                 miscon:maxStrength 800 ;
+                 miscon:minStrength 500 .
+
+
+###  https://purl.org/s2c2/miscon/BattleTeam
+miscon:BattleTeam rdf:type owl:NamedIndividual ,
+                           gufo:SubKind ,
+                           miscon:MilitaryOrganizationPowerType ;
+                  miscon:MOTypeIsSubordinateTo miscon:Platoon ;
+                  miscon:maxStrength 5 ;
+                  miscon:minStrength 3 .
+
+
+###  https://purl.org/s2c2/miscon/Brigade
+miscon:Brigade rdf:type owl:NamedIndividual ,
+                        gufo:SubKind ,
+                        miscon:MilitaryOrganizationPowerType ;
+               miscon:maxStrength 5000 ;
+               miscon:minStrength 3000 .
+
+
+###  https://purl.org/s2c2/miscon/Car
+miscon:Car rdf:type owl:NamedIndividual ,
+                    gufo:Kind .
+
+
+###  https://purl.org/s2c2/miscon/Cascavel
+miscon:Cascavel rdf:type owl:NamedIndividual ,
+                         gufo:SubKind ,
+                         miscon:VehiclePowerType ;
+                miscon:maxPassengers 3 ;
+                miscon:minPassengers 2 .
+
+
+###  https://purl.org/s2c2/miscon/CommDevice
+miscon:CommDevice rdf:type owl:NamedIndividual ,
+                           gufo:Kind .
+
+
+###  https://purl.org/s2c2/miscon/CommDeviceCarrier
+miscon:CommDeviceCarrier rdf:type owl:NamedIndividual ,
+                                  gufo:Mixin .
+
+
+###  https://purl.org/s2c2/miscon/Commander
+miscon:Commander rdf:type owl:NamedIndividual ,
+                          gufo:Role .
+
+
+###  https://purl.org/s2c2/miscon/Company
+miscon:Company rdf:type owl:NamedIndividual ,
+                        gufo:SubKind ,
+                        miscon:MilitaryOrganizationPowerType ;
+               miscon:MOTypeIsSubordinateTo miscon:Battalion ;
+               miscon:maxStrength 250 ;
+               miscon:minStrength 60 .
+
+
+###  https://purl.org/s2c2/miscon/Guarani
+miscon:Guarani rdf:type owl:NamedIndividual ,
+                        gufo:SubKind ,
+                        miscon:VehiclePowerType ;
+               miscon:maxPassengers 11 ;
+               miscon:minPassengers 2 .
+
+
+###  https://purl.org/s2c2/miscon/GuaraniType
+miscon:GuaraniType rdf:type owl:NamedIndividual .
+
+
+###  https://purl.org/s2c2/miscon/HierarchicallyEquivalent
+miscon:HierarchicallyEquivalent rdf:type owl:NamedIndividual ,
+                                         gufo:Role .
+
+
+###  https://purl.org/s2c2/miscon/Interface
+miscon:Interface rdf:type owl:NamedIndividual ,
+                          gufo:Kind .
+
+
+###  https://purl.org/s2c2/miscon/InterfacePowerType
+miscon:InterfacePowerType rdf:type owl:NamedIndividual ,
+                                   gufo:Kind .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryEmployment
+miscon:MilitaryEmployment rdf:type owl:NamedIndividual ,
+                                   gufo:Kind ;
+                          gufo:isDerivedFrom <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#militaryHasMilitaryOrganization> .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryOrganization
+miscon:MilitaryOrganization rdf:type owl:NamedIndividual ,
+                                     gufo:Kind .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryOrganizationPowerTypee
+miscon:MilitaryOrganizationPowerTypee rdf:type owl:NamedIndividual ,
+                                               gufo:Kind .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryPerson
+miscon:MilitaryPerson rdf:type owl:NamedIndividual ,
+                               gufo:Role .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryPersonAsDismounted
+miscon:MilitaryPersonAsDismounted rdf:type owl:NamedIndividual ,
+                                           gufo:Phase .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryPersonAsPassenger
+miscon:MilitaryPersonAsPassenger rdf:type owl:NamedIndividual ,
+                                          gufo:Phase .
+
+
+###  https://purl.org/s2c2/miscon/MilitaryPlatform
+miscon:MilitaryPlatform rdf:type owl:NamedIndividual ,
+                                 gufo:Category .
+
+
+###  https://purl.org/s2c2/miscon/OperationalElement
+miscon:OperationalElement rdf:type owl:NamedIndividual ,
+                                   gufo:Category .
+
+
+###  https://purl.org/s2c2/miscon/Operator
+miscon:Operator rdf:type owl:NamedIndividual ,
+                         gufo:Role .
+
+
+###  https://purl.org/s2c2/miscon/Person
+miscon:Person rdf:type owl:NamedIndividual ,
+                       gufo:Kind .
+
+
+###  https://purl.org/s2c2/miscon/Platoon
+miscon:Platoon rdf:type owl:NamedIndividual ,
+                        gufo:SubKind ,
+                        miscon:MilitaryOrganizationPowerType ;
+               miscon:MOTypeIsSubordinateTo miscon:Company ;
+               miscon:maxStrength 50 ;
+               miscon:minStrength 20 .
+
+
+###  https://purl.org/s2c2/miscon/Protocol
+miscon:Protocol rdf:type owl:NamedIndividual ,
+                         gufo:Kind .
+
+
+###  https://purl.org/s2c2/miscon/Subordinate
+miscon:Subordinate rdf:type owl:NamedIndividual ,
+                            gufo:Role .
+
+
+###  https://purl.org/s2c2/miscon/Ue
+miscon:Ue rdf:type owl:NamedIndividual ,
+                   gufo:Role .
+
+
+###  https://purl.org/s2c2/miscon/UeDown
+miscon:UeDown rdf:type owl:NamedIndividual ,
+                       gufo:Role .
+
+
+###  https://purl.org/s2c2/miscon/UeUp
+miscon:UeUp rdf:type owl:NamedIndividual ,
+                     gufo:Role .
+
+
+###  https://purl.org/s2c2/miscon/Urutu
+miscon:Urutu rdf:type owl:NamedIndividual ,
+                      gufo:SubKind ,
+                      miscon:VehiclePowerType ;
+             miscon:maxPassengers 13 ;
+             miscon:minPassengers 2 .
+
+
+###  https://purl.org/s2c2/miscon/Vehicle
+miscon:Vehicle rdf:type owl:NamedIndividual ,
+                        gufo:Category .
+
+
+###  https://purl.org/s2c2/miscon/WirelessNetwork
+miscon:WirelessNetwork rdf:type owl:NamedIndividual ,
+                                gufo:Kind .
+
+
+###  https://purl.org/s2c2/miscon/interfpt01
+miscon:interfpt01 rdf:type owl:NamedIndividual .
+
+
+###  https://purl.org/s2c2/miscon/militaryPersonHasMilitaryOrganization
+miscon:militaryPersonHasMilitaryOrganization rdf:type owl:NamedIndividual ,
+                                                      gufo:MaterialRelationshipType .
+
+
+###  https://purl.org/s2c2/miscon/net1
+miscon:net1 rdf:type owl:NamedIndividual ,
+                     miscon:WirelessNetwork .
+
+
+###  https://purl.org/s2c2/miscon/scenario1
+miscon:scenario1 rdf:type owl:NamedIndividual ,
+                          miscon:MilitaryScenario .
+
+
+###  https://purl.org/s2c2/miscon/sta7
+miscon:sta7 rdf:type owl:NamedIndividual ,
+                     miscon:CommDevice ;
+            miscon:mac "00:00:00:00:00:08" .
+
+
+###  https://purl.org/s2c2/miscon/#802.11g
+<https://purl.org/s2c2/miscon/#802.11g> rdf:type owl:NamedIndividual ,
+                                                 miscon:Protocol .
+
+
+###  https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#militaryHasMilitaryOrganization
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#militaryHasMilitaryOrganization> rdf:type owl:NamedIndividual .
+
+
+[ miscon:maxStrength 800 ;
+  miscon:minStrength 500
+] .
+
+[ miscon:maxStrength 50
+ ] .
+
+[ miscon:maxStrength 50 ;
+   miscon:minStrength 20
+ ] .
+
+[ miscon:maxStrength 50
+ ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+miscon:AccessPoint rdfs:label "AccessPoint"@en .
+
+
+miscon:Armored rdfs:label "Armored"@en .
+
+
+miscon:Battalion rdfs:label "Battalion"@en .
+
+
+miscon:BattleTeam rdfs:label "BattleTeam"@en .
+
+
+miscon:Brigade rdfs:label "Brigade"@en .
+
+
+miscon:CommDevice rdfs:label "CommDevice"@en .
+
+
+miscon:CommDeviceCarrier rdfs:label "CommDeviceCarrier"@en .
+
+
+miscon:Commander rdfs:label "Commander"@en .
+
+
+miscon:Company rdfs:label "Company"@en .
+
+
+miscon:HierarchicallyEquivalent rdfs:label "HierarchicallyEquivalent"@en .
+
+
+miscon:Interface rdfs:label "Interface"@en .
+
+
+miscon:MilitaryEmployment rdfs:label "MilitaryEmployment"@en .
+
+
+miscon:MilitaryOrganization rdfs:label "MilitaryOrganization"@en .
+
+
+miscon:MilitaryPerson rdfs:label "MilitaryPerson"@en .
+
+
+miscon:MilitaryPersonAsPassenger rdfs:label "MilitaryPersonAsPassenger"@en .
+
+
+miscon:MilitaryPlatform rdfs:label "MilitaryPlatform"@en .
+
+
+miscon:OperationalElement rdfs:label "OperationalElement"@en .
+
+
+miscon:Operator rdfs:label "CommDeviceOperator"@en .
+
+
+miscon:Person rdfs:label "Person"@en .
+
+
+miscon:Platoon rdfs:label "Platoon"@en .
+
+
+miscon:Subordinate rdfs:label "Subordinate"@en .
+
+
+miscon:Vehicle rdfs:label "Vehicle"@en .
+
+
+miscon:WirelessNetwork rdfs:label "WirelessNetwork"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( miscon:Battalion
+                        miscon:BattleTeam
+                        miscon:Brigade
+                        miscon:Company
+                        miscon:Platoon
+                      )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<http://example.com#o1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#g> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ie> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ms> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#mp> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#mo> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ompt1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o3> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ompt2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<http://example.com#m1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#oe> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ms2> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ms1> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "communication rule to create communication inside the same MO" ;
+   rdfs:label "communication rule (same MO)" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:militaryPersonHasMilitaryOrganization ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:militaryPersonHasMilitaryOrganization ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m2> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> miscon:UeUp ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> miscon:UeUp ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#SameIndividualAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#classPredicate> miscon:CommDevice ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c1>
+                                                                                                            ] ;
+                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganization ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                                                                       ] ;
+                                                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganization ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                                                                                                  ] ;
+                                                                                                                        rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                   rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hasInterface ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c1> ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1>
+                                                                                                                                             ] ;
+                                                                                                                                   rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                              rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hasInterface ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c2> ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                                                                                                                        ] ;
+                                                                                                                                              rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                         rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:operates ;
+                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1> ;
+                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1>
+                                                                                                                                                                   ] ;
+                                                                                                                                                         rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                    rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:operates ;
+                                                                                                                                                                                <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m2> ;
+                                                                                                                                                                                <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                                                                                                                                              ] ;
+                                                                                                                                                                    rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                               rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryPerson ;
+                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m2>
+                                                                                                                                                                                         ] ;
+                                                                                                                                                                               rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryPerson ;
+                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1>
+                                                                                                                                                                                                    ] ;
+                                                                                                                                                                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom> ;
+                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c1> ;
+                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c2>
+                                                                                                                                                                                                               ] ;
+                                                                                                                                                                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                                                                            <http://www.w3.org/2003/11/swrl#classPredicate> miscon:CommDevice ;
+                                                                                                                                                                                                                            <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c2>
+                                                                                                                                                                                                                          ] ;
+                                                                                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                                                                                              ]
+                                                                                                                                                                                                   ]
+                                                                                                                                                                                        ]
+                                                                                                                                                                             ]
+                                                                                                                                                                  ]
+                                                                                                                                                       ]
+                                                                                                                                            ]
+                                                                                                                                 ]
+                                                                                                                      ]
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:mayTalkTo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "MilitaryAsCarrier" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryPerson ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://example.com#o1>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> miscon:CommDeviceCarrier ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://example.com#o1>
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryPersonAsDismounted ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://example.com#o1>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "set guarani data properties" ;
+   rdfs:label "Guarani Data Properties" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> miscon:Guarani ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#g>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:maxSpeedLand ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#g> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> 95
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:visibilityRange ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#g> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> 1000
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:amphibiousSpeed ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#g> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> 9
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:minSpeed ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#g> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> 3.5
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "InstitutionalElement" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> miscon:InstitutionalElement ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ie>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryScenario ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ms>
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:militaryScenarioHasInstitutionalElement ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ms> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ie>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "MilitaryPerson and Platform must belong to the same MO" ;
+   rdfs:label "MilitaryPerson and Platform same MO" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:isLocatedIn ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#mp>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:belongsTo ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#mp> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#mo>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganization ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#mo>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryPlatform ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#mp>
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryPerson ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1>
+                                                                                                 ] ;
+                                                                                       rdf:rest rdf:nil
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:militaryPersonHasMilitaryOrganization ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#mo>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "defines two organizations as equivalent" ;
+   rdfs:label "HierarchicallyEquivalent rule" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganizationPowerType ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ompt1>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganization ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o3>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganization ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganization ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hasMOPowerType ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ompt1>
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hasMOPowerType ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ompt1>
+                                                                                                            ] ;
+                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                                                                       ] ;
+                                                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:isSubordinateTo ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o3>
+                                                                                                                                  ] ;
+                                                                                                                        rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                   rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:isSubordinateTo ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2> ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o3>
+                                                                                                                                             ] ;
+                                                                                                                                   rdf:rest rdf:nil
+                                                                                                                                 ]
+                                                                                                                      ]
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hierarchicallyEquivalentWith ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> miscon:HierarchicallyEquivalent ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> miscon:HierarchicallyEquivalent ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "communication rule 3" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:militaryPersonHasMilitaryOrganization ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:militaryPersonHasMilitaryOrganization ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m2> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> miscon:CommDevice ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c1>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganization ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganization ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hasInterface ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c1> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1>
+                                                                                                            ] ;
+                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hasInterface ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c2> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                                                                                       ] ;
+                                                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:mayTalkTo ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                                                                                                  ] ;
+                                                                                                                        rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                   rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:operates ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1> ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1>
+                                                                                                                                             ] ;
+                                                                                                                                   rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                              rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:operates ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m2> ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                                                                                                                        ] ;
+                                                                                                                                              rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                         rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#classPredicate> miscon:Interface ;
+                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1>
+                                                                                                                                                                   ] ;
+                                                                                                                                                         rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                    rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                                <http://www.w3.org/2003/11/swrl#classPredicate> miscon:Interface ;
+                                                                                                                                                                                <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                                                                                                                                              ] ;
+                                                                                                                                                                    rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                               rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryPerson ;
+                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m2>
+                                                                                                                                                                                         ] ;
+                                                                                                                                                                               rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryPerson ;
+                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1>
+                                                                                                                                                                                                    ] ;
+                                                                                                                                                                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom> ;
+                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1> ;
+                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                                                                                                                                                               ] ;
+                                                                                                                                                                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                                                                            <http://www.w3.org/2003/11/swrl#classPredicate> miscon:CommDevice ;
+                                                                                                                                                                                                                            <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c2>
+                                                                                                                                                                                                                          ] ;
+                                                                                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                                                                                              ]
+                                                                                                                                                                                                   ]
+                                                                                                                                                                                        ]
+                                                                                                                                                                             ]
+                                                                                                                                                                  ]
+                                                                                                                                                       ]
+                                                                                                                                            ]
+                                                                                                                                 ]
+                                                                                                                      ]
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hasDirectRelationshipWith ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Rule definition to restrict subordination relations in the military hierarchy" ;
+   rdfs:label "Hierarchically restriction for MO powertypes" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganizationPowerType ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ompt1>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganizationPowerType ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ompt2>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganization ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganization ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hasMOPowerType ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ompt1>
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hasMOPowerType ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ompt2>
+                                                                                                            ] ;
+                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                                                                       ] ;
+                                                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:isSubordinateTo ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                                                                                                  ] ;
+                                                                                                                        rdf:rest rdf:nil
+                                                                                                                      ]
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:MOTypeIsSubordinateTo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ompt2> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ompt1>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "Military Data Properties" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryPersonAsDismounted ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://example.com#m1>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:visibilityRange ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://example.com#m1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> 300
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:maxSpeedLand ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://example.com#m1> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> 4
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:minSpeed ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://example.com#m1> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> 1
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "OperationalElement" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> miscon:OperationalElement ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#oe>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryScenario ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ms>
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:militaryScenarioHasOperationalElement ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ms> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#oe>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "Scenario restriction" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryScenario ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ms2>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryScenario ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ms1>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ms1> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ms2>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#SameIndividualAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ms1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#ms2>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "communication  rule 2" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:isSubordinateTo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hasDirectRelationshipWith ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "mayTalkTo inference to subordinates" ;
+   rdfs:label "communication rule 1" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:militaryPersonHasMilitaryOrganization ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:militaryPersonHasMilitaryOrganization ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m2> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> miscon:UeUp ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> miscon:CommDevice ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c1>
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganization ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganization ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                                                                            ] ;
+                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hasInterface ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c2> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                                                                                       ] ;
+                                                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hasInterface ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c1> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1>
+                                                                                                                                  ] ;
+                                                                                                                        rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                   rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:isSubordinateTo ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2> ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                                                                                                             ] ;
+                                                                                                                                   rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                              rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:operates ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1> ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1>
+                                                                                                                                                        ] ;
+                                                                                                                                              rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                         rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:operates ;
+                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m2> ;
+                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                                                                                                                                   ] ;
+                                                                                                                                                         rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                    rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                                <http://www.w3.org/2003/11/swrl#classPredicate> miscon:UeDown ;
+                                                                                                                                                                                <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1>
+                                                                                                                                                                              ] ;
+                                                                                                                                                                    rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                               rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryPerson ;
+                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m2>
+                                                                                                                                                                                         ] ;
+                                                                                                                                                                               rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryPerson ;
+                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1>
+                                                                                                                                                                                                    ] ;
+                                                                                                                                                                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#classPredicate> miscon:CommDevice ;
+                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c2>
+                                                                                                                                                                                                               ] ;
+                                                                                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                                                                                   ]
+                                                                                                                                                                                        ]
+                                                                                                                                                                             ]
+                                                                                                                                                                  ]
+                                                                                                                                                       ]
+                                                                                                                                            ]
+                                                                                                                                 ]
+                                                                                                                      ]
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:mayTalkTo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "hierarquically equivalent MayTalkTo" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:militaryPersonHasMilitaryOrganization ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:militaryPersonHasMilitaryOrganization ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m2> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> miscon:UeUp ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1>
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> miscon:UeUp ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#classPredicate> miscon:CommDevice ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c1>
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganization ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                                                            ] ;
+                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryOrganization ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1>
+                                                                                                                       ] ;
+                                                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hasInterface ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c1> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1>
+                                                                                                                                  ] ;
+                                                                                                                        rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                   rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hasInterface ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c2> ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                                                                                                             ] ;
+                                                                                                                                   rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                              rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:operates ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1> ;
+                                                                                                                                                          <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1>
+                                                                                                                                                        ] ;
+                                                                                                                                              rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                         rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:operates ;
+                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m2> ;
+                                                                                                                                                                     <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                                                                                                                                   ] ;
+                                                                                                                                                         rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                    rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                                <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryPerson ;
+                                                                                                                                                                                <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m2>
+                                                                                                                                                                              ] ;
+                                                                                                                                                                    rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                               rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:hierarchicallyEquivalentWith ;
+                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1> ;
+                                                                                                                                                                                           <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                                                                                                                                         ] ;
+                                                                                                                                                                               rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                          rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#classPredicate> miscon:MilitaryPerson ;
+                                                                                                                                                                                                      <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#m1>
+                                                                                                                                                                                                    ] ;
+                                                                                                                                                                                          rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                     rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom> ;
+                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o1> ;
+                                                                                                                                                                                                                 <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#o2>
+                                                                                                                                                                                                               ] ;
+                                                                                                                                                                                                     rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                                                                                                rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                                                                                                                                            <http://www.w3.org/2003/11/swrl#classPredicate> miscon:CommDevice ;
+                                                                                                                                                                                                                            <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#c2>
+                                                                                                                                                                                                                          ] ;
+                                                                                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                                                                                              ]
+                                                                                                                                                                                                   ]
+                                                                                                                                                                                        ]
+                                                                                                                                                                             ]
+                                                                                                                                                                  ]
+                                                                                                                                                       ]
+                                                                                                                                            ]
+                                                                                                                                 ]
+                                                                                                                      ]
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> miscon:mayTalkTo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i1> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <https://raw.githubusercontent.com/ProjetoS2C2Redes/S2C2-TestReferenceFiles/main/owlBase03112023.owl#i2>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

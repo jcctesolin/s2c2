@@ -1,0 +1,1009 @@
+@prefix : <https://purl.org/s2c2/hint#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix gufo: <http://purl.org/nemo/gufo#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://purl.org/s2c2/hint#> .
+
+<https://purl.org/s2c2/hint> rdf:type owl:Ontology ;
+                              owl:imports <https://purl.org/nemo/gufo#/1.0.0> ;
+                              <http://purl.org/dc/elements/1.1/creator> "Julio" ;
+                              <http://purl.org/dc/elements/1.1/title> "hint: A Heterogeneous Telecomunications Network Ontology" ;
+                              <http://purl.org/dc/terms/created> "\"2024-06-07\""^^xsd:date ;
+                              <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/legalcode" ;
+                              owl:versionInfo "\"1.0.0\"@en" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://purl.org/s2c2/hint#bindsMedium
+:bindsMedium rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf gufo:externallyDependsOn ;
+             rdfs:domain :DetectBond ;
+             rdfs:range :Medium ;
+             rdfs:label "bindsMedium"@en .
+
+
+###  https://purl.org/s2c2/hint#bindsNeighbor
+:bindsNeighbor rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :bindsWSender ;
+               rdfs:domain :NLink ;
+               rdfs:range :Neighbor ;
+               rdfs:label "bindsNeighbor"@en .
+
+
+###  https://purl.org/s2c2/hint#bindsReceiver_1
+:bindsReceiver_1 rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf gufo:inheresIn ;
+                 rdfs:domain :SelectedBond ;
+                 rdfs:range :Receiver ;
+                 rdfs:label "bindsReceiver"@en .
+
+
+###  https://purl.org/s2c2/hint#bindsSender
+:bindsSender rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf gufo:externallyDependsOn ;
+             rdfs:domain :DetectBond ;
+             rdfs:range :Sender ;
+             rdfs:label "bindsSender"@en .
+
+
+###  https://purl.org/s2c2/hint#bindsServer
+:bindsServer rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :bindsWSender ;
+             rdfs:domain :SelectedBond ;
+             rdfs:range :MServer ;
+             rdfs:label "bindsServer"@en .
+
+
+###  https://purl.org/s2c2/hint#bindsSignal
+:bindsSignal rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf gufo:externallyDependsOn ;
+             rdfs:domain :DetectBond ;
+             rdfs:range :Signal ;
+             rdfs:label "bindsSignal"@en .
+
+
+###  https://purl.org/s2c2/hint#bindsTRx
+:bindsTRx rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf gufo:mediates ;
+          rdfs:domain :Connection ;
+          rdfs:range :PeerNode ;
+          rdfs:label "bindsTRx"@en .
+
+
+###  https://purl.org/s2c2/hint#bindsWSender
+:bindsWSender rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :bindsSender ;
+              rdfs:domain :Link ;
+              rdfs:range :Server ;
+              rdfs:label "bindsWSender"@en .
+
+
+###  https://purl.org/s2c2/hint#bindsWSignal
+:bindsWSignal rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :bindsSignal ;
+              rdfs:domain :Link ;
+              rdfs:range :WantedSignal ;
+              rdfs:label "bindsWSignal"@en .
+
+
+###  https://purl.org/s2c2/hint#caracterizesSignal
+:caracterizesSignal rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf gufo:inheresIn ;
+                    rdfs:domain :SignalGeneration ;
+                    rdfs:range :Signal ;
+                    rdfs:label "caracterizesSignal"@en .
+
+
+###  https://purl.org/s2c2/hint#decodes
+:decodes rdf:type owl:ObjectProperty ;
+         rdfs:domain :Server ;
+         rdfs:range :Receiver .
+
+
+###  https://purl.org/s2c2/hint#dependsOnSender
+:dependsOnSender rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf gufo:externallyDependsOn ;
+                 rdfs:domain :SignalGeneration ;
+                 rdfs:range :Sender ;
+                 rdfs:label "dependsOnSender"@en .
+
+
+###  https://purl.org/s2c2/hint#hasCommBoard
+:hasCommBoard rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf gufo:isComponentOf ;
+              rdfs:domain :CommDevice ;
+              rdfs:range :CommBoard ;
+              rdfs:label "hasCommBoard"@en .
+
+
+###  https://purl.org/s2c2/hint#hasCommSW
+:hasCommSW rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf gufo:isComponentOf ;
+           rdfs:domain :CommDevice ;
+           rdfs:range :CommSW ;
+           rdfs:label "hasCommSW"@en .
+
+
+###  https://purl.org/s2c2/hint#hasLN
+:hasLN rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf gufo:isComponentOf ;
+       rdfs:domain :CommBoard ;
+       rdfs:range :LayerNode .
+
+
+###  https://purl.org/s2c2/hint#hasRx
+:hasRx rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf gufo:isComponentOf ;
+       rdfs:domain :TRx ;
+       rdfs:range :Rx ;
+       rdfs:label "hasRx"@en .
+
+
+###  https://purl.org/s2c2/hint#hasSLink
+:hasSLink rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf gufo:isComponentOf ;
+          rdfs:domain :Connection ;
+          rdfs:range :SelectedBond ;
+          rdfs:label "hasSLink"@en .
+
+
+###  https://purl.org/s2c2/hint#hasTx
+:hasTx rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf gufo:isComponentOf ;
+       rdfs:domain :TRx ;
+       rdfs:range :Tx ;
+       rdfs:label "hasTx"@en .
+
+
+###  https://purl.org/s2c2/hint#isPositionOf
+:isPositionOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf gufo:inheresIn ;
+              rdfs:domain :Position ;
+              rdfs:range :CommDevice ;
+              rdfs:label "isPositionOf"@en .
+
+
+###  https://purl.org/s2c2/hint#isProtocolOf
+:isProtocolOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf gufo:inheresIn ;
+              rdfs:domain :Protocol ;
+              rdfs:range :PeerNode .
+
+
+###  https://purl.org/s2c2/hint#monitors
+:monitors rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :decodes ;
+          rdfs:domain :Receiver ;
+          rdfs:range :Neighbor .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  signalGeneration:bandwidth
+<signalGeneration:bandwidth> rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf gufo:hasQualityValue ;
+                             rdfs:domain :SignalGeneration ;
+                             rdfs:label "bandwidth"@en .
+
+
+###  signalGeneration:frequency
+<signalGeneration:frequency> rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf gufo:hasQualityValue ;
+                             rdfs:domain :SignalGeneration ;
+                             rdfs:label "frequency"@en .
+
+
+###  signalGeneration:power
+<signalGeneration:power> rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf gufo:hasQualityValue ;
+                         rdfs:domain :SignalGeneration ;
+                         rdfs:label "power"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://purl.org/s2c2/hint#Air
+:Air rdf:type owl:Class ;
+     rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  https://purl.org/s2c2/hint#CommBoard
+:CommBoard rdf:type owl:Class ;
+           rdfs:subClassOf :LayerNode ;
+           owl:disjointWith :CommSW .
+
+
+###  https://purl.org/s2c2/hint#CommDevice
+:CommDevice rdf:type owl:Class ;
+            rdfs:subClassOf gufo:FunctionalComplex ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasCommBoard ;
+                              owl:someValuesFrom :CommBoard
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasCommSW ;
+                              owl:someValuesFrom :CommSW
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty [ owl:inverseOf :isPositionOf
+                                             ] ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Position
+                            ] .
+
+
+###  https://purl.org/s2c2/hint#CommSW
+:CommSW rdf:type owl:Class ;
+        rdfs:subClassOf :LayerNode .
+
+
+###  https://purl.org/s2c2/hint#Connection
+:Connection rdf:type owl:Class ;
+            rdfs:subClassOf gufo:Relator ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :bindsTRx ;
+                              owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                              owl:onClass :PeerNode
+                            ] .
+
+
+###  https://purl.org/s2c2/hint#DetectBond
+:DetectBond rdf:type owl:Class ;
+            rdfs:subClassOf gufo:ExtrinsicMode ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :bindsMedium ;
+                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Medium
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :bindsSender ;
+                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Sender
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :bindsSignal ;
+                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Signal
+                            ] .
+
+
+###  https://purl.org/s2c2/hint#LayerNode
+:LayerNode rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:unionOf ( :CommBoard
+                                               :CommSW
+                                             )
+                               ] ,
+                               [ rdf:type owl:Class ;
+                                 owl:unionOf ( :PeerNode
+                                               :ServiceNode
+                                             )
+                               ] ;
+           rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  https://purl.org/s2c2/hint#Link
+:Link rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Class ;
+                            owl:unionOf ( :NLink
+                                          :SelectedBond
+                                        )
+                          ] ;
+      rdfs:subClassOf :DetectBond .
+
+
+###  https://purl.org/s2c2/hint#MServer
+:MServer rdf:type owl:Class ;
+         rdfs:subClassOf :Server .
+
+
+###  https://purl.org/s2c2/hint#Medium
+:Medium rdf:type owl:Class ;
+        rdfs:subClassOf :Air .
+
+
+###  https://purl.org/s2c2/hint#NLink
+:NLink rdf:type owl:Class ;
+       rdfs:subClassOf :Link .
+
+
+###  https://purl.org/s2c2/hint#Neighbor
+:Neighbor rdf:type owl:Class ;
+          rdfs:subClassOf :Server .
+
+
+###  https://purl.org/s2c2/hint#PeerNode
+:PeerNode rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:unionOf ( :Receiver
+                                              :Sender
+                                            )
+                              ] ,
+                              [ rdf:type owl:Class ;
+                                owl:unionOf ( :Rx
+                                              :TRx
+                                              :Tx
+                                            )
+                              ] ;
+          rdfs:subClassOf :LayerNode .
+
+
+###  https://purl.org/s2c2/hint#Position
+:Position rdf:type owl:Class ;
+          rdfs:subClassOf gufo:Quality .
+
+
+###  https://purl.org/s2c2/hint#Protocol
+:Protocol rdf:type owl:Class ;
+          rdfs:subClassOf gufo:IntrinsicMode .
+
+
+###  https://purl.org/s2c2/hint#Receiver
+:Receiver rdf:type owl:Class ;
+          rdfs:subClassOf :PeerNode ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty [ owl:inverseOf :bindsReceiver_1
+                                           ] ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :SelectedBond
+                          ] ;
+          owl:disjointWith :Tx .
+
+
+###  https://purl.org/s2c2/hint#Rx
+:Rx rdf:type owl:Class ;
+    rdfs:subClassOf :PeerNode .
+
+
+###  https://purl.org/s2c2/hint#SelectedBond
+:SelectedBond rdf:type owl:Class ;
+              rdfs:subClassOf :Link ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :bindsReceiver_1 ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :Receiver
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :bindsServer ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :MServer
+                              ] .
+
+
+###  https://purl.org/s2c2/hint#Sender
+:Sender rdf:type owl:Class ;
+        rdfs:subClassOf :PeerNode ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf :dependsOnSender
+                                         ] ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :SignalGeneration
+                        ] .
+
+
+###  https://purl.org/s2c2/hint#Server
+:Server rdf:type owl:Class ;
+        rdfs:subClassOf :Sender .
+
+
+###  https://purl.org/s2c2/hint#ServiceNode
+:ServiceNode rdf:type owl:Class ;
+             rdfs:subClassOf :LayerNode .
+
+
+###  https://purl.org/s2c2/hint#Signal
+:Signal rdf:type owl:Class ;
+        rdfs:subClassOf gufo:FunctionalComplex ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty [ owl:inverseOf :caracterizesSignal
+                                         ] ;
+                          owl:someValuesFrom :SignalGeneration
+                        ] .
+
+
+###  https://purl.org/s2c2/hint#SignalGeneration
+:SignalGeneration rdf:type owl:Class ;
+                  rdfs:subClassOf gufo:ExtrinsicMode ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :dependsOnSender ;
+                                    owl:someValuesFrom :Sender
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :caracterizesSignal ;
+                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :Signal
+                                  ] .
+
+
+###  https://purl.org/s2c2/hint#TRx
+:TRx rdf:type owl:Class ;
+     rdfs:subClassOf :PeerNode .
+
+
+###  https://purl.org/s2c2/hint#Tx
+:Tx rdf:type owl:Class ;
+    rdfs:subClassOf :PeerNode .
+
+
+###  https://purl.org/s2c2/hint#WantedSignal
+:WantedSignal rdf:type owl:Class ;
+              rdfs:subClassOf :Signal .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://purl.org/s2c2/hint#Air
+:Air rdf:type owl:NamedIndividual ,
+              gufo:Kind .
+
+
+###  https://purl.org/s2c2/hint#CommBoard
+:CommBoard rdf:type owl:NamedIndividual ,
+                    gufo:Category .
+
+
+###  https://purl.org/s2c2/hint#CommDevice
+:CommDevice rdf:type owl:NamedIndividual ,
+                     gufo:Kind .
+
+
+###  https://purl.org/s2c2/hint#CommSW
+:CommSW rdf:type owl:NamedIndividual ,
+                 gufo:Category .
+
+
+###  https://purl.org/s2c2/hint#Connection
+:Connection rdf:type owl:NamedIndividual ,
+                     gufo:Kind .
+
+
+###  https://purl.org/s2c2/hint#DetectBond
+:DetectBond rdf:type owl:NamedIndividual ,
+                     gufo:Kind .
+
+
+###  https://purl.org/s2c2/hint#LayerNode
+:LayerNode rdf:type owl:NamedIndividual ,
+                    gufo:Category .
+
+
+###  https://purl.org/s2c2/hint#Link
+:Link rdf:type owl:NamedIndividual ,
+               gufo:Role .
+
+
+###  https://purl.org/s2c2/hint#MServer
+:MServer rdf:type owl:NamedIndividual ,
+                  gufo:RoleMixin .
+
+
+###  https://purl.org/s2c2/hint#Medium
+:Medium rdf:type owl:NamedIndividual ,
+                 gufo:Role .
+
+
+###  https://purl.org/s2c2/hint#NLink
+:NLink rdf:type owl:NamedIndividual ,
+                gufo:Role .
+
+
+###  https://purl.org/s2c2/hint#Neighbor
+:Neighbor rdf:type owl:NamedIndividual ,
+                   gufo:RoleMixin .
+
+
+###  https://purl.org/s2c2/hint#PeerNode
+:PeerNode rdf:type owl:NamedIndividual ,
+                   gufo:Mixin .
+
+
+###  https://purl.org/s2c2/hint#Position
+:Position rdf:type owl:NamedIndividual ,
+                   gufo:Kind .
+
+
+###  https://purl.org/s2c2/hint#Receiver
+:Receiver rdf:type owl:NamedIndividual ,
+                   gufo:RoleMixin .
+
+
+###  https://purl.org/s2c2/hint#Rx
+:Rx rdf:type owl:NamedIndividual ,
+             gufo:Category .
+
+
+###  https://purl.org/s2c2/hint#SelectedBond
+:SelectedBond rdf:type owl:NamedIndividual ,
+                       gufo:Role .
+
+
+###  https://purl.org/s2c2/hint#Sender
+:Sender rdf:type owl:NamedIndividual ,
+                 gufo:RoleMixin .
+
+
+###  https://purl.org/s2c2/hint#Server
+:Server rdf:type owl:NamedIndividual ,
+                 gufo:RoleMixin .
+
+
+###  https://purl.org/s2c2/hint#ServiceNode
+:ServiceNode rdf:type owl:NamedIndividual ,
+                      gufo:RoleMixin .
+
+
+###  https://purl.org/s2c2/hint#Signal
+:Signal rdf:type owl:NamedIndividual ,
+                 gufo:Kind .
+
+
+###  https://purl.org/s2c2/hint#SignalGeneration
+:SignalGeneration rdf:type owl:NamedIndividual ,
+                           gufo:Kind .
+
+
+###  https://purl.org/s2c2/hint#TRx
+:TRx rdf:type owl:NamedIndividual ,
+              gufo:Category .
+
+
+###  https://purl.org/s2c2/hint#Tx
+:Tx rdf:type owl:NamedIndividual ,
+             gufo:Category .
+
+
+###  https://purl.org/s2c2/hint#WantedSignal
+:WantedSignal rdf:type owl:NamedIndividual ,
+                       gufo:Role .
+
+
+###  https://purl.org/s2c2/hint#decodes
+:decodes rdf:type owl:NamedIndividual ,
+                  gufo:MaterialRelationshipType .
+
+
+###  https://purl.org/s2c2/hint#monitors
+:monitors rdf:type owl:NamedIndividual ,
+                   gufo:MaterialRelationshipType ;
+          gufo:isDerivedFrom :NLink .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Air rdfs:label "Air"@en .
+
+
+:CommBoard rdfs:label "CommBoard"@en .
+
+
+:CommDevice rdfs:label "CommDevice"@en .
+
+
+:CommSW rdfs:label "CommSW"@en .
+
+
+:Connection rdfs:label "Connection"@en .
+
+
+:DetectBond rdfs:label "DetectBond"@en .
+
+
+:LayerNode rdfs:label "LayerNode"@en .
+
+
+:Link rdfs:label "Link"@en .
+
+
+:MServer rdfs:label "MServer"@en .
+
+
+:Medium rdfs:label "Medium"@en .
+
+
+:NLink rdfs:label "NLink"@en .
+
+
+:Neighbor rdfs:label "Neighbor"@en .
+
+
+:PeerNode rdfs:label "PeerNode"@en .
+
+
+:Position rdfs:label "Position"@en .
+
+
+:Receiver rdfs:label "Receiver"@en .
+
+
+:Rx rdfs:label "Rx"@en .
+
+
+:SelectedBond rdfs:label "SelectedBond"@en .
+
+
+:Sender rdfs:label "Sender"@en .
+
+
+:Server rdfs:label "Server"@en .
+
+
+:ServiceNode rdfs:label "ServiceNode"@en .
+
+
+:Signal rdfs:label "Signal"@en .
+
+
+:SignalGeneration rdfs:label "SignalGeneration"@en .
+
+
+:TRx rdfs:label "TRx"@en .
+
+
+:Tx rdfs:label "Tx"@en .
+
+
+:WantedSignal rdfs:label "WantedSignal"@en .
+
+
+:decodes rdfs:label "decodes"@en .
+
+
+:monitors rdfs:label "monitors"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Rx
+                :TRx
+                :Tx
+              )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:a rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:b rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:c rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:d rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:e rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S2" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TRx ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :a
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :Rx ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :b
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasRx ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :a ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :b
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Receiver ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :a
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#classPredicate> :Receiver ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> :b
+                                                                                                 ] ;
+                                                                                       rdf:rest rdf:nil
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#SameIndividualAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :a ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :b
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S1" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TRx ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :a
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :Tx ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :b
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasTx ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :a ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :b
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :Sender ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :a
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#classPredicate> :Sender ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> :b
+                                                                                                 ] ;
+                                                                                       rdf:rest rdf:nil
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#SameIndividualAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :a ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :b
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S5" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :CommDevice ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :a
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :CommDevice ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :b
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :LayerNode ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :c
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#classPredicate> :LayerNode ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :d
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#classPredicate> :Link ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> :e
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasLN ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> :a ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument2> :c
+                                                                                                            ] ;
+                                                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasLN ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument1> :b ;
+                                                                                                                         <http://www.w3.org/2003/11/swrl#argument2> :d
+                                                                                                                       ] ;
+                                                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#propertyPredicate> :bindsReceiver_1 ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument1> :e ;
+                                                                                                                                    <http://www.w3.org/2003/11/swrl#argument2> :c
+                                                                                                                                  ] ;
+                                                                                                                        rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                                                   rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#propertyPredicate> :bindsSender ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument1> :e ;
+                                                                                                                                               <http://www.w3.org/2003/11/swrl#argument2> :d
+                                                                                                                                             ] ;
+                                                                                                                                   rdf:rest rdf:nil
+                                                                                                                                 ]
+                                                                                                                      ]
+                                                                                                           ]
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :a ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :b
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S4" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TRx ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :a
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :TRx ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :b
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :Connection ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :c
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :bindsTRx ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :c ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :a
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#classPredicate> :SelectedBond ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> :d
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#classPredicate> :SelectedBond ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> :e
+                                                                                                            ] ;
+                                                                                                  rdf:rest rdf:nil
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :bindsReceiver_1 ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :d ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :b
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :bindsSender ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :d ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :a
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :bindsReceiver_1 ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :e ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :a
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :bindsSender ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :e ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :b
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasSLink ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument1> :c ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> :d
+                                                                                                 ] ;
+                                                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasSLink ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument1> :c ;
+                                                                                                              <http://www.w3.org/2003/11/swrl#argument2> :e
+                                                                                                            ] ;
+                                                                                                  rdf:rest rdf:nil
+                                                                                                ]
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S3" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :TRx ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :a
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :TRx ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :b
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#classPredicate> :Connection ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :c
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :bindsTRx ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :c ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :a
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :a ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :b
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S6" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :PeerNode ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :a
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :PeerNode ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :b
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> rdf:nil
+ ] .
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
