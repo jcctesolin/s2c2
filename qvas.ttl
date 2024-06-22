@@ -9,10 +9,15 @@
 
 <https://purl.org/s2c2/qvas> rdf:type owl:Ontology ;
                               owl:imports <https://purl.org/nemo/gufo#/1.0.0> ;
-                              <http://purl.org/dc/elements/1.1/creator> "Julio" ;
-                              <http://purl.org/dc/elements/1.1/title> "qvas: Quality Value Assignment Ontology" ;
+                              <http://purl.org/dc/elements/1.1/creator> "https://orcid.org/0000-0002-0240-4506" ,
+                                                                        "https://orcid.org/0000-0002-1153-3879" ,
+                                                                        "https://orcid.org/0000-0003-4965-9941" ;
+                              <http://purl.org/dc/elements/1.1/title> "qvas: The Quality Value Assignment Ontology" ;
                               <http://purl.org/dc/terms/created> "\"2024-06-07\""^^xsd:date ;
                               <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/legalcode" ;
+                              <http://purl.org/vocab/vann/preferredNamespacePrefix> "qvas" ;
+                              <http://purl.org/vocab/vann/preferredNamespaceUri> "http://purl.org/s2c2/qvas#" ;
+                              rdfs:comment "The Quality Value Assignment ontology (qvas) aims to provide an operational ontology that allows value assignment over time for qualities defined by the UFO foundational ontology. An assigning event can be further specialized as a measurement or a configuration, while a value assignment can be specialized as a measurement result or configuration setting." ;
                               owl:versionInfo "\"1.0.0\"@en" .
 
 #################################################################
@@ -32,6 +37,7 @@
            rdfs:subPropertyOf gufo:inheresIn ;
            rdfs:domain :MQuality ;
            rdfs:range :MQBearer ;
+           rdfs:comment "identifies a MQuality which inheres in a MQBearer" ;
            rdfs:label "describes"@en .
 
 
@@ -56,6 +62,7 @@
                rdfs:subPropertyOf gufo:inheresIn ;
                rdfs:domain :ValueAsgmt ;
                rdfs:range :MQuality ;
+               rdfs:comment "identifies a ValueAsgmt which inheres in a MQuality" ;
                rdfs:label "holdsValueFor"@en .
 
 
@@ -64,6 +71,7 @@
               rdfs:subPropertyOf gufo:externallyDependsOn ;
               rdfs:domain :ValueAsgmt ;
               rdfs:range :ValueAssigner ;
+              rdfs:comment "identifies a ValueAsgmt which is externally dependent on a ValueAssigner" ;
               rdfs:label "isAssignedBy"@en .
 
 
@@ -72,6 +80,7 @@
             rdfs:subPropertyOf gufo:wasCreatedIn ;
             rdfs:domain :ValueAsgmt ;
             rdfs:range :AsgnEvent ;
+            rdfs:comment "identifies a ValueAsgmt that is the result of a value-assigning event" ;
             rdfs:label "isResultOf"@en .
 
 
@@ -80,6 +89,7 @@
                   rdfs:subPropertyOf gufo:participatedIn ;
                   rdfs:domain :MQBearer ;
                   rdfs:range :AsgnEvent ;
+                  rdfs:comment "identifies a MQBearer participating on a value-assigning event" ;
                   rdfs:label "participateAsMQB"@en .
 
 
@@ -88,6 +98,7 @@
                  rdfs:subPropertyOf gufo:participatedIn ;
                  rdfs:domain :ValueAssigner ;
                  rdfs:range :AsgnEvent ;
+                 rdfs:comment "identifies a ValuseAssigner participating on a value-assigning event" ;
                  rdfs:label "participateAsVA"@en .
 
 
@@ -99,6 +110,7 @@
 :assignedValue rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf gufo:hasQualityValue ;
                rdfs:domain :ValueAsgmt ;
+               rdfs:comment "maps a ValueAsgmt to MQuality's domain (quality structure)" ;
                rdfs:label "assignedValue"@en .
 
 
@@ -106,6 +118,7 @@
 :endTime rdf:type owl:DatatypeProperty ;
          rdfs:subPropertyOf gufo:hasQualityValue ;
          rdfs:domain :AsgnEvent ;
+         rdfs:comment "maps a AsgnEvent to the ending time of a value-assigning event" ;
          rdfs:label "endTime"@en .
 
 
@@ -113,6 +126,7 @@
 :resultTime rdf:type owl:DatatypeProperty ;
             rdfs:subPropertyOf gufo:hasQualityValue ;
             rdfs:domain :ValueAsgmt ;
+            rdfs:comment "maps a ValueAsgmt to the instant of time when a value was assigned to a MQuality" ;
             rdfs:label "resultTime"@en .
 
 
@@ -120,6 +134,7 @@
 :sresultTime rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf gufo:hasQualityValue ;
              rdfs:domain :CValueAsgmt ;
+             rdfs:comment "maps a CValueAsgmt to the starting instant of the ValueAsgmt aggregation" ;
              rdfs:label "sresultTime"@en .
 
 
@@ -127,6 +142,7 @@
 :startTime rdf:type owl:DatatypeProperty ;
            rdfs:subPropertyOf gufo:hasQualityValue ;
            rdfs:domain :AsgnEvent ;
+           rdfs:comment "maps a AsgnEvent to the starting time of a value-assigning event" ;
            rdfs:label "startTime"@en .
 
 
@@ -171,9 +187,9 @@
               rdfs:subClassOf gufo:FunctionalComplex .
 
 
-###  https://purl.org/s2c2/qvas#DomainQuaity
-:DomainQuaity rdf:type owl:Class ;
-              rdfs:subClassOf gufo:Quality .
+###  https://purl.org/s2c2/qvas#DomainQuality
+:DomainQuality rdf:type owl:Class ;
+               rdfs:subClassOf gufo:Quality .
 
 
 ###  https://purl.org/s2c2/qvas#MQBearer
@@ -183,7 +199,7 @@
 
 ###  https://purl.org/s2c2/qvas#MQuality
 :MQuality rdf:type owl:Class ;
-          rdfs:subClassOf :DomainQuaity .
+          rdfs:subClassOf :DomainQuality .
 
 
 ###  https://purl.org/s2c2/qvas#ValueAsgmt
@@ -235,9 +251,9 @@
                        gufo:Kind .
 
 
-###  https://purl.org/s2c2/qvas#DomainQuaity
-:DomainQuaity rdf:type owl:NamedIndividual ,
-                       gufo:Kind .
+###  https://purl.org/s2c2/qvas#DomainQuality
+:DomainQuality rdf:type owl:NamedIndividual ,
+                        gufo:Kind .
 
 
 ###  https://purl.org/s2c2/qvas#MQBearer
@@ -264,37 +280,48 @@
 #    Annotations
 #################################################################
 
-:AAsgnEvent rdfs:label "AAsgnEvent"@en .
+:AAsgnEvent rdfs:comment "is a specialization of AsgnEvent, representing atomic events of value assignment, which may result in value assignments" ;
+            rdfs:label "AAsgnEvent"@en .
 
 
-:AValueAsgmt rdfs:label "AValueAsgmt"@en .
+:AValueAsgmt rdfs:comment "is a specialization of ValueAsgmt, representing atomic value assignments holding a value for MQuality at a specific time." ;
+             rdfs:label "AValueAsgmt"@en .
 
 
-:AsgnEvent rdfs:label "AsgnEvent"@en .
+:AsgnEvent rdfs:comment "is the category of events that assigns values to  MQuality in which an MQBearer and a ValueAssigner participate and possibly lead to a value assignment." ;
+           rdfs:label "AsgnEvent"@en .
 
 
-:CAsgnEvent rdfs:label "CAsgnEvent"@en .
+:CAsgnEvent rdfs:comment "is a specialization of AsgnEvent, representing complex events of value assignment as AsgnEvent aggregations" ;
+            rdfs:label "CAsgnEvent"@en .
 
 
-:CValueAsgmt rdfs:label "CValueAsgmt"@en .
+:CValueAsgmt rdfs:comment "is a specialization of ValueAsgmt, representing complex value assignments as aggregations of ValueAsgmt." ;
+             rdfs:label "CValueAsgmt"@en .
 
 
-:DomainEntity rdfs:label "DomainEntity"@en .
+:DomainEntity rdfs:comment "an entity in a domain that can be identified as a UFO Object." ;
+              rdfs:label "DomainEntity"@en .
 
 
-:DomainQuaity rdfs:label "DomainQuaity"@en .
+:DomainQuality rdfs:comment "an entity representing an aspect of the domain that can be defined as a UFO Quality." ;
+               rdfs:label "DomainQuality"@en .
 
 
-:MQBearer rdfs:label "MQBearer"@en .
+:MQBearer rdfs:comment "is the role an endurant plays whenever it bears an MQuality while participating in a value assignment event (AsgEvent)" ;
+          rdfs:label "MQBearer"@en .
 
 
-:MQuality rdfs:label "MQuality"@en .
+:MQuality rdfs:comment "is the role a quality plays whenever its value changes over time, and it is necessary to keep track of it." ;
+          rdfs:label "MQuality"@en .
 
 
-:ValueAsgmt rdfs:label "ValueAsgmt"@en .
+:ValueAsgmt rdfs:comment "is the truthmaker of the material relationship between MQuality and ValueAssigner. It is a category of external dependent modes responsible for holding the assigned value for an MQuality, which a ValueAssigner assigns, and it is the result of a value assignment event in a certain period." ;
+            rdfs:label "ValueAsgmt"@en .
 
 
-:ValueAssigner rdfs:label "ValueAssigner"@en .
+:ValueAssigner rdfs:comment "is the role an endurant plays whenever it is responsible for assigning a value to an MQuality while participating in a value assignment event (AsgEvent)" ;
+               rdfs:label "ValueAssigner"@en .
 
 
 #################################################################
