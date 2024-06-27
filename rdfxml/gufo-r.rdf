@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.org/nemo/gufo#"
-     xml:base="http://purl.org/nemo/gufo"
+<rdf:RDF xmlns="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#"
+     xml:base="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:dct="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -8,12 +8,12 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:gufo="http://purl.org/nemo/gufo#"
+     xmlns:gufo="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:time="http://www.w3.org/2006/time#"
      xmlns:vann="http://purl.org/vocab/vann/">
-    <owl:Ontology rdf:about="http://purl.org/nemo/gufo#">
-        <owl:versionIRI rdf:resource="http://purl.org/nemo/gufo#/1.0.0"/>
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#">
+        <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#/1.0.0"/>
         <dc:creator>Almeida, João Paulo A.</dc:creator>
         <dc:creator>Falbo, Ricardo A.</dc:creator>
         <dc:creator>Guizzardi, Giancarlo</dc:creator>
@@ -141,11 +141,11 @@ For the source repository, see: &lt;https://github.com/nemo-ufes/gufo&gt;</rdfs:
     
 
 
-    <!-- http://purl.org/nemo/gufo#broughtAbout -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#broughtAbout -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#broughtAbout">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Event"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Situation"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#broughtAbout">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Event"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Situation"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:Situation that is brought about by the gufo:Event.
 
 Guizzardi et al. (2013) included a notion of &quot;brings-about&quot; that related events to a single (&quot;maximal&quot;) situation, embodying all the effects of the event at the time it ends. This implementation of gufo:broughtAbout diverges from &quot;brings-about&quot; in that work because gufo:broughtAbout can be used to relate events to more than one gufo:Situation. Each gufo:Situation identified through gufo:broughtAbout should be understood as an (improper) part of the maximal situation.</rdfs:comment>
@@ -154,23 +154,23 @@ Guizzardi et al. (2013) included a notion of &quot;brings-about&quot; that relat
     
 
 
-    <!-- http://purl.org/nemo/gufo#categorizes -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#categorizes -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#categorizes">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#categorizes">
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/nemo/gufo#Type"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Type"/>
                     <owl:Class>
-                        <owl:complementOf rdf:resource="http://purl.org/nemo/gufo#AbstractIndividualType"/>
+                        <owl:complementOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AbstractIndividualType"/>
                     </owl:Class>
                     <owl:Class>
-                        <owl:complementOf rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividualType"/>
+                        <owl:complementOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividualType"/>
                     </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Type"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Type"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:Type whose instances may be classified by instances of the categorizing higher-order type.
 
 For example, &quot;ShipType&quot; gufo:categorizes &quot;Ship&quot;. Instances of &quot;ShipType&quot; such as &quot;Supercarrier&quot; and &quot;Cargoship&quot; should be declared subclasses of &quot;Ship&quot;. OWL 2 punning should be used to capture the two facets of &quot;Supercarrier&quot; and &quot;Cargoship&quot; in this example: (i) as instances of &quot;ShipType&quot;, and (ii) as subclasses of &quot;Ship&quot;.
@@ -189,111 +189,111 @@ V. A. Carvalho, J. P. A. Almeida, C. M. Fonseca, and G. Guizzardi, “Multi-leve
     
 
 
-    <!-- http://purl.org/nemo/gufo#concernsConstitutedEndurant -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsConstitutedEndurant -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#concernsConstitutedEndurant">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#TemporaryConstitutionSituation"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsConstitutedEndurant">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryConstitutionSituation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
         <rdfs:comment xml:lang="en">Identifies the constituted gufo:Endurant in the gufo:TemporaryConstitutionSituation.</rdfs:comment>
         <rdfs:label xml:lang="en">concernsConstitutedEndurant</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#concernsNonRigidType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsNonRigidType -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#concernsNonRigidType">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsNonRigidType">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#TemporaryInstantiationSituation"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#NonRigidType"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryInstantiationSituation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#NonRigidType"/>
         <rdfs:comment xml:lang="en">Identifies the gufo:NonRigidType that is instantiated by the endurant that stands in a gufo:TemporaryInstantiationSituation.</rdfs:comment>
         <rdfs:label xml:lang="en">concernsNonRigidType</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#concernsQualityType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsQualityType -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#concernsQualityType">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsQualityType">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#QualityValueAttributionSituation"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#EndurantType"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#QualityValueAttributionSituation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#EndurantType"/>
         <rdfs:comment xml:lang="en">Identifies the quality type (a gufo:EndurantType subclassing gufo:Quality) whose value is attributed in the gufo:QualityValueAttributionSituation.</rdfs:comment>
         <rdfs:label xml:lang="en">concernsQualityType</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#concernsReifiedQualityValue -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsReifiedQualityValue -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#concernsReifiedQualityValue">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsReifiedQualityValue">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#QualityValueAttributionSituation"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#QualityValue"/>
-        <rdfs:comment rdf:resource="http://purl.org/nemo/gufo#concernsQualityValue"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#QualityValueAttributionSituation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#QualityValue"/>
+        <rdfs:comment rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsQualityValue"/>
         <rdfs:comment xml:lang="en">Identifies the gufo:QualityValue (i.e., the reified quality value) associated with the endurant that stands in the gufo:QualityValueAttributionSituation.</rdfs:comment>
         <rdfs:label xml:lang="en">concernsReifiedQualityValue</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#concernsRelatedEndurant -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsRelatedEndurant -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#concernsRelatedEndurant">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsRelatedEndurant">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#TemporaryRelationshipSituation"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryRelationshipSituation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
         <rdfs:comment xml:lang="en">Identifies the related gufo:Endurant in the gufo:TemporaryRelationshipSituation.</rdfs:comment>
         <rdfs:label xml:lang="en">concernsRelatedEndurant</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#concernsRelationshipType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsRelationshipType -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#concernsRelationshipType">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsRelationshipType">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#TemporaryRelationshipSituation"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#RelationshipType"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryRelationshipSituation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RelationshipType"/>
         <rdfs:comment xml:lang="en">Identifies the gufo:RelationshipType instantiated in the gufo:TemporaryRelationshipSituation.</rdfs:comment>
         <rdfs:label xml:lang="en">concernsRelationshipType</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#concernsTemporaryWhole -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsTemporaryWhole -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#concernsTemporaryWhole">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsTemporaryWhole">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#TemporaryParthoodSituation"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryParthoodSituation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
         <rdfs:comment xml:lang="en">Identifies the whole (a gufo:Endurant) of which the endurant that stands in the gufo:TemporaryParthoodSituation is part.</rdfs:comment>
         <rdfs:label xml:lang="en">concernsTemporaryWhole</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#constitutes -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#constitutes -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#constitutes">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#constitutes">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:ConcreteIndividual that is constituted (partially) by the constituent individual.
 
 For example, the gufo:Collection of persons whose members are John, Paul, George, Ringo constituted the beatles, the gufo:Quantity of marble that constitutes the statue of Venus de Milo, and the gufo:Event of Paul raising his arm in a meeting that constitutes his voting (also a gufo:Event).
 
 In case constitution changes in time, see gufo:standsInQualifiedConstitution.</rdfs:comment>
         <rdfs:label xml:lang="en">constitutes</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#standsInQualifiedConstitution"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedConstitution"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#contributedToTrigger -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#contributedToTrigger -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#contributedToTrigger">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Situation"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Event"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#contributedToTrigger">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Situation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Event"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:Event that the gufo:Situation contributed to trigger.
 
 Guizzardi et al. (2013) defined a notion of &quot;triggers&quot; to relate the situation satisfying all the sufficient and necessary conditions with the triggered  event. This implementation differs from  &quot;triggers&quot; as defined in that work because gufo:contributedToTrigger can be used to relate more than one gufo:Situation to a gufo:Event. Each gufo:Situation identified through gufo:contributedToTrigger should be understood as an (improper) part of the situation that triggered the event.</rdfs:comment>
@@ -302,12 +302,12 @@ Guizzardi et al. (2013) defined a notion of &quot;triggers&quot; to relate the s
     
 
 
-    <!-- http://purl.org/nemo/gufo#externallyDependsOn -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#externallyDependsOn -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#externallyDependsOn">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#externallyDependsOn">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#ExtrinsicMode"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ExtrinsicMode"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:Endurant on which the gufo:ExtrinsicMode depends.
 
 For example, John&apos;s duty to return the book he borrowed from Mary (a gufo:ExtrinsicMode) depends externally on Mary.
@@ -318,11 +318,11 @@ The identifed gufo:Endurant should  be external to the bearer of the extrinsic m
     
 
 
-    <!-- http://purl.org/nemo/gufo#hasAssociatedQualityValueType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasAssociatedQualityValueType -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#hasAssociatedQualityValueType">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#EndurantType"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#AbstractIndividualType"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasAssociatedQualityValueType">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#EndurantType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AbstractIndividualType"/>
         <rdfs:comment xml:lang="en">Identifies a quality value type to which the quality type is associated. 
 
 For example, a &quot;Color&quot; quality type may be associated with a &quot;ColorValueInRGB&quot; quality value type.
@@ -335,10 +335,10 @@ To be used only when quality values are reified.</rdfs:comment>
     
 
 
-    <!-- http://purl.org/nemo/gufo#hasBeginPoint -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasBeginPoint -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#hasBeginPoint">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasBeginPoint">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
         <rdfs:comment xml:lang="en">Identifies the begin point for a gufo:ConcreteIndividual, in the case in which time instants are reified. 
 
@@ -346,32 +346,32 @@ In the case of endurants, this identifies the time point when the endurant comes
 
 If time instants are not reified, use gufo:hasBeginPointInXSDDate or gufo:hasBeginPointInXSDDateTimeStamp.</rdfs:comment>
         <rdfs:label xml:lang="en">hasBeginPoint</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasBeginPointInXSDDate"/>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasBeginPointInXSDDateTimeStamp"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasBeginPointInXSDDate"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasBeginPointInXSDDateTimeStamp"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#hasEndPoint -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasEndPoint -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#hasEndPoint">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasEndPoint">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
         <rdfs:comment xml:lang="en">Identifies the end point for a gufo:ConcreteIndividual, in the case in which time instants are reified.
 
 In the case of endurants, this identifies the time point when the endurant ceases to exist. In the case of events, this identifies the time point when the event ends. In the case of situation, this identifies the time point when the situation ceases to hold.</rdfs:comment>
         <rdfs:label xml:lang="en">hasEndPoint</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasEndPointInXSDDate"/>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasEndPointInXSDDateTimeStamp"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasEndPointInXSDDate"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasEndPointInXSDDateTimeStamp"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#hasReifiedQualityValue -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasReifiedQualityValue -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#hasReifiedQualityValue">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#QualityValue"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasReifiedQualityValue">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#QualityValue"/>
         <rdfs:comment xml:lang="en">Identifies an instance of gufo:QualityValue to reflect the perception or conception of a quality in a certain value space. 
 
 Use this property only for quality values that are to be reified in the A-box and associated with a gufo:ConcreteIndividual. Otherwise, use the gufo:hasQualityValue data property and a literal to determine the quality value.
@@ -380,17 +380,17 @@ The full representation pattern for quality values involves first identifying a 
 
 When the full pattern is not required, gufo:hasReifiedQualityValue can also be used to directly associate a concrete individual (without identifying the quality) with a quality value.</rdfs:comment>
         <rdfs:label xml:lang="en">hasReifiedQualityValue</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasQualityValue"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasQualityValue"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#historicallyDependsOn -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#historicallyDependsOn -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#historicallyDependsOn">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#historicallyDependsOn">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:ConcreteIndividual on which the concrete individual depends historically. 
 
 For example, a person is historically dependent on his/her ancestors.
@@ -405,14 +405,14 @@ Historical dependence is transitive. Hence, in the example above, Real Madrid&ap
     
 
 
-    <!-- http://purl.org/nemo/gufo#inheresIn -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#inheresIn -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#inheresIn">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#inheresIn">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Aspect"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Aspect"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         <rdfs:comment xml:lang="en">Identifies the gufo:ConcreteIndividual in which the gufo:Aspect inheres. Inherence is a sort of existential dependence. The identified concrete individual is the &quot;bearer&quot; of the aspect.
 
 For example, the color of an object inheres in the object and the average speed of a flight inheres in the flight.</rdfs:comment>
@@ -421,13 +421,13 @@ For example, the color of an object inheres in the object and the average speed 
     
 
 
-    <!-- http://purl.org/nemo/gufo#isAspectProperPartOf -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isAspectProperPartOf -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#isAspectProperPartOf">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nemo/gufo#isProperPartOf"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isAspectProperPartOf">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isProperPartOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Aspect"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Aspect"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Aspect"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Aspect"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:Aspect of which the aspect is a proper part.
 
 For example, John&apos;s obligations towards Mary in the scope of their marriage is an aspect proper part of their marriage  (and same can be said of Mary&apos;s extrinsic aspects in the scope of their marriage.)
@@ -440,12 +440,12 @@ gufo:isAspectProperPartOf is transitive.</rdfs:comment>
     
 
 
-    <!-- http://purl.org/nemo/gufo#isCollectionMemberOf -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isCollectionMemberOf -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#isCollectionMemberOf">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nemo/gufo#isObjectProperPartOf"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Object"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Collection"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isCollectionMemberOf">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isObjectProperPartOf"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Collection"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:Collection of which the object is a member. 
 
 This is the relation between John and a group of persons, and between a cow and its herd.
@@ -454,17 +454,17 @@ gufo:isCollectionMemberOf is intransitive (Guizzardi, 2005, p. 185).
 
 For membership in a gufo:VariableCollection, see gufo:standsInQualifiedParthood.</rdfs:comment>
         <rdfs:label xml:lang="en">isCollectionMemberOf</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#standsInQualifiedParthood"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedParthood"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#isComponentOf -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isComponentOf -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#isComponentOf">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nemo/gufo#isObjectProperPartOf"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Object"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#FunctionalComplex"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isComponentOf">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isObjectProperPartOf"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#FunctionalComplex"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:FunctionalComplex of which the object is a component.
 
 For example, the habitation module is a component of the International Space Station, and so are each of the solar panels; Obama&apos;s brain is a component of his body, and so is his heart; the engine is a component of the HMS Queen Elizabeth (R08).
@@ -473,23 +473,23 @@ gufo:isComponentOf is not transitive in the general case. Particular sub-propert
 
 When a component may change its relation to be whole, see gufo:standsInQualifiedParthood.</rdfs:comment>
         <rdfs:label xml:lang="en">isComponentOf</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#standsInQualifiedParthood"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedParthood"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#isDerivedFrom -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isDerivedFrom -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#isDerivedFrom">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isDerivedFrom">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/nemo/gufo#ComparativeRelationshipType"/>
-                    <rdf:Description rdf:about="http://purl.org/nemo/gufo#MaterialRelationshipType"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ComparativeRelationshipType"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#MaterialRelationshipType"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#EndurantType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#EndurantType"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:EndurantType from which the material or comparative relation can be derived. The identified gufo:EndurantType should be a subclass of gufo:Aspect, more specifically a subclass of gufo:ExtrinsicAspect in the case of a gufo:MaterialRelationshipType, and a subclass of gufo:IntrinsicAspect in the case of a gufo:ComparativeRelationshipType.
 
 For example, &quot;marriedWith&quot; can be derived from &quot;Marriage&quot;, &quot;heavierThan&quot; can be derived from &quot;Weight&quot;.
@@ -500,13 +500,13 @@ See Fonseca et al. (2019).</rdfs:comment>
     
 
 
-    <!-- http://purl.org/nemo/gufo#isEventProperPartOf -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isEventProperPartOf -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#isEventProperPartOf">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nemo/gufo#isProperPartOf"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isEventProperPartOf">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isProperPartOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Event"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Event"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Event"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Event"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:Event of which the event is part. 
 
 For example, Cristiano Ronaldo&apos;s penalty kick is an event proper part of the 2016 FIFA Club World Cup Final, having ocurred in the 60th minute of that match. That match is itself an event proper part of the 2016 FIFA Club World Cup.
@@ -519,13 +519,13 @@ gufo:isEventProperPartOf is transitive.</rdfs:comment>
     
 
 
-    <!-- http://purl.org/nemo/gufo#isObjectProperPartOf -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isObjectProperPartOf -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#isObjectProperPartOf">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nemo/gufo#isProperPartOf"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isObjectProperPartOf">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isProperPartOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Object"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Object"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:Object of which the object is a part.
 
 This is a general parthood relation between objects. Use the various sub-properties provided in order to represent specific types of parthood, each of which has specialized semantics (and different formal properties in this implementation, in particular, transitivity (Guizzardi, 2005, section 5.6).</rdfs:comment>
@@ -534,9 +534,9 @@ This is a general parthood relation between objects. Use the various sub-propert
     
 
 
-    <!-- http://purl.org/nemo/gufo#isProperPartOf -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isProperPartOf -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#isProperPartOf">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isProperPartOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
@@ -552,12 +552,12 @@ Note that gufo:isProperPartOf (as the most general notion of parthood) is transi
     
 
 
-    <!-- http://purl.org/nemo/gufo#isSituationProperPartOf -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isSituationProperPartOf -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#isSituationProperPartOf">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nemo/gufo#isProperPartOf"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Situation"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Situation"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isSituationProperPartOf">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isProperPartOf"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Situation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Situation"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:Situation of which the situation is a part.
 
 Examples include: the situation in which John has influenza is part of the situation in which John has influenza and he is tired; the situation in which John is friends with Mary is part of the situation in which he is friends with Mary and Alice; the situation in which John is married to Alice is part of the situation in which John is married to Alice, while she works at the Free University of Bozen-Bolzano.</rdfs:comment>
@@ -566,31 +566,31 @@ Examples include: the situation in which John has influenza is part of the situa
     
 
 
-    <!-- http://purl.org/nemo/gufo#isSubCollectionOf -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isSubCollectionOf -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#isSubCollectionOf">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nemo/gufo#isObjectProperPartOf"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isSubCollectionOf">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isObjectProperPartOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Collection"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Collection"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Collection"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Collection"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:Collection of which the collection is a sub-collection. All members of the sub-collection are members of the identified super-collection.
 
 gufo:isSubCollectionOf is transitive (Guizzardi, 2005, p. 186).
 
 For parthood involving one or more varied collections, see gufo:standsInQualifiedParthood.</rdfs:comment>
         <rdfs:label xml:lang="en">isSubCollectionOf</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#standsInQualifiedParthood"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedParthood"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#isSubQuantityOf -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isSubQuantityOf -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#isSubQuantityOf">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nemo/gufo#isObjectProperPartOf"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isSubQuantityOf">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isObjectProperPartOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Quantity"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Quantity"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Quantity"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Quantity"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:Quantity of which the quantity is a part.
 
 For example, the quantity of water in a wine glass is a sub-quantity of the wine in that glass.
@@ -603,11 +603,11 @@ Sub-quantities are always essential parts of their wholes. Thus, gufo:standsInQu
     
 
 
-    <!-- http://purl.org/nemo/gufo#manifestedIn -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#manifestedIn -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#manifestedIn">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Aspect"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Event"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#manifestedIn">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Aspect"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Event"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:Event in which the gufo:Aspect is manifested.
 
 For example, the passing of an electrical current in a conductor is an event that encompasses the manifestation of an aspect inhering in a copper wire (the wire&apos;s  electrical conductivity).</rdfs:comment>
@@ -616,13 +616,13 @@ For example, the passing of an electrical current in a conductor is an event tha
     
 
 
-    <!-- http://purl.org/nemo/gufo#mediates -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#mediates -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#mediates">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#mediates">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Relator"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Relator"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
         <rdfs:comment xml:lang="en">Identifies the endurants mediated by a gufo:Relator.
 
 For example, John and Mary&apos;s marriage mediates John and Mary.</rdfs:comment>
@@ -631,11 +631,11 @@ For example, John and Mary&apos;s marriage mediates John and Mary.</rdfs:comment
     
 
 
-    <!-- http://purl.org/nemo/gufo#participatedIn -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#participatedIn -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#participatedIn">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Object"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Event"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#participatedIn">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Event"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:Event in which the gufo:Object participated.
 
 Examples include the participation of Freddy Mercury in Queen&apos;s Live Aid Concert and the participation of an airplane in a flight.</rdfs:comment>
@@ -644,19 +644,19 @@ Examples include the participation of Freddy Mercury in Queen&apos;s Live Aid Co
     
 
 
-    <!-- http://purl.org/nemo/gufo#partitions -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#partitions -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#partitions">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nemo/gufo#categorizes"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#partitions">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#categorizes"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/nemo/gufo#Type"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Type"/>
                     <owl:Class>
-                        <owl:complementOf rdf:resource="http://purl.org/nemo/gufo#AbstractIndividualType"/>
+                        <owl:complementOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AbstractIndividualType"/>
                     </owl:Class>
                     <owl:Class>
-                        <owl:complementOf rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividualType"/>
+                        <owl:complementOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividualType"/>
                     </owl:Class>
                 </owl:intersectionOf>
             </owl:Class>
@@ -677,11 +677,11 @@ V. A. Carvalho, J. P. A. Almeida, C. M. Fonseca, and G. Guizzardi, “Multi-leve
     
 
 
-    <!-- http://purl.org/nemo/gufo#standsIn -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsIn -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#standsIn">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsIn">
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Situation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Situation"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:Situation in which the entity stands. 
 
 This implementation includes sub-properties of gufo:standsIn to identify situations concerning the attribution of (mutable) values to qualities, variable relationships, the instantiation of non-contingent types, temporary parthood and temporary constitution.</rdfs:comment>
@@ -690,81 +690,81 @@ This implementation includes sub-properties of gufo:standsIn to identify situati
     
 
 
-    <!-- http://purl.org/nemo/gufo#standsInQualifiedAttribution -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedAttribution -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#standsInQualifiedAttribution">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nemo/gufo#standsIn"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#QualityValueAttributionSituation"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedAttribution">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsIn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#QualityValueAttributionSituation"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:QualityValueAttributionSituation in which the endurant stands. The identified gufo:QualityValueAttributionSituation is then used with the gufo:concernsQualityValue data property or the gufo:concernsReifiedQualityValue object property to indicate a quality value attributed to the gufo:Endurant standing in the situation. This forms a pattern to represent that quality values may differ in different situations.</rdfs:comment>
         <rdfs:label xml:lang="en">standsInQualifiedAttribution</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#QualityValueAttributionSituation"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#QualityValueAttributionSituation"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#standsInQualifiedConstitution -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedConstitution -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#standsInQualifiedConstitution">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nemo/gufo#standsIn"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#TemporaryConstitutionSituation"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedConstitution">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsIn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryConstitutionSituation"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:TemporaryConstitutionSituation in which an endurant stands temporarily (as a constituent). The identified gufo:TemporaryConstitutionSituation is further related with an endurant (the whole) through the gufo:concernsConstitutedEndurant object property. This forms a pattern to represent temporary constitution, in which the relationships between constituents and constituted endurant vary in different situations.
 
 Consider, for example, a group of people (understood as a gufo:FixedCollection) constituting a band (understood as a gufo:FunctionalComplex). In this case, any change in the membership of the group (e.g., the replacement of one person) creates a different group of people. Therefore, the band&apos;s constitution can change in time, and the pattern using gufo:TemporaryConstitutionSituation is applicable.</rdfs:comment>
         <rdfs:label xml:lang="en">standsInQualifiedConstitution</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#TemporaryConstitutionSituation"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryConstitutionSituation"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#standsInQualifiedInstantiation -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedInstantiation -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#standsInQualifiedInstantiation">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nemo/gufo#standsIn"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#TemporaryInstantiationSituation"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedInstantiation">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsIn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryInstantiationSituation"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:TemporaryInstantiationSituation in which the endurant stands. The identified gufo:TemporaryInstantiationSituation is further related with a gufo:NonRigidType through the gufo:concernsNonRigidType object property. This forms a pattern to represent the contigent instantiation of a non-rigid type by the endurant, in which case instantiation may vary in different situations.</rdfs:comment>
         <rdfs:label xml:lang="en">standsInQualifiedInstantiation</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#TemporaryInstantiationSituation"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryInstantiationSituation"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#standsInQualifiedParthood -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedParthood -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#standsInQualifiedParthood">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nemo/gufo#standsIn"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#TemporaryParthoodSituation"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedParthood">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsIn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryParthoodSituation"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:TemporaryParthoodSituation in which the endurant stands (as a temporary part). The identified gufo:TemporaryParthoodSituation is further related with an endurant (the whole) through the gufo:concernsTemporaryWhole object property. This forms a pattern to represent temporary parthood, in which the relationships between parts and wholes vary in different situations. In particular, this pattern is useful in case parts may be separated from their wholes, attached to other wholes, replaced.</rdfs:comment>
         <rdfs:label xml:lang="en">standsInQualifiedParthood</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#TemporaryParthoodSituation"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryParthoodSituation"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#standsInQualifiedRelationship -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedRelationship -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#standsInQualifiedRelationship">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nemo/gufo#standsIn"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#TemporaryRelationshipSituation"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedRelationship">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsIn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryRelationshipSituation"/>
         <rdfs:comment xml:lang="en">Identifies a gufo:TemporaryRelationshipSituation in which the endurant stands. The identified gufo:TemporaryRelationshipSituation is then used with the gufo:concernsRelatedEndurant and the gufo:concernsRelationshipType object properties to indicate the related element and the type of relationship that applies. This forms a pattern to represent that relationships that may change in different situations. For example, &quot;heavierThan&quot; may change when the objects involved gain or lose weight.
 
 For material relations, prefer the use of gufo:Relator.</rdfs:comment>
         <rdfs:label xml:lang="en">standsInQualifiedRelationship</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#Relator"/>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#TemporaryRelationshipSituation"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Relator"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryRelationshipSituation"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#wasCreatedIn -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#wasCreatedIn -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#wasCreatedIn">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Event"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#wasCreatedIn">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Event"/>
         <rdfs:comment xml:lang="en">Identifies the gufo:Event which brought the gufo:Endurant into existence. 
 
 For example, a musical piece is created in an act of composition (or in an event that is part of it), a piece of legislation is created in a complex legislative process.
@@ -777,11 +777,11 @@ A. B. Benevides, J. R. Bourguet, G. Guizzardi, R. Penãloza, and J. P. A. Almeid
     
 
 
-    <!-- http://purl.org/nemo/gufo#wasTerminatedIn -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#wasTerminatedIn -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/nemo/gufo#wasTerminatedIn">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
-        <rdfs:range rdf:resource="http://purl.org/nemo/gufo#Event"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#wasTerminatedIn">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Event"/>
         <rdfs:comment xml:lang="en">Identifies the gufo:Event in which the gufo:Endurant was brought to an end. 
 
 For example, the Space Shuttle Challenger (OV-099) (a gufo:FunctionalComplex) was destroyed during the launch of its tenth flight (a gufo:Event). 
@@ -805,26 +805,26 @@ A. B. Benevides, J. R. Bourguet, G. Guizzardi, R. Penãloza, and J. P. A. Almeid
     
 
 
-    <!-- http://purl.org/nemo/gufo#concernsQualityValue -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsQualityValue -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/nemo/gufo#concernsQualityValue">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#QualityValueAttributionSituation"/>
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsQualityValue">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#QualityValueAttributionSituation"/>
         <rdfs:comment xml:lang="en">Determines a quality value associated with the gufo:ConcreteIndividual that stands in the gufo:QualityValueAttributionSituation.
 
 Use gufo:concernsReifiedQualityValue instead when quality values are refied.
 
 It is recommended that subproperties of gufo:concernsQualityValue are created, possibly identifying the datatype to be used. For example, &quot;concernsTemperatureValue&quot; could be defined as a sub-property of gufo:concernsQualityValue with range xsd:double.</rdfs:comment>
         <rdfs:label xml:lang="en">concernsQualityValue</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#concernsReifiedQualityValue"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsReifiedQualityValue"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#hasBeginPointInXSDDate -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasBeginPointInXSDDate -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/nemo/gufo#hasBeginPointInXSDDate">
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasBeginPointInXSDDate">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <rdfs:comment xml:lang="en">Determines the begin point for a gufo:ConcreteIndividual, using a xsd:date literal.
 
@@ -832,17 +832,17 @@ In the case of endurants, gufo:asBeginPointInXSDDate determines the time point w
 
 Use gufo:hasBeginPoint instead when temporal entities are reified.</rdfs:comment>
         <rdfs:label xml:lang="en">hasBeginPointInXSDDate</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasBeginPoint"/>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasBeginPointInXSDDateTimeStamp"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasBeginPoint"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasBeginPointInXSDDateTimeStamp"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#hasBeginPointInXSDDateTimeStamp -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasBeginPointInXSDDateTimeStamp -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/nemo/gufo#hasBeginPointInXSDDateTimeStamp">
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasBeginPointInXSDDateTimeStamp">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
         <rdfs:comment xml:lang="en">Determines the begin point for a gufo:ConcreteIndividual, using a xsd:dateTimeStamp literal.
 
@@ -850,17 +850,17 @@ In the case of endurants, gufo:hasBeginPointInXSDDateTimeStamp determines the ti
 
 Use gufo:hasBeginPoint instead when temporal entities are reified.</rdfs:comment>
         <rdfs:label xml:lang="en">hasBeginPointInXSDDateTimeStamp</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasBeginPoint"/>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasBeginPointInXSDDate"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasBeginPoint"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasBeginPointInXSDDate"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#hasEndPointInXSDDate -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasEndPointInXSDDate -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/nemo/gufo#hasEndPointInXSDDate">
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasEndPointInXSDDate">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
         <rdfs:comment xml:lang="en">Determines the end point for a gufo:ConcreteIndividual using a xsd:date literal.
  
@@ -868,17 +868,17 @@ In the case of endurants, gufo:hasEndPointInXSDDate determines the time point wh
 
 Use gufo:hasEndPoint instead when temporal entities are reified.</rdfs:comment>
         <rdfs:label xml:lang="en">hasEndPointInXSDDate</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasEndPoint"/>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasEndPointInXSDDateTimeStamp"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasEndPoint"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasEndPointInXSDDateTimeStamp"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#hasEndPointInXSDDateTimeStamp -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasEndPointInXSDDateTimeStamp -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/nemo/gufo#hasEndPointInXSDDateTimeStamp">
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasEndPointInXSDDateTimeStamp">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
         <rdfs:comment xml:lang="en">Determines the end point for a gufo:ConcreteIndividual using a xsd:dateTimeStamp literal.
  
@@ -886,31 +886,31 @@ In the case of endurants, gufo:hasEndPointInXSDDateTimeStamp determines the time
 
 Use gufo:hasEndPoint instead when temporal entities are reified.</rdfs:comment>
         <rdfs:label xml:lang="en">hasEndPointInXSDDateTimeStamp</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasEndPoint"/>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasEndPointInXSDDate"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasEndPoint"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasEndPointInXSDDate"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#hasQualityValue -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasQualityValue -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/nemo/gufo#hasQualityValue">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasQualityValue">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         <rdfs:comment xml:lang="en">Determines a quality value associated with the concrete individual.
 
 Use gufo:hasReifiedQualityValue instead when quality values are reified.
 
 It is recommended that subproperties of gufo:hasQualityValue are created, possibly identifying the datatype to be used. For example, &quot;hasTemperatureValue&quot; could be defined as a sub-property of gufo:hasQualityValue whose domain is &quot;Temperature&quot; (specializing gufo:Quality) and whose range is xsd:double.</rdfs:comment>
         <rdfs:label xml:lang="en">hasQualityValue</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasReifiedQualityValue"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasReifiedQualityValue"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://purl.org/nemo/gufo#hasValueComponent -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasValueComponent -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/nemo/gufo#hasValueComponent">
-        <rdfs:domain rdf:resource="http://purl.org/nemo/gufo#QualityValue"/>
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasValueComponent">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#QualityValue"/>
         <rdfs:comment xml:lang="en">This property is used for quality values that are defined in terms of a multidimensional quality structure (such as color conceived in terms of hue, saturation and brightness). Each value component of a quality value (a particular value for hue, a particular value for saturation, a particular value for brightness) is determined with this property. 
 
 It is recommended that subproperties of gufo:hasValueComponent are created to indicate values for particular dimensions, possibly identifying the datatype to be used. For example &quot;hasHueComponent&quot;, &quot;hasSaturationComponent&quot; and &quot;hasBrightnessComponent&quot; could be used as data properties specializing gufo:hasValueComponent with the xsd:double datatype.</rdfs:comment>
@@ -930,11 +930,21 @@ It is recommended that subproperties of gufo:hasValueComponent are created to in
     
 
 
-    <!-- http://purl.org/nemo/gufo#AbstractIndividual -->
+    <!-- http://www.w3.org/2006/time#Instant -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#AbstractIndividual">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Individual"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+    <owl:Class rdf:about="http://www.w3.org/2006/time#Instant">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AbstractIndividual"/>
+        <rdfs:comment xml:lang="en">An gufo:AbstractIndividual that reifies time instants. It is used as a target of the gufo:hasBeginPoint and gufo:hasEndPoint object properties.</rdfs:comment>
+        <rdfs:label xml:lang="en">Instant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AbstractIndividual -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AbstractIndividual">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Individual"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         <rdfs:comment xml:lang="en">A gufo:Individual that does not exist in space-time in the same way as a gufo:ConcreteIndividual does. A gufo:AbstractIndividual has no spatiotemporal qualities in its own right. Hence, it does not make sense to ask how much space it now occupies (Gideon, 2018) and when it was created or destroyed.
 
 Examples include the number ten, the null set, and the proposition that &apos;Obama was the president of the United States&apos;.
@@ -945,12 +955,12 @@ Rosen, Gideon, &quot;Abstract Objects&quot;, The Stanford Encyclopedia of Philos
     
 
 
-    <!-- http://purl.org/nemo/gufo#AbstractIndividualType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AbstractIndividualType -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#AbstractIndividualType">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Type"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividualType"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#RelationshipType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AbstractIndividualType">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Type"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividualType"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RelationshipType"/>
         <rdfs:comment xml:lang="en">A gufo:Type whose instances are abstract individuals.
 
 Instances of gufo:AbstractIndividualType are subclasses of gufo:AbstractIndividual.
@@ -961,11 +971,11 @@ Examples include the types &quot;NaturalNumber&quot;, &quot;Set&quot;, &quot;Pro
     
 
 
-    <!-- http://purl.org/nemo/gufo#AntiRigidType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AntiRigidType -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#AntiRigidType">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#NonRigidType"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#SemiRigidType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AntiRigidType">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#NonRigidType"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#SemiRigidType"/>
         <rdfs:comment xml:lang="en">A gufo:NonRigidType that applies contingently to all its instances (see Guizzardi, 2005, chapter 4).
 
 Examples include the gufo:Phase &quot;Child&quot;, the gufo:PhaseMixin &quot;InfantAnimal&quot;, the gufo:Role &quot;Student&quot;, and the gufo:RoleMixin &quot;Customer&quot;.</rdfs:comment>
@@ -974,14 +984,14 @@ Examples include the gufo:Phase &quot;Child&quot;, the gufo:PhaseMixin &quot;Inf
     
 
 
-    <!-- http://purl.org/nemo/gufo#Aspect -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Aspect -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Aspect">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#Object"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Aspect">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object"/>
         <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#ExtrinsicAspect"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#IntrinsicAspect"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ExtrinsicAspect"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#IntrinsicAspect"/>
         </owl:disjointUnionOf>
         <rdfs:comment xml:lang="en">A gufo:Endurant that depends on at least one other concrete individual for its existence. A gufo:Aspect is a characteristic or trait of a concrete individual that is itself conceived as an individual. 
 
@@ -997,11 +1007,11 @@ Also termed &quot;property instance&quot;, &quot;particularized property&quot;, 
     
 
 
-    <!-- http://purl.org/nemo/gufo#Category -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Category -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Category">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#NonSortal"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#RigidType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Category">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#NonSortal"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RigidType"/>
         <rdfs:comment xml:lang="en">A gufo:EndurantType that is both non-sortal and rigid. It captures essential properties that apply to instances of different kinds.
 
 For example, &quot;PhysicalObject&quot; may be considered a gufo:Category, encompassing objects such as cars, planets, trees. &quot;Agent&quot; may be a gufo:Category that classifies both people and organizations.</rdfs:comment>
@@ -1010,13 +1020,13 @@ For example, &quot;PhysicalObject&quot; may be considered a gufo:Category, encom
     
 
 
-    <!-- http://purl.org/nemo/gufo#Collection -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Collection -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Collection">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Object"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Collection">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object"/>
         <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#FixedCollection"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#VariableCollection"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#FixedCollection"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#VariableCollection"/>
         </owl:disjointUnionOf>
         <rdfs:comment xml:lang="en">A complex gufo:Object whose parts (the members of the collection) have a uniform structure (i.e., members are conceived as playing the same role in the collection). Collections may have a fixed or variable membership, which can be asserted using gufo:FixedCollection and gufo:VariableCollection respectively.
 
@@ -1030,11 +1040,11 @@ A gufo:Collection may be decomposed into &quot;smaller&quot; collections. For in
     
 
 
-    <!-- http://purl.org/nemo/gufo#ComparativeRelationshipType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ComparativeRelationshipType -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#ComparativeRelationshipType">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#RelationshipType"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#MaterialRelationshipType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ComparativeRelationshipType">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RelationshipType"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#MaterialRelationshipType"/>
         <rdfs:comment xml:lang="en">A gufo:RelationshipType derived from intrinsic aspects of the related entities.
 
 For example, &quot;heavierThan&quot;, &quot;olderThan&quot;. 
@@ -1045,19 +1055,19 @@ Note that, in the case of relationships that may change in different circumstanc
 
 Corresponds to &quot;comparative formal relation&quot; in Guizzardi (2005) and &quot;Comparative Relation&quot; in Fonseca et al. (2019).</rdfs:comment>
         <rdfs:label xml:lang="en">ComparativeRelationshipType</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#isDerivedFrom"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isDerivedFrom"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/nemo/gufo#ConcreteIndividual -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#ConcreteIndividual">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Individual"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Individual"/>
         <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#Endurant"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#Event"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#Situation"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Event"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Situation"/>
         </owl:disjointUnionOf>
         <rdfs:comment xml:lang="en">A gufo:Individual that exists in space-time. 
 
@@ -1067,11 +1077,11 @@ Concrete individuals comprise not only object-like entities (a car, a mountain, 
     
 
 
-    <!-- http://purl.org/nemo/gufo#ConcreteIndividualType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividualType -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#ConcreteIndividualType">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Type"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#RelationshipType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividualType">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Type"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RelationshipType"/>
         <rdfs:comment xml:lang="en">A gufo:Type whose instances are concrete individuals.
 
 Instances of gufo:ConcreteIndividualType are subclasses of gufo:ConcreteIndividual.
@@ -1082,13 +1092,13 @@ Examples include the gufo:Kind &quot;Person&quot;, the gufo:Category &quot;Physi
     
 
 
-    <!-- http://purl.org/nemo/gufo#Endurant -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Endurant">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#Aspect"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#Object"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Aspect"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object"/>
         </owl:disjointUnionOf>
         <rdfs:comment xml:lang="en">A gufo:ConcreteIndividual that endures in time and may change qualitatively while keeping its identity. 
 
@@ -1100,19 +1110,19 @@ Also termed &quot;continuant&quot; in the philosophical literature.</rdfs:commen
     
 
 
-    <!-- http://purl.org/nemo/gufo#EndurantType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#EndurantType -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#EndurantType">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividualType"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#EventType"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#SituationType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#EndurantType">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividualType"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#EventType"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#SituationType"/>
         <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#NonRigidType"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#RigidType"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#NonRigidType"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RigidType"/>
         </owl:disjointUnionOf>
         <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#NonSortal"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#Sortal"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#NonSortal"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Sortal"/>
         </owl:disjointUnionOf>
         <rdfs:comment xml:lang="en">A gufo:Type whose instances are endurants. 
 
@@ -1126,10 +1136,10 @@ See Guizzardi et al. (2018) for details concerning the taxonomy of endurant type
     
 
 
-    <!-- http://purl.org/nemo/gufo#Event -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Event -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Event">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Event">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         <rdfs:comment xml:lang="en">A gufo:ConcreteIndividual that &apos;occurs&apos; or &apos;happens&apos; in time. They may be instantaneous or long-running. Events are those &quot;things that happen to or are performed by&quot; (Casati and Varzi, 2015) endurants. 
 
 Examples include actions and processes, such as a business meeting, a communicative act, a soccer match, a goal kick, the clicking of a mouse button; as well as natural occurrences such as an earthquake, the fall of the meteor that caused the extinction of the dinosaurs.
@@ -1138,16 +1148,16 @@ Also termed &quot;happening&quot;, &quot;occurrence&quot;, &quot;perdurant&quot;
 
 Casati, R. &amp; Varzi, A. (2015). Events. In E.N. Zalta (Ed.), The Stanford Encyclopedia of Philosophy (Winter 2015 ed.). 19 Metaphysics Research Lab, Stanford University. https://plato.stanford.edu/archives/win2015/entries/events/</rdfs:comment>
         <rdfs:label xml:lang="en">Event</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#participatedIn"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#participatedIn"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/nemo/gufo#EventType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#EventType -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#EventType">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividualType"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#SituationType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#EventType">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividualType"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#SituationType"/>
         <rdfs:comment xml:lang="en">A gufo:Type whose instances are events.
 
 Instances of gufo:EventType are subclasses of gufo:Event.
@@ -1158,14 +1168,14 @@ Examples include &quot;Business Meeting&quot;, &quot;Birth&quot;, &quot;Musical 
     
 
 
-    <!-- http://purl.org/nemo/gufo#ExtrinsicAspect -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ExtrinsicAspect -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#ExtrinsicAspect">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Aspect"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#IntrinsicAspect"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ExtrinsicAspect">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Aspect"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#IntrinsicAspect"/>
         <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#ExtrinsicMode"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#Relator"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ExtrinsicMode"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Relator"/>
         </owl:disjointUnionOf>
         <rdfs:comment xml:lang="en">A gufo:Aspect that depends on one or more concrete individuals.
 
@@ -1177,76 +1187,76 @@ Corresponds to &quot;Extrinsic Moment&quot; in Fonseca et al (2019). Encompasses
     
 
 
-    <!-- http://purl.org/nemo/gufo#ExtrinsicMode -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ExtrinsicMode -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#ExtrinsicMode">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#ExtrinsicAspect"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ExtrinsicMode">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ExtrinsicAspect"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#externallyDependsOn"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#externallyDependsOn"/>
+                <owl:someValuesFrom rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#inheresIn"/>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#inheresIn"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#Relator"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Relator"/>
         <rdfs:comment xml:lang="en">A gufo:ExtrinsicAspect that inheres in a concrete individual and depends on others for its existence.
 
 A gufo:ExtrinsicMode can be understood as a reified one-sided relationship, such as John&apos;s admiration for Mary.
 
 Corresponds to &quot;Extrinsic Moment&quot; in Fonseca et al (2019). Encompasses what &quot;Externally Dependent Mode&quot;, &quot;Qua Individual&quot; and &quot;Relator&quot; in Guizzardi (2005).</rdfs:comment>
         <rdfs:label xml:lang="en">ExtrinsicMode</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#externallyDependsOn"/>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#inheresIn"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#externallyDependsOn"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#inheresIn"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/nemo/gufo#FixedCollection -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#FixedCollection -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#FixedCollection">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Collection"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#VariableCollection"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#FixedCollection">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Collection"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#VariableCollection"/>
         <rdfs:comment xml:lang="en">A gufo:Collection for which no change in membership is possible.
 
 Such a collection obeys an extensional principle of identity, i.e., two fixed collections are the same if, and only if, they have the same members.
 
 Consider, for example, a group of people understood as a gufo:FixedCollection. In this case, any change in the membership of the group (e.g., the addition of one person) would in fact create a different group of people. In this case, the gufo:FixedCollection may be contrasted with the complexes they constitute. For instance, The Beatles (the band conceived as a gufo:FunctionalComplex) was in a certain circumstance constituted by the collection {John, Paul, George, Pete} and in another one constituted by the collection {John, Paul, George, Ringo}. The replacement of Pete Best by Ringo Star does not alter the identity of the band, but creates a  different group of people.</rdfs:comment>
         <rdfs:label xml:lang="en">FixedCollection</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#isCollectionMemberOf"/>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#isSubCollectionOf"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isCollectionMemberOf"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isSubCollectionOf"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/nemo/gufo#FunctionalComplex -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#FunctionalComplex -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#FunctionalComplex">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Object"/>
-        <rdfs:comment rdf:resource="http://purl.org/nemo/gufo#isComponentOf"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#FunctionalComplex">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object"/>
+        <rdfs:comment rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isComponentOf"/>
         <rdfs:comment xml:lang="en">A complex gufo:Object whose parts (components) play different roles in its composition. 
 
 For example, a person could be considered a gufo:FunctionalComplex with the various organs (heart, brain, lungs, etc.) playing different roles. Another example is a scrum team, which is composed by people playing the roles of scrum master, product owner, developer, etc.
 
 To explicitly capture temporary components, use gufo:TemporaryParthoodSituation.</rdfs:comment>
         <rdfs:label xml:lang="en">FunctionalComplex</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#TemporaryParthoodSituation"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryParthoodSituation"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/nemo/gufo#Individual -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Individual -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Individual">
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#Type"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Individual">
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Type"/>
         <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#AbstractIndividual"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AbstractIndividual"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         </owl:disjointUnionOf>
         <rdfs:comment xml:lang="en">An entity that (unlike a gufo:Type) cannot be instantiated.
 
@@ -1258,20 +1268,20 @@ Also known as &quot;particular&quot; in the philosophical literature.</rdfs:comm
     
 
 
-    <!-- http://purl.org/nemo/gufo#IntrinsicAspect -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#IntrinsicAspect -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#IntrinsicAspect">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Aspect"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#IntrinsicAspect">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Aspect"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#inheresIn"/>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#inheresIn"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#IntrinsicMode"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#Quality"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#IntrinsicMode"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Quality"/>
         </owl:disjointUnionOf>
         <rdfs:comment xml:lang="en">A gufo:Aspect that depends on a single concrete individual in which it inheres. 
 
@@ -1281,16 +1291,16 @@ A gufo:IntrinsicAspect is classified as a gufo:Quality (e.g., an apple&apos;s we
 
 Corresponds to &quot;Instrinsic Moment&quot; in Guizzardi (2005). Different from Guizzardi (2005), here we consider that aspects can inhere in concrete individuals in general, and not only in endurants.</rdfs:comment>
         <rdfs:label xml:lang="en">IntrinsicAspect</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#inheresIn"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#inheresIn"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/nemo/gufo#IntrinsicMode -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#IntrinsicMode -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#IntrinsicMode">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#IntrinsicAspect"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#Quality"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#IntrinsicMode">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#IntrinsicAspect"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Quality"/>
         <rdfs:comment xml:lang="en">A gufo:IntrinsicAspect that is not measurable.
 
 For example, Bob&apos;s belief that the Eiffel Tower is in Paris, his math skills, his headache.
@@ -1301,12 +1311,12 @@ Corresponds to &quot;Mode&quot; in Guizzardi (2005).</rdfs:comment>
     
 
 
-    <!-- http://purl.org/nemo/gufo#Kind -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Kind -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Kind">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#RigidType"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Sortal"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#SubKind"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Kind">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RigidType"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Sortal"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#SubKind"/>
         <rdfs:comment xml:lang="en">A gufo:EndurantType that is both sortal and rigid. It provides a uniform principle of identity for its instances. Every gufo:Endurant instantiates one and only one gufo:Kind. 
 
 Examples include kinds of ordinary objects of everyday experience, such as: &quot;Person&quot;, &quot;House&quot;, &quot;Car&quot;; kinds of relators, such as &quot;Marriage&quot;, &quot;RentalContract&quot;; kinds of existentially-dependent aspects of objects, such as &quot;Weight&quot;, &quot;Belief&quot;, &quot;Vulnerability&quot;.</rdfs:comment>
@@ -1315,10 +1325,10 @@ Examples include kinds of ordinary objects of everyday experience, such as: &quo
     
 
 
-    <!-- http://purl.org/nemo/gufo#MaterialRelationshipType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#MaterialRelationshipType -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#MaterialRelationshipType">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#RelationshipType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#MaterialRelationshipType">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RelationshipType"/>
         <rdfs:comment xml:lang="en">A gufo:RelationshipType derived from extrinsic aspects of the related entities.
 
 For example, &quot;marriedWith&quot;, &quot;employedBy&quot;, &quot;enrolledIn&quot;, &quot;admires&quot;. 
@@ -1327,16 +1337,16 @@ For a gufo:MaterialRelationshipType it is recommended to identify the type of ex
 
 Encompasses &quot;Material Relation&quot; in Guizzardi (2005) and corresponds to &quot;Material Relation&quot; in Fonseca et al. (2019).</rdfs:comment>
         <rdfs:label xml:lang="en">MaterialRelationshipType</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#isDerivedFrom"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isDerivedFrom"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/nemo/gufo#Mixin -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Mixin -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Mixin">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#NonSortal"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#SemiRigidType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Mixin">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#NonSortal"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#SemiRigidType"/>
         <rdfs:comment xml:lang="en">A gufo:EndurantType that is both non-sortal and semi-rigid. As a semi-rigid type, it applies necessarily to some of its instances and contingently to some others. As a non-sortal, it captures properties shared by instances of different kinds.
 
 For example, the type &quot;FemaleAnimal&quot; may be considered a gufo:Mixin as it applies necessarily to animals of certain species, e.g., lions and sharks, while it applies contingently to animals of other species such as clownfish and mushroom corals (which may change sex given certain conditions).</rdfs:comment>
@@ -1345,14 +1355,14 @@ For example, the type &quot;FemaleAnimal&quot; may be considered a gufo:Mixin as
     
 
 
-    <!-- http://purl.org/nemo/gufo#NonRigidType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#NonRigidType -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#NonRigidType">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#EndurantType"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#RigidType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#NonRigidType">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#EndurantType"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RigidType"/>
         <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#AntiRigidType"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#SemiRigidType"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AntiRigidType"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#SemiRigidType"/>
         </owl:disjointUnionOf>
         <rdfs:comment xml:lang="en">A gufo:EndurantType that does not apply necessarily to at least one of its instances (see Guizzardi, 2005, chapter 4).
 
@@ -1362,11 +1372,11 @@ Examples include anti-rigid types, such as the role &quot;Student&quot; and the 
     
 
 
-    <!-- http://purl.org/nemo/gufo#NonSortal -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#NonSortal -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#NonSortal">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#EndurantType"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#Sortal"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#NonSortal">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#EndurantType"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Sortal"/>
         <rdfs:comment xml:lang="en">A gufo:EndurantType that applies to individuals of different kinds (see Guizzardi, 2005, chapter 4).
 
 Non-sortals do not provide a uniform principle of identity for their instances; instead, they just classify things that share common properties but which obey different principles of identity.
@@ -1377,10 +1387,10 @@ Also termed &quot;dispersive&quot; types in the philosophical literature.</rdfs:
     
 
 
-    <!-- http://purl.org/nemo/gufo#Object -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Object">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
         <rdfs:comment xml:lang="en">A gufo:Endurant that does not depend on another endurant for its existence (excluding its essential parts and aspects). 
 
 Examples of objects include ordinary physical entities, such as a dog, a house, a tomato, a car, Alan Turing, but also socially-defined entities such as The Rolling Stones, the European Union, the Brazilian 1988 Constitution.
@@ -1391,36 +1401,36 @@ Guizzardi (2005) also included the more abstract notion of &quot;Substantial&quo
     
 
 
-    <!-- http://purl.org/nemo/gufo#Participation -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Participation -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Participation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Event"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Participation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Event"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty>
                     <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#participatedIn"/>
+                        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#participatedIn"/>
                     </rdf:Description>
                 </owl:onProperty>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/nemo/gufo#Object"/>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A gufo:Event that depends on a single object. 
 
 Participations can be used to partition an event into portions, each of which depend exclusively on a single object. Consider a business meeting with multiple participants, including John and Mary. John&apos;s participation in the meeting encompasses all events that are part of the meeting and that depend solely on him. Likewise, Mary&apos;s participation encompasses all events that are part of the meeting and that depend solely on her. Similarly, in Brutus’ stabbing of Caesar, we may identify the participations of Brutus, of Caesar, and of the dagger.</rdfs:comment>
         <rdfs:label xml:lang="en">Participation</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#participatedIn"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#participatedIn"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/nemo/gufo#Phase -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Phase -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Phase">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#AntiRigidType"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Sortal"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#Role"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Phase">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AntiRigidType"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Sortal"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Role"/>
         <rdfs:comment xml:lang="en">A gufo:EndurantType that is both sortal and anti-rigid. It is defined by instrinsic but contingent instantiation conditions. Phases are relationally independent types that capturec instrinsic properties shared by instances of a given kind.
 
 For example, &quot;Child&quot; may be considered a gufo:Phase as a subclass of the gufo:Kind &quot;Person&quot;, instantiated by persons younger than 12. Another example is the type &quot;IllPerson&quot;, which may be considered a gufo:Phase that is instantiated whenever an instance of &quot;Disease&quot; (a gufo:IntrinsicMode) inheres in a person.</rdfs:comment>
@@ -1429,12 +1439,12 @@ For example, &quot;Child&quot; may be considered a gufo:Phase as a subclass of t
     
 
 
-    <!-- http://purl.org/nemo/gufo#PhaseMixin -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#PhaseMixin -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#PhaseMixin">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#AntiRigidType"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#NonSortal"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#RoleMixin"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#PhaseMixin">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AntiRigidType"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#NonSortal"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RoleMixin"/>
         <rdfs:comment xml:lang="en">A gufo:EndurantType that is both non-sortal and anti-rigid. It is defined by instrinsic but contingent instantiation conditions. Phase mixins are relationally independent types that capture instrinsic properties shared by instances of different kinds.
 
 For example, &quot;LivingAnimal&quot; may be considered a gufo:PhaseMixin as a superclass of the phases &quot;LivingPerson&quot; (specializing the gufo:Kind &quot;Person&quot;) and &quot;LivingDog&quot; (specializing the gufo:Kind &quot;Dog&quot;).</rdfs:comment>
@@ -1443,10 +1453,10 @@ For example, &quot;LivingAnimal&quot; may be considered a gufo:PhaseMixin as a s
     
 
 
-    <!-- http://purl.org/nemo/gufo#Quality -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Quality -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Quality">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#IntrinsicAspect"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Quality">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#IntrinsicAspect"/>
         <rdfs:comment xml:lang="en">A gufo:IntrinsicAspect that is measurable by some value spaces. A quality may be used to compare individuals, on the basis of the value it takes in a certain quality space (for instance, a position within the RGB spectrum).
 
 Examples include the weight of a person, the name of organization, the color of a car, and the duration of a concert.</rdfs:comment>
@@ -1455,10 +1465,10 @@ Examples include the weight of a person, the name of organization, the color of 
     
 
 
-    <!-- http://purl.org/nemo/gufo#QualityValue -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#QualityValue -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#QualityValue">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#AbstractIndividual"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#QualityValue">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AbstractIndividual"/>
         <rdfs:comment xml:lang="en">A gufo:AbstractIndividual that can be associated with a gufo:Quality reflecting the perception or conception of the quality in a certain value space. 
 
 Instances of gufo:QualityValue include the rational number 2.5 when used to conceive of the acidity of a portion of wine (in a pH scale), the tuple &lt;38.8897,-77.0089&gt; when used to conceive of the location of a building (in a space formed by latitude and longitude), or the triplet &lt;0,0,0&gt; when used to conceive of the color of a physical object (in a trimensional space formed by red, green and blue color components).  
@@ -1467,25 +1477,25 @@ Corresponds to &quot;Quale&quot; in Guizzardi (2005).
 
 Use this class only for quality values (qualia) that are to be reified in the A-box and associated with a gufo:ConcreteIndividual through the object property gufo:hasReifiedQualityValue. Otherwise, use the gufo:hasQualityValue data property and a literal to determine the quality value.</rdfs:comment>
         <rdfs:label xml:lang="en">QualityValue</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#hasReifiedQualityValue"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#hasReifiedQualityValue"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/nemo/gufo#QualityValueAttributionSituation -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#QualityValueAttributionSituation -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#QualityValueAttributionSituation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Situation"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#QualityValueAttributionSituation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Situation"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#concernsReifiedQualityValue"/>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsReifiedQualityValue"/>
                         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                        <owl:onClass rdf:resource="http://purl.org/nemo/gufo#QualityValue"/>
+                        <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#QualityValue"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#concernsQualityValue"/>
+                        <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsQualityValue"/>
                         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
                     </owl:Restriction>
                 </owl:unionOf>
@@ -1493,26 +1503,26 @@ Use this class only for quality values (qualia) that are to be reified in the A-
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#concernsQualityType"/>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsQualityType"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/nemo/gufo#EndurantType"/>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#EndurantType"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty>
                     <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#standsInQualifiedAttribution"/>
+                        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedAttribution"/>
                     </rdf:Description>
                 </owl:onProperty>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#TemporaryConstitutionSituation"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#TemporaryInstantiationSituation"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#TemporaryParthoodSituation"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#TemporaryRelationshipSituation"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryConstitutionSituation"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryInstantiationSituation"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryParthoodSituation"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryRelationshipSituation"/>
         <rdfs:comment xml:lang="en">A gufo:Situation in which a quality value is temporarily attributed to a gufo:Endurant.
 
 A gufo:QualityValueAttributionSituation should be used only for mutable qualities, i.e. those whose value can vary in time.
@@ -1521,31 +1531,31 @@ Examples include: the situation in which the value of a bitcoin in Euros is 6.52
 
 This is a reification of the quality value attribution (in a solution that is similar to the qualified relation pattern  http://patterns.dataincubator.org/book/qualified-relation.html )</rdfs:comment>
         <rdfs:label xml:lang="en">QualityValueAttributionSituation</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#concernsQualityValue"/>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#concernsReifiedQualityValue"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsQualityValue"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsReifiedQualityValue"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/nemo/gufo#Quantity -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Quantity -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Quantity">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Object"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Quantity">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object"/>
         <rdfs:comment xml:lang="en">A complex gufo:Object that is a maximally-connected portion of stuff. A gufo:Quantity has a fixed constitution, and thus, removing or adding a sub-quantity would result in a different quantity.
 
 Examples include the portion of wine in a wine tank, a lump of clay, the gold that constitutes a wedding ring.
 
 Also termed &quot;quantity of matter&quot;, &quot;objectified portion of matter&quot;, &quot;piece&quot; in the philosophical literature.</rdfs:comment>
         <rdfs:label xml:lang="en">Quantity</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#isSubQuantityOf"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#isSubQuantityOf"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/nemo/gufo#RelationshipType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RelationshipType -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#RelationshipType">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Type"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RelationshipType">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Type"/>
         <rdfs:comment xml:lang="en">A gufo:Type whose instances are ordered pairs of related entities. Instances of gufo:RelationshipType are object properties in UFO-based ontologies.
 
 The object properties &quot;marriedWith&quot; and &quot;enrolledIn&quot; are examples of material relationship types. The object properties &quot;heavierThan&quot;, &quot;olderThan&quot; are examples of comparative relationship types.
@@ -1558,30 +1568,30 @@ Corresponds to &quot;Relation&quot; in Guizzardi (2005) and Fonseca et al. (2019
     
 
 
-    <!-- http://purl.org/nemo/gufo#Relator -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Relator -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Relator">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#ExtrinsicAspect"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Relator">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ExtrinsicAspect"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#mediates"/>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#mediates"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A gufo:ExtrinsicAspect that connects (involves, mediates) two or more concrete individuals. Relators are reified relationships composed of reciprocal extrinsic modes.
 
 Examples of relators include John and Mary&apos;s marriage (composed of John&apos;s obligations towards Mary in the scope of the marriage, Mary&apos;s reciprocal claims, Mary&apos;s obligations towards John, John&apos;s reciprocal claims), Mary&apos;s employment contract at Nasa, a covalent bond between two atoms.</rdfs:comment>
         <rdfs:label xml:lang="en">Relator</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.org/nemo/gufo#mediates"/>
+        <rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#mediates"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/nemo/gufo#RigidType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RigidType -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#RigidType">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#EndurantType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RigidType">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#EndurantType"/>
         <rdfs:comment xml:lang="en">A gufo:EndurantType which applies necessarily to its instances (see Guizzardi, 2005, chapter 4).
 
 Examples include the types &quot;Agent&quot;, &quot;Person&quot;, &quot;Animal&quot;, &quot;PhysicalObject&quot;, &quot;Car&quot;, and &quot;Tree&quot;.</rdfs:comment>
@@ -1590,11 +1600,11 @@ Examples include the types &quot;Agent&quot;, &quot;Person&quot;, &quot;Animal&q
     
 
 
-    <!-- http://purl.org/nemo/gufo#Role -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Role -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Role">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#AntiRigidType"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Sortal"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Role">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AntiRigidType"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Sortal"/>
         <rdfs:comment xml:lang="en">A gufo:EndurantType that both sortal and anti-rigid. It is defined by relational instantiation conditions. Roles are relationally dependent types, capturing relational properties shared by instances of a given kind.
 
 For example, &quot;Student&quot; may be considered a gufo:Role as a subclass of the gufo:Kind &quot;Person&quot;, instantiated by all persons enrolled in a school. &quot;</rdfs:comment>
@@ -1603,11 +1613,11 @@ For example, &quot;Student&quot; may be considered a gufo:Role as a subclass of 
     
 
 
-    <!-- http://purl.org/nemo/gufo#RoleMixin -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RoleMixin -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#RoleMixin">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#AntiRigidType"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#NonSortal"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RoleMixin">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#AntiRigidType"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#NonSortal"/>
         <rdfs:comment xml:lang="en">A gufo:EndurantType that is both non-sortal and anti-rigid. It is defined by relational instantiation conditions. Role mixins are relationally dependent types, capturing relational properties shared by instances of different kinds.
 
 For example, &quot;Customer&quot; may be considered a gufo:RoleMixin as a superclass of the roles &quot;CorporateCustomer&quot; (specializing the gufo:Kind &quot;BusinessOrganization&quot;) and &quot;PersonalCustomer&quot; (specializing the gufo:Kind &quot;Person&quot;).</rdfs:comment>
@@ -1616,20 +1626,20 @@ For example, &quot;Customer&quot; may be considered a gufo:RoleMixin as a superc
     
 
 
-    <!-- http://purl.org/nemo/gufo#SemiRigidType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#SemiRigidType -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#SemiRigidType">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#NonRigidType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#SemiRigidType">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#NonRigidType"/>
         <rdfs:comment xml:lang="en">A gufo:NonRigidType that applies necessarily to some of its instances and contingently to some others (see Guizzardi, 2005, chapter 4).</rdfs:comment>
         <rdfs:label xml:lang="en">SemiRigidType</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/nemo/gufo#Situation -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Situation -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Situation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividual"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Situation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividual"/>
         <rdfs:comment xml:lang="en">A gufo:ConcreteIndividual that is a particular configuration of a part of reality which can be understood as a whole and in which entities stand in relations. A situation may be counterfactual or actual. An actual situation (or in other words, a &quot;fact&quot;) &quot;obtains&quot; in a certain time instant or during a time interval.
 
 Note that, in Guizzardi et al. (2013), situations were considered to obtain at a specific point in time. Here, instead, they obtain in a time interval when begin and end points differ.
@@ -1640,10 +1650,10 @@ The various subclasses of Situation in this implementation are used to capture &
     
 
 
-    <!-- http://purl.org/nemo/gufo#SituationType -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#SituationType -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#SituationType">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividualType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#SituationType">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#ConcreteIndividualType"/>
         <rdfs:comment xml:lang="en">A gufo:Type whose instances are situations.
 
 Instances of gufo:SituationType are subclasses of gufo:Situation.
@@ -1654,21 +1664,21 @@ Examples include &quot;HazardousSituation&quot;, &quot;PersonHasFever&quot;,  &q
     
 
 
-    <!-- http://purl.org/nemo/gufo#Sortal -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Sortal -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Sortal">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#EndurantType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Sortal">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#EndurantType"/>
         <rdfs:comment xml:lang="en">A gufo:EndurantType which carries (or supplies) a principle of identity for its instances  (see Guizzardi, 2005, chapter 4).</rdfs:comment>
         <rdfs:label xml:lang="en">Sortal</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/nemo/gufo#SubKind -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#SubKind -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#SubKind">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#RigidType"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Sortal"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#SubKind">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RigidType"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Sortal"/>
         <rdfs:comment xml:lang="en">A gufo:EndurantType that is both sortal and rigid. It specializes a gufo:Kind carrying the principle of identity supplied by that kind. Every gufo:SubKind should directly or indirectly specialize a gufo:Kind.
 
 For example, the gufo:Kind &quot;Lion&quot; may be specialized into the &quot;Lionness&quot; and &quot;Male Lion&quot; subkinds, while the gufo:Kind &quot;Computer&quot; may be specialized into the &quot;Laptop&quot; and &quot;Desktop&quot; subkinds.</rdfs:comment>
@@ -1677,30 +1687,30 @@ For example, the gufo:Kind &quot;Lion&quot; may be specialized into the &quot;Li
     
 
 
-    <!-- http://purl.org/nemo/gufo#TemporaryConstitutionSituation -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryConstitutionSituation -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#TemporaryConstitutionSituation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Situation"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryConstitutionSituation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Situation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#concernsConstitutedEndurant"/>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsConstitutedEndurant"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/nemo/gufo#Object"/>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty>
                     <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#standsInQualifiedConstitution"/>
+                        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedConstitution"/>
                     </rdf:Description>
                 </owl:onProperty>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/nemo/gufo#Object"/>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Object"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#TemporaryInstantiationSituation"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#TemporaryRelationshipSituation"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryInstantiationSituation"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryRelationshipSituation"/>
         <rdfs:comment xml:lang="en">A gufo:Situation in which a gufo:Endurant temporarly constitutes another gufo:Endurant.
 
 When constitution of an object may change in time, it may be qualified by the period in time in which the relation applies. 
@@ -1713,30 +1723,30 @@ This is a reification of constitution (in a solution that is similar to the qual
     
 
 
-    <!-- http://purl.org/nemo/gufo#TemporaryInstantiationSituation -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryInstantiationSituation -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#TemporaryInstantiationSituation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Situation"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryInstantiationSituation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Situation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#concernsNonRigidType"/>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsNonRigidType"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/nemo/gufo#NonRigidType"/>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#NonRigidType"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty>
                     <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#standsInQualifiedInstantiation"/>
+                        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedInstantiation"/>
                     </rdf:Description>
                 </owl:onProperty>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#TemporaryParthoodSituation"/>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#TemporaryRelationshipSituation"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryParthoodSituation"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryRelationshipSituation"/>
         <rdfs:comment xml:lang="en">A gufo:Situation in which a gufo:Endurant temporarily instantiates a gufo:NonRigidType.
 
 A gufo:TemporaryInstantiationSituation can account for the time period in which a particular instantiation holds.
@@ -1749,29 +1759,29 @@ This solution is inspired in the qualified relation pattern (http://patterns.dat
     
 
 
-    <!-- http://purl.org/nemo/gufo#TemporaryParthoodSituation -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryParthoodSituation -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#TemporaryParthoodSituation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Situation"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryParthoodSituation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Situation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#concernsTemporaryWhole"/>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsTemporaryWhole"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty>
                     <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#standsInQualifiedParthood"/>
+                        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedParthood"/>
                     </rdf:Description>
                 </owl:onProperty>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://purl.org/nemo/gufo#TemporaryRelationshipSituation"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryRelationshipSituation"/>
         <rdfs:comment>A gufo:Situation in which a gufo:Endurant is temporarily a part of another gufo:Endurant.
 
 A gufo:TemporaryParthoodSituation should only be used for mutable parts. It may be qualified by the period in time in which the relation applies. 
@@ -1786,32 +1796,32 @@ This solution is inspired in the qualified relation pattern (http://patterns.dat
     
 
 
-    <!-- http://purl.org/nemo/gufo#TemporaryRelationshipSituation -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryRelationshipSituation -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#TemporaryRelationshipSituation">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Situation"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryRelationshipSituation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Situation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#concernsRelatedEndurant"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsRelatedEndurant"/>
+                <owl:someValuesFrom rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/nemo/gufo#concernsRelationshipType"/>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#concernsRelationshipType"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/nemo/gufo#RelationshipType"/>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#RelationshipType"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty>
                     <rdf:Description>
-                        <owl:inverseOf rdf:resource="http://purl.org/nemo/gufo#standsInQualifiedRelationship"/>
+                        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#standsInQualifiedRelationship"/>
                     </rdf:Description>
                 </owl:onProperty>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/nemo/gufo#Endurant"/>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A gufo:Situation in which a gufo:Endurant temporarily stands in a relation with another gufo:Endurant (or other endurants in the case of n-ary relationships). 
@@ -1828,9 +1838,9 @@ This is a reification of the relationship (in a solution that is similar to the 
     
 
 
-    <!-- http://purl.org/nemo/gufo#Type -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Type -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#Type">
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Type">
         <rdfs:comment xml:lang="en">An entity that may be instantiated by (or predicated over) other entities. Types encompass what we often call &quot;sorts&quot;, &quot;kinds&quot;, &quot;categories&quot;, etc. 
 
 Examples include the kind &quot;Person&quot;, the event type &quot;Earthquake&quot;, and the abstract individual type &quot;NaturalNumber&quot;. Relations, such as &quot;marriedTo&quot; and &quot;olderThan&quot;, are also considered as types.
@@ -1843,11 +1853,11 @@ Encompasses the notion of &quot;Universal&quot; in Guizzardi (2005).</rdfs:comme
     
 
 
-    <!-- http://purl.org/nemo/gufo#VariableCollection -->
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#VariableCollection -->
 
-    <owl:Class rdf:about="http://purl.org/nemo/gufo#VariableCollection">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#Collection"/>
-        <rdfs:comment rdf:resource="http://purl.org/nemo/gufo#TemporaryParthoodSituation"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#VariableCollection">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Collection"/>
+        <rdfs:comment rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#TemporaryParthoodSituation"/>
         <rdfs:comment xml:lang="en">A gufo:Collection for which change in membership is possible.
 
 Such a collection obeys an intensional principle of identity, i.e., change in membership does not necessarily create a different collection.
@@ -1856,16 +1866,6 @@ For example, KLM&apos;s fleet of airplanes could be understood as a gufo:Variabl
 
 See gufo:TemporaryParthoodSituation for the pattern to represent the relation of a variable collection to its temporary parts.</rdfs:comment>
         <rdfs:label xml:lang="en">VariableCollection</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/2006/time#Instant -->
-
-    <owl:Class rdf:about="http://www.w3.org/2006/time#Instant">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#AbstractIndividual"/>
-        <rdfs:comment xml:lang="en">An gufo:AbstractIndividual that reifies time instants. It is used as a target of the gufo:hasBeginPoint and gufo:hasEndPoint object properties.</rdfs:comment>
-        <rdfs:label xml:lang="en">Instant</rdfs:label>
     </owl:Class>
     
 
@@ -1881,17 +1881,17 @@ See gufo:TemporaryParthoodSituation for the pattern to represent the relation of
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#Collection"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#FunctionalComplex"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#Quantity"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Collection"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#FunctionalComplex"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Quantity"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#Endurant"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#Event"/>
-            <rdf:Description rdf:about="http://purl.org/nemo/gufo#Situation"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Endurant"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Event"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo-r#Situation"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
