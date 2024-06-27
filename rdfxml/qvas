@@ -1,0 +1,584 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas#"
+     xml:base="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:gufo="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas#">
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#/1.0.0"/>
+        <dc:creator>https://orcid.org/0000-0002-0240-4506</dc:creator>
+        <dc:creator>https://orcid.org/0000-0002-1153-3879</dc:creator>
+        <dc:creator>https://orcid.org/0000-0003-4965-9941</dc:creator>
+        <dc:title>qvas: The Quality Value Assignment Ontology</dc:title>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">&quot;2024-06-07&quot;</terms:created>
+        <terms:license>https://creativecommons.org/licenses/by/4.0/legalcode</terms:license>
+        <vann:preferredNamespacePrefix>qvas</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://purl.org/s2c2/qvas#</vann:preferredNamespaceUri>
+        <rdfs:comment>The Quality Value Assignment ontology (qvas) aims to provide an operational ontology that allows value assignment over time for qualities defined by the UFO foundational ontology. An assigning event can be further specialized as a measurement or a configuration, while a value assignment can be specialized as a measurement result or configuration setting.</rdfs:comment>
+        <owl:versionInfo>&quot;1.0.0&quot;@en</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##describes -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##describes">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#inheresIn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##MQuality"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##MQBearer"/>
+        <rdfs:comment>identifies a MQuality which inheres in a MQBearer</rdfs:comment>
+        <rdfs:label xml:lang="en">describes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##hasAEvent -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##hasAEvent">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#isEventProperPartOf"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CAsgnEvent"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AsgnEvent"/>
+        <rdfs:label xml:lang="en">hasAEvent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##hasVAsgmt -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##hasVAsgmt">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#isAspectProperPartOf"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CValueAsgmt"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAsgmt"/>
+        <rdfs:label xml:lang="en">hasVAsgmt</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##holdsValueFor -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##holdsValueFor">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#inheresIn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAsgmt"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##MQuality"/>
+        <rdfs:comment>identifies a ValueAsgmt which inheres in a MQuality</rdfs:comment>
+        <rdfs:label xml:lang="en">holdsValueFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##isAssignedBy -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##isAssignedBy">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#externallyDependsOn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAsgmt"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAssigner"/>
+        <rdfs:comment>identifies a ValueAsgmt which is externally dependent on a ValueAssigner</rdfs:comment>
+        <rdfs:label xml:lang="en">isAssignedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##isResultOf -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##isResultOf">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#wasCreatedIn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAsgmt"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AsgnEvent"/>
+        <rdfs:comment>identifies a ValueAsgmt that is the result of a value-assigning event</rdfs:comment>
+        <rdfs:label xml:lang="en">isResultOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##participateAsMQB -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##participateAsMQB">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#participatedIn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##MQBearer"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AsgnEvent"/>
+        <rdfs:comment>identifies a MQBearer participating on a value-assigning event</rdfs:comment>
+        <rdfs:label xml:lang="en">participateAsMQB</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##participateAsVA -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##participateAsVA">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#participatedIn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAssigner"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AsgnEvent"/>
+        <rdfs:comment>identifies a ValuseAssigner participating on a value-assigning event</rdfs:comment>
+        <rdfs:label xml:lang="en">participateAsVA</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##assignedValue -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##assignedValue">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#hasQualityValue"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAsgmt"/>
+        <rdfs:comment>maps a ValueAsgmt to MQuality&apos;s domain (quality structure)</rdfs:comment>
+        <rdfs:label xml:lang="en">assignedValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##endTime -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##endTime">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#hasQualityValue"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AsgnEvent"/>
+        <rdfs:comment>maps a AsgnEvent to the ending time of a value-assigning event</rdfs:comment>
+        <rdfs:label xml:lang="en">endTime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##resultTime -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##resultTime">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#hasQualityValue"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAsgmt"/>
+        <rdfs:comment>maps a ValueAsgmt to the instant of time when a value was assigned to a MQuality</rdfs:comment>
+        <rdfs:label xml:lang="en">resultTime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##sresultTime -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##sresultTime">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#hasQualityValue"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CValueAsgmt"/>
+        <rdfs:comment>maps a CValueAsgmt to the starting instant of the ValueAsgmt aggregation</rdfs:comment>
+        <rdfs:label xml:lang="en">sresultTime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##startTime -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##startTime">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#hasQualityValue"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AsgnEvent"/>
+        <rdfs:comment>maps a AsgnEvent to the starting time of a value-assigning event</rdfs:comment>
+        <rdfs:label xml:lang="en">startTime</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AAsgnEvent -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AAsgnEvent">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AsgnEvent"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CAsgnEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AValueAsgmt -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AValueAsgmt">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAsgmt"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CValueAsgmt"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AsgnEvent -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AsgnEvent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AAsgnEvent"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CAsgnEvent"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CAsgnEvent -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CAsgnEvent">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AsgnEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CValueAsgmt -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CValueAsgmt">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAsgmt"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##DomainEntity -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##DomainEntity">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##DomainQuality -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##DomainQuality">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##MQBearer -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##MQBearer">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##DomainEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##MQuality -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##MQuality">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##DomainQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAsgmt -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAsgmt">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AValueAsgmt"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CValueAsgmt"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#ExtrinsicMode"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAssigner -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAssigner">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##DomainEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AAsgnEvent -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AAsgnEvent">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#EventType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AValueAsgmt -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AValueAsgmt">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AsgnEvent -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AsgnEvent">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#EventType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CAsgnEvent -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CAsgnEvent">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#EventType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CValueAsgmt -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CValueAsgmt">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##DomainEntity -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##DomainEntity">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##DomainQuality -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##DomainQuality">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##MQBearer -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##MQBearer">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##MQuality -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##MQuality">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAsgmt -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAsgmt">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Category"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAssigner -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAssigner">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AAsgnEvent">
+        <rdfs:comment>is a specialization of AsgnEvent, representing atomic events of value assignment, which may result in value assignments</rdfs:comment>
+        <rdfs:label xml:lang="en">AAsgnEvent</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AValueAsgmt">
+        <rdfs:comment>is a specialization of ValueAsgmt, representing atomic value assignments holding a value for MQuality at a specific time.</rdfs:comment>
+        <rdfs:label xml:lang="en">AValueAsgmt</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AsgnEvent">
+        <rdfs:comment>is the category of events that assigns values to  MQuality in which an MQBearer and a ValueAssigner participate and possibly lead to a value assignment.</rdfs:comment>
+        <rdfs:label xml:lang="en">AsgnEvent</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CAsgnEvent">
+        <rdfs:comment>is a specialization of AsgnEvent, representing complex events of value assignment as AsgnEvent aggregations</rdfs:comment>
+        <rdfs:label xml:lang="en">CAsgnEvent</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##CValueAsgmt">
+        <rdfs:comment>is a specialization of ValueAsgmt, representing complex value assignments as aggregations of ValueAsgmt.</rdfs:comment>
+        <rdfs:label xml:lang="en">CValueAsgmt</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##DomainEntity">
+        <rdfs:comment>an entity in a domain that can be identified as a UFO Object.</rdfs:comment>
+        <rdfs:label xml:lang="en">DomainEntity</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##DomainQuality">
+        <rdfs:comment>an entity representing an aspect of the domain that can be defined as a UFO Quality.</rdfs:comment>
+        <rdfs:label xml:lang="en">DomainQuality</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##MQBearer">
+        <rdfs:comment>is the role an endurant plays whenever it bears an MQuality while participating in a value assignment event (AsgEvent)</rdfs:comment>
+        <rdfs:label xml:lang="en">MQBearer</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##MQuality">
+        <rdfs:comment>is the role a quality plays whenever its value changes over time, and it is necessary to keep track of it.</rdfs:comment>
+        <rdfs:label xml:lang="en">MQuality</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAsgmt">
+        <rdfs:comment>is the truthmaker of the material relationship between MQuality and ValueAssigner. It is a category of external dependent modes responsible for holding the assigned value for an MQuality, which a ValueAssigner assigns, and it is the result of a value assignment event in a certain period.</rdfs:comment>
+        <rdfs:label xml:lang="en">ValueAsgmt</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAssigner">
+        <rdfs:comment>is the role an endurant plays whenever it is responsible for assigning a value to an MQuality while participating in a value assignment event (AsgEvent)</rdfs:comment>
+        <rdfs:label xml:lang="en">ValueAssigner</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="https://purl.org/s2c2/qvas#b">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://purl.org/s2c2/qvas#a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://purl.org/s2c2/qvas#value">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##ValueAsgmt"/>
+                        <swrl:argument1 rdf:resource="https://purl.org/s2c2/qvas#b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##AsgnEvent"/>
+                                <swrl:argument1 rdf:resource="https://purl.org/s2c2/qvas#a"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##isResultOf"/>
+                                        <swrl:argument1 rdf:resource="https://purl.org/s2c2/qvas#b"/>
+                                        <swrl:argument2 rdf:resource="https://purl.org/s2c2/qvas#a"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##endTime"/>
+                                                <swrl:argument1 rdf:resource="https://purl.org/s2c2/qvas#a"/>
+                                                <swrl:argument2 rdf:resource="https://purl.org/s2c2/qvas#value"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/qvas##resultTime"/>
+                        <swrl:argument1 rdf:resource="https://purl.org/s2c2/qvas#b"/>
+                        <swrl:argument2 rdf:resource="https://purl.org/s2c2/qvas#value"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
