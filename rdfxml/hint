@@ -1,0 +1,1357 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#"
+     xml:base="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:gufo="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint">
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#/1.0.0"/>
+        <dc:creator>https://orcid.org/0000-0002-0240-4506</dc:creator>
+        <dc:creator>https://orcid.org/0000-0002-1153-3879</dc:creator>
+        <dc:creator>https://orcid.org/0000-0003-4965-9941</dc:creator>
+        <dc:title>hint: Heterogeneous Telecommunication Network Ontology</dc:title>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-06-07</terms:created>
+        <terms:license>https://creativecommons.org/licenses/by/4.0/legalcode</terms:license>
+        <vann:preferredNamespacePrefix>hint</vann:preferredNamespacePrefix>
+        <vann:preferredNamespacePrefix>http://purl.org/s2c2/hint#</vann:preferredNamespacePrefix>
+        <rdfs:comment>&quot;Heterogeneous Telecommunication Network Ontology (hint) aims to provide an operational ontology that allows the representation of the main mobility management concepts and relationships. It is supported by UFO Foundational Ontology and is based on the conceptual model proposed in the article entitled &apos;Enhancing heterogeneous mobile network management based on a well-founded reference ontology&apos; (https://doi.org/10.1016/j.future.2023.08.008)&quot;</rdfs:comment>
+        <owl:versionInfo xml:lang="en">&quot;1.0.0&quot;</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsMSignal -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsMSignal">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsWSignal"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredBond"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSignal"/>
+        <rdfs:label xml:lang="en">bindsMSignal</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsMedium -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsMedium">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#externallyDependsOn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DetectedBond"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Medium"/>
+        <rdfs:label xml:lang="en">bindsMedium</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsReceiver -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsReceiver">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#inheresIn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DetectedBond"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Receiver"/>
+        <rdfs:label xml:lang="en">bindsReceiver</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsSSender -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsSSender">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsWSender"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedBond"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSender"/>
+        <rdfs:label xml:lang="en">bindsSSender</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsSSignal -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsSSignal">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsWSignal"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedBond"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSignal"/>
+        <rdfs:label xml:lang="en">bindsSSignal</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsSender -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsSender">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#externallyDependsOn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DetectedBond"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Sender"/>
+        <rdfs:label xml:lang="en">bindsSender</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsSignal -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsSignal">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#externallyDependsOn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DetectedBond"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Signal"/>
+        <rdfs:label xml:lang="en">bindsSignal</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsWSender -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsWSender">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsSender"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DecodedBond"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSender"/>
+        <rdfs:label xml:lang="en">bindsWSender</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsWSignal -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsWSignal">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsSignal"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DecodedBond"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSignal"/>
+        <rdfs:label xml:lang="en">bindsWSignal</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#caracterizesMSignal -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#caracterizesMSignal">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#caracterizesWSignal"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSignal"/>
+        <rdfs:label xml:lang="en">caracterizesMSignal</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#caracterizesSSignal -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#caracterizesSSignal">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#caracterizesWSignal"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSignal"/>
+        <rdfs:label xml:lang="en">caracterizesSSignal</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#caracterizesSignal -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#caracterizesSignal">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#inheresIn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Signal"/>
+        <rdfs:label xml:lang="en">caracterizesSignal</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#caracterizesWSignal -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#caracterizesWSignal">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#caracterizesSignal"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSignal"/>
+        <rdfs:label xml:lang="en">caracterizesWSignal</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#dependsOnMSender -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#dependsOnMSender">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#dependsOnWSender"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSender"/>
+        <rdfs:label xml:lang="en">dependsOnMSender</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#dependsOnSSender -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#dependsOnSSender">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#dependsOnWSender"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSender"/>
+        <rdfs:label xml:lang="en">dependsOnSSender</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#dependsOnSender -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#dependsOnSender">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#externallyDependsOn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Sender"/>
+        <rdfs:label xml:lang="en">dependsOnSender</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#dependsOnWSender -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#dependsOnWSender">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#dependsOnSender"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSender"/>
+        <rdfs:label xml:lang="en">dependsOnWSender</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#providedBy -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#providedBy">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#inheresIn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SrvRequest"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LLNode"/>
+        <rdfs:label xml:lang="en">providedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#requestedBy -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#requestedBy">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#externallyDependsOn"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SrvRequest"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ULNode"/>
+        <rdfs:label xml:lang="en">requestedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- signalGeneration:bandwidth -->
+
+    <owl:DatatypeProperty rdf:about="signalGeneration:bandwidth">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#hasQualityValue"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration"/>
+        <rdfs:label xml:lang="en">bandwidth</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- signalGeneration:frequency -->
+
+    <owl:DatatypeProperty rdf:about="signalGeneration:frequency">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#hasQualityValue"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration"/>
+        <rdfs:label xml:lang="en">frequency</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- signalGeneration:power -->
+
+    <owl:DatatypeProperty rdf:about="signalGeneration:power">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#hasQualityValue"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration"/>
+        <rdfs:label xml:lang="en">power</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Atmosphere -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Atmosphere">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PropagationEnabler"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CoaxialCable -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CoaxialCable">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PropagationEnabler"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommBoard -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommBoard">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LayerNode"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommSW"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommDevice -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommDevice">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#inheresIn"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Position"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommSW -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommSW">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LayerNode"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DecodedBond -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DecodedBond">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredBond"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedBond"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DetectedBond"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DetectedBond -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DetectedBond">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#ExtrinsicMode"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsMedium"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsReceiver"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Receiver"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsSender"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Sender"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsSignal"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Signal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#FiberCable -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#FiberCable">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PropagationEnabler"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#HandShakeBond -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#HandShakeBond">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Relator"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#mediates"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PeerNode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LLMedium -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LLMedium">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LogMedium"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LLNode -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LLNode">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ServiceNode"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LayerNode -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LayerNode">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommBoard"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommSW"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PeerNode"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ServiceNode"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LogMedium -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LogMedium">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LLMedium"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ULMedium"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Medium"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PropagationEnabler"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Medium -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Medium">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LogMedium"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PhyMedium"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredBond -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredBond">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DecodedBond"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSender -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSender">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSender"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSignal -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSignal">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSignal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PeerNode -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PeerNode">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Receiver"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Sender"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Rx"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#TRx"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Tx"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LayerNode"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#inheresIn"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Protocol"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PhyMedium -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PhyMedium">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Medium"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PropagationEnabler"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Position -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Position">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PropagationEnabler -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PropagationEnabler">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#FunctionalComplex"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Protocol -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Protocol">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#IntrinsicMode"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#inheresIn"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PeerNode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Receiver -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Receiver">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PeerNode"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsReceiver"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DetectedBond"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Tx"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Rx -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Rx">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PeerNode"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Sender"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedBond -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedBond">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DecodedBond"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#bindsSSender"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSender"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSender -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSender">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSender"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSignal -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSignal">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSignal"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Sender -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Sender">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PeerNode"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#dependsOnSender"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ServiceNode -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ServiceNode">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LLNode"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ULNode"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LayerNode"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Signal -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Signal">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#FunctionalComplex"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#caracterizesSignal"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#ExtrinsicMode"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#dependsOnSender"/>
+                <owl:someValuesFrom rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Sender"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#caracterizesSignal"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Signal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SrvRequest -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SrvRequest">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#ExtrinsicMode"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#providedBy"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LLNode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#requestedBy"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ULNode"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#TRx -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#TRx">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PeerNode"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Tx -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Tx">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PeerNode"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ULMedium -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ULMedium">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LogMedium"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ULNode -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ULNode">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ServiceNode"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSender -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSender">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSender"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSender"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Sender"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSignal -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSignal">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSignal"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSignal"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Signal"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Atmosphere -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Atmosphere">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CoaxialCable -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CoaxialCable">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommBoard -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommBoard">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Category"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommDevice -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommDevice">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommSW -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommSW">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Category"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DecodedBond -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DecodedBond">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DetectedBond -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DetectedBond">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#FiberCable -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#FiberCable">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#HandShakeBond -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#HandShakeBond">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LLMedium -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LLMedium">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LLNode -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LLNode">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#RoleMixin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LayerNode -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LayerNode">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Category"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LogMedium -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LogMedium">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Medium -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Medium">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Mixin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredBond -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredBond">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSender -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSender">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#RoleMixin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSignal -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSignal">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PeerNode -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PeerNode">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Mixin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PhyMedium -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PhyMedium">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#RoleMixin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Position -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Position">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PropagationEnabler -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PropagationEnabler">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Category"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Protocol -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Protocol">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Receiver -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Receiver">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#RoleMixin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Rx -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Rx">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedBond -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedBond">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSender -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSender">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#RoleMixin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSignal -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSignal">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Sender -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Sender">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#RoleMixin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Sensitivity -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Sensitivity">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ServiceNode -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ServiceNode">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#RoleMixin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Signal -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Signal">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SrvRequest -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SrvRequest">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#TRx -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#TRx">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Tx -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Tx">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ULMedium -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ULMedium">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ULNode -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ULNode">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#RoleMixin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSender -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSender">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#RoleMixin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSignal -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSignal">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#detects -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#detects">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#MaterialRelationshipType"/>
+        <gufo:isDerivedFrom rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DetectedBond"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#isServedBy -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#isServedBy">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#MaterialRelationshipType"/>
+        <gufo:isDerivedFrom rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedBond"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Atmosphere">
+        <rdfs:label xml:lang="en">Atmosphere</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CoaxialCable">
+        <rdfs:label xml:lang="en">CoaxialCable</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommBoard">
+        <rdfs:comment>in this context, represents the category of hardware able to transmit and/or receive electromagnetic waves.</rdfs:comment>
+        <rdfs:label xml:lang="en">CommBoard</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommDevice">
+        <rdfs:comment>An entity comprising at least one CommBoard and some CommSW. For instance, it can be a cell phone, a modem, or a GPS receiver, among others.</rdfs:comment>
+        <rdfs:label xml:lang="en">CommDevice</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommSW">
+        <rdfs:comment>in this context, represents the category of software able to establish communication with other software or hardware</rdfs:comment>
+        <rdfs:label xml:lang="en">CommSW</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DecodedBond">
+        <rdfs:comment>is a specialization of the DetectedBond EDM, representing the Signal&apos;s detection and decodification. According to several telecommunications vocabularies, it is the Link entity, such as the ITU V.662-3 recommendation.</rdfs:comment>
+        <rdfs:label xml:lang="en">DecodedBond</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DetectedBond">
+        <rdfs:comment>is the truthmaker that binds Signal, Medium, and Receiver and supports the relation detectsSignal. It is the composition of the asymmetrical commitments between Receiver-Signal, Signal-Medium, and receiver-Medium, all representing external dependent modes (EDMs). It is also the truthmaker of the material relation between a Receiver and a Sender</rdfs:comment>
+        <rdfs:label xml:lang="en">DetectedBond</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#FiberCable">
+        <rdfs:label xml:lang="en">FiberCable</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#HandShakeBond">
+        <rdfs:comment>is the truthmaker of the material relationship that binds two distincts TRxs represeting their mutual commitements and obligations.</rdfs:comment>
+        <rdfs:label xml:lang="en">HandShakeBond</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LLMedium">
+        <rdfs:label xml:lang="en">LLMedium</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LLNode">
+        <rdfs:comment>is a role category whenever a LayerNode &quot;vertically&quot; provides a service for another LayerNode</rdfs:comment>
+        <rdfs:label xml:lang="en">LLNode</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LayerNode">
+        <rdfs:comment>represents an entity in a layered network architecture that is grouped in a layer and generalizes two distinct categories of entities: CommBoards and CommSWs.</rdfs:comment>
+        <rdfs:label xml:lang="en">LayerNode</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LogMedium">
+        <rdfs:comment>a logical structure through or over which a logical Signal is conveyed</rdfs:comment>
+        <rdfs:label xml:lang="en">LogMedium</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Medium">
+        <rdfs:comment>a structure through or over which a Signal is conveyed</rdfs:comment>
+        <rdfs:label xml:lang="en">Medium</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredBond">
+        <rdfs:comment>in mobile networks, the Receiver has to deal with several WantedSenders simultaneously. There are Signals that are not elected to be the ServingSignal, but need to be monitored to allow the execution of the handover process. In this sense, MonitoredSenders generates MonitoredSignals, which allows the bonding to a Receiver. The MonitoredBond represents such bonding, and it is a role played by the DecodedBond. According to 3GPP&apos;s recommendations, the MonitoredSender is also known as Neighbor and, therefore, the MonitoredBond is also known as the Neighbor Link.</rdfs:comment>
+        <rdfs:label xml:lang="en">MonitoredBond</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSender">
+        <rdfs:comment>a role played by a WantedSender whenever its generates a Signal which is only monitored by the Receiver.</rdfs:comment>
+        <rdfs:label xml:lang="en">MonitoredSender</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#MonitoredSignal">
+        <rdfs:comment>a role WantedSignal plays whenever it is only monitored by the Receiver, becoming a SelectedSignal whenever necessary.</rdfs:comment>
+        <rdfs:label xml:lang="en">MonitoredSignal</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PeerNode">
+        <rdfs:comment>a role category that a Layer Node plays when it &quot;horizontally&quot; communicates with another distinct Layer Node that shares the same communication Protocol.</rdfs:comment>
+        <rdfs:label xml:lang="en">PeerNode</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PhyMedium">
+        <rdfs:comment>natural or manufactured structure through or over which a physical Signal is conveyed. A role category that generalizes entities in the physical world able to propagate electromagnetic waves.</rdfs:comment>
+        <rdfs:label xml:lang="en">PhyMedium</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Position">
+        <rdfs:comment>it is the location of an entity according to a coordinate system</rdfs:comment>
+        <rdfs:label xml:lang="en">Position</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PropagationEnabler">
+        <rdfs:label xml:lang="en">PropagationEnabler</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Protocol">
+        <rdfs:comment>a set of communication rules that allows information exchange between distinct PeerNodes</rdfs:comment>
+        <rdfs:label xml:lang="en">Protocol</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Receiver">
+        <rdfs:comment>an abstract entity that detects Signals</rdfs:comment>
+        <rdfs:label xml:lang="en">Receiver</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Rx">
+        <rdfs:comment>hardware or software that can play, among others, the role of Receiver but not of Sender</rdfs:comment>
+        <rdfs:label xml:lang="en">Rx</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedBond">
+        <rdfs:comment>in mobile networks, the Receiver has to deal with several WantedSenders simultaneously. Among them, one is selected to be the SelectedSender. Therefore, the SelectedBond, a role of the DecodedBond,  represents the bonding of a SelectedSender and Receiver, where the user&apos;s information is actually exchanged. According to 3GPP&apos;s recommendations, the SelectedSender is also known as Server and , therefore, the SelectedBond is also known as the Server Link.</rdfs:comment>
+        <rdfs:label xml:lang="en">SelectedBond</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSender">
+        <rdfs:comment>a role played by a WantedSender whenever it generates a Signal that is selected for information exchange.</rdfs:comment>
+        <rdfs:label xml:lang="en">SelectedSender</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedSignal">
+        <rdfs:comment>a role WantedSignal plays whenever it is selected for information exchange between the WantedSender, now playing the role of SelectedSignal, and the Receiver.</rdfs:comment>
+        <rdfs:label xml:lang="en">SelectedSignal</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Sender">
+        <rdfs:comment xml:lang="en">an abstract entity that generates and transmits Signals</rdfs:comment>
+        <rdfs:label xml:lang="en">Sender</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ServiceNode">
+        <rdfs:comment>a role category played by a LayerNode when it ServiceNode whenever it &quot;vertically&quot; requests and/or provides network services to another LayerNode in the same host.</rdfs:comment>
+        <rdfs:label xml:lang="en">ServiceNode</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Signal">
+        <rdfs:comment>a detectable transmitted energy that can be used to carry information</rdfs:comment>
+        <rdfs:label xml:lang="en">Signal</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SignalGeneration">
+        <rdfs:comment>is the truthmaker of the material relation between a Sender and a Signal, which characterizes the latter and is externally dependent on the former. It bears signal properties such as frequency, power, and bandwidth, among others.</rdfs:comment>
+        <rdfs:label xml:lang="en">SignalGeneration</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SrvRequest">
+        <rdfs:comment>is the truthmaker of the material relation between a ULNode and a LLNode, which characterizes the latter and is externally dependent on the former.</rdfs:comment>
+        <rdfs:label xml:lang="en">SrvRequest</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#TRx">
+        <rdfs:comment>hardware or software that can play, among others, the role of Sender and Receiver</rdfs:comment>
+        <rdfs:label xml:lang="en">TRx</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Tx">
+        <rdfs:comment>hardware or software that can play, among others, the role of Sender but not of Receiver</rdfs:comment>
+        <rdfs:label xml:lang="en">Tx</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ULMedium">
+        <rdfs:label xml:lang="en">ULMedium</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#ULNode">
+        <rdfs:comment>is a role category whenever a LayerNode &quot;vertically&quot; requests a service for another LayerNode</rdfs:comment>
+        <rdfs:label xml:lang="en">ULNode</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSender">
+        <rdfs:comment>a role played by a Sender whenever it generates a Signal that is decoded by the Receiver</rdfs:comment>
+        <rdfs:label xml:lang="en">WantedSender</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#WantedSignal">
+        <rdfs:comment>a Signal conveying Information that is not only detected but also understood (or decoded) by the Receiver. In other words, it is a Signal role whenever it is decoded by the Receiver</rdfs:comment>
+        <rdfs:label xml:lang="en">WantedSignal</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Atmosphere"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CoaxialCable"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#FiberCable"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#CommDevice"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#LayerNode"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#PropagationEnabler"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Signal"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Rx"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#TRx"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#Tx"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

@@ -34,6 +34,7 @@
 
 ###  https://purl.org/s2c2/hint#bindsMedium
 :bindsMedium rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf gufo:externallyDependsOn ;
              rdfs:domain :DetectedBond ;
              rdfs:range :Medium ;
              rdfs:label "bindsMedium"@en .
@@ -41,6 +42,7 @@
 
 ###  https://purl.org/s2c2/hint#bindsReceiver
 :bindsReceiver rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf gufo:inheresIn ;
                rdfs:domain :DetectedBond ;
                rdfs:range :Receiver ;
                rdfs:label "bindsReceiver"@en .
@@ -48,6 +50,7 @@
 
 ###  https://purl.org/s2c2/hint#bindsSSender
 :bindsSSender rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :bindsWSender ;
               rdfs:domain :SelectedBond ;
               rdfs:range :SelectedSender ;
               rdfs:label "bindsSSender"@en .
@@ -63,6 +66,7 @@
 
 ###  https://purl.org/s2c2/hint#bindsSender
 :bindsSender rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf gufo:externallyDependsOn ;
              rdfs:domain :DetectedBond ;
              rdfs:range :Sender ;
              rdfs:label "bindsSender"@en .
@@ -70,6 +74,7 @@
 
 ###  https://purl.org/s2c2/hint#bindsSignal
 :bindsSignal rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf gufo:externallyDependsOn ;
              rdfs:domain :DetectedBond ;
              rdfs:range :Signal ;
              rdfs:label "bindsSignal"@en .
@@ -109,6 +114,7 @@
 
 ###  https://purl.org/s2c2/hint#caracterizesSignal
 :caracterizesSignal rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf gufo:inheresIn ;
                     rdfs:domain :SignalGeneration ;
                     rdfs:range :Signal ;
                     rdfs:label "caracterizesSignal"@en .
@@ -124,6 +130,7 @@
 
 ###  https://purl.org/s2c2/hint#dependsOnMSender
 :dependsOnMSender rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :dependsOnWSender ;
                   rdfs:domain :SignalGeneration ;
                   rdfs:range :MonitoredSender ;
                   rdfs:label "dependsOnMSender"@en .
@@ -131,6 +138,7 @@
 
 ###  https://purl.org/s2c2/hint#dependsOnSSender
 :dependsOnSSender rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :dependsOnWSender ;
                   rdfs:domain :SignalGeneration ;
                   rdfs:range :SelectedSender ;
                   rdfs:label "dependsOnSSender"@en .
@@ -138,6 +146,7 @@
 
 ###  https://purl.org/s2c2/hint#dependsOnSender
 :dependsOnSender rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf gufo:externallyDependsOn ;
                  rdfs:domain :SignalGeneration ;
                  rdfs:range :Sender ;
                  rdfs:label "dependsOnSender"@en .
@@ -151,20 +160,9 @@
                   rdfs:label "dependsOnWSender"@en .
 
 
-###  https://purl.org/s2c2/hint#detects
-:detects rdf:type owl:ObjectProperty ;
-         rdfs:domain :Sender ;
-         rdfs:range :Receiver .
-
-
-###  https://purl.org/s2c2/hint#isServedBy
-:isServedBy rdf:type owl:ObjectProperty ;
-            rdfs:domain :Receiver ;
-            rdfs:range :SelectedSender .
-
-
 ###  https://purl.org/s2c2/hint#providedBy
 :providedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf gufo:inheresIn ;
             rdfs:domain :SrvRequest ;
             rdfs:range :LLNode ;
             rdfs:label "providedBy"@en .
@@ -172,6 +170,7 @@
 
 ###  https://purl.org/s2c2/hint#requestedBy
 :requestedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf gufo:externallyDependsOn ;
              rdfs:domain :SrvRequest ;
              rdfs:range :ULNode ;
              rdfs:label "requestedBy"@en .
@@ -768,16 +767,19 @@
         rdfs:label "CommSW"@en .
 
 
-:DecodedBond rdfs:label "DecodedBond"@en .
+:DecodedBond rdfs:comment "is a specialization of the DetectedBond EDM, representing the Signal's detection and decodification. According to several telecommunications vocabularies, it is the Link entity, such as the ITU V.662-3 recommendation." ;
+             rdfs:label "DecodedBond"@en .
 
 
-:DetectedBond rdfs:label "DetectedBond"@en .
+:DetectedBond rdfs:comment "is the truthmaker that binds Signal, Medium, and Receiver and supports the relation detectsSignal. It is the composition of the asymmetrical commitments between Receiver-Signal, Signal-Medium, and receiver-Medium, all representing external dependent modes (EDMs). It is also the truthmaker of the material relation between a Receiver and a Sender" ;
+              rdfs:label "DetectedBond"@en .
 
 
 :FiberCable rdfs:label "FiberCable"@en .
 
 
-:HandShakeBond rdfs:label "HandShakeBond"@en .
+:HandShakeBond rdfs:comment "is the truthmaker of the material relationship that binds two distincts TRxs represeting their mutual commitements and obligations." ;
+               rdfs:label "HandShakeBond"@en .
 
 
 :LLMedium rdfs:label "LLMedium"@en .
@@ -799,7 +801,8 @@
         rdfs:label "Medium"@en .
 
 
-:MonitoredBond rdfs:label "MonitoredBond"@en .
+:MonitoredBond rdfs:comment "in mobile networks, the Receiver has to deal with several WantedSenders simultaneously. There are Signals that are not elected to be the ServingSignal, but need to be monitored to allow the execution of the handover process. In this sense, MonitoredSenders generates MonitoredSignals, which allows the bonding to a Receiver. The MonitoredBond represents such bonding, and it is a role played by the DecodedBond. According to 3GPP's recommendations, the MonitoredSender is also known as Neighbor and, therefore, the MonitoredBond is also known as the Neighbor Link." ;
+               rdfs:label "MonitoredBond"@en .
 
 
 :MonitoredSender rdfs:comment "a role played by a WantedSender whenever its generates a Signal which is only monitored by the Receiver." ;
@@ -818,13 +821,15 @@
            rdfs:label "PhyMedium"@en .
 
 
-:Position rdfs:label "Position"@en .
+:Position rdfs:comment "it is the location of an entity according to a coordinate system" ;
+          rdfs:label "Position"@en .
 
 
 :PropagationEnabler rdfs:label "PropagationEnabler"@en .
 
 
-:Protocol rdfs:label "Protocol"@en .
+:Protocol rdfs:comment "a set of communication rules that allows information exchange between distinct PeerNodes" ;
+          rdfs:label "Protocol"@en .
 
 
 :Receiver rdfs:comment "an abstract entity that detects Signals" ;
@@ -835,7 +840,8 @@
     rdfs:label "Rx"@en .
 
 
-:SelectedBond rdfs:label "SelectedBond"@en .
+:SelectedBond rdfs:comment "in mobile networks, the Receiver has to deal with several WantedSenders simultaneously. Among them, one is selected to be the SelectedSender. Therefore, the SelectedBond, a role of the DecodedBond,  represents the bonding of a SelectedSender and Receiver, where the user's information is actually exchanged. According to 3GPP's recommendations, the SelectedSender is also known as Server and , therefore, the SelectedBond is also known as the Server Link." ;
+              rdfs:label "SelectedBond"@en .
 
 
 :SelectedSender rdfs:comment "a role played by a WantedSender whenever it generates a Signal that is selected for information exchange." ;
@@ -858,10 +864,12 @@
         rdfs:label "Signal"@en .
 
 
-:SignalGeneration rdfs:label "SignalGeneration"@en .
+:SignalGeneration rdfs:comment "is the truthmaker of the material relation between a Sender and a Signal, which characterizes the latter and is externally dependent on the former. It bears signal properties such as frequency, power, and bandwidth, among others." ;
+                  rdfs:label "SignalGeneration"@en .
 
 
-:SrvRequest rdfs:label "SrvRequest"@en .
+:SrvRequest rdfs:comment "is the truthmaker of the material relation between a ULNode and a LLNode, which characterizes the latter and is externally dependent on the former." ;
+            rdfs:label "SrvRequest"@en .
 
 
 :TRx rdfs:comment "hardware or software that can play, among others, the role of Sender and Receiver" ;
@@ -885,12 +893,6 @@
 
 :WantedSignal rdfs:comment "a Signal conveying Information that is not only detected but also understood (or decoded) by the Receiver. In other words, it is a Signal role whenever it is decoded by the Receiver" ;
               rdfs:label "WantedSignal"@en .
-
-
-:detects rdfs:label "detects"@en .
-
-
-:isServedBy rdfs:label "isServedBy"@en .
 
 
 #################################################################
