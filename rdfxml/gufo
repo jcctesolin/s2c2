@@ -13,7 +13,7 @@
      xmlns:time="http://www.w3.org/2006/time#"
      xmlns:vann="http://purl.org/vocab/vann/">
     <owl:Ontology rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#">
-        <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#/1.0.0"/>
+        <!--<owl:versionIRI rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#/1.0.0"/>-->
         <dc:creator>Almeida, João Paulo A.</dc:creator>
         <dc:creator>Falbo, Ricardo A.</dc:creator>
         <dc:creator>Guizzardi, Giancarlo</dc:creator>
