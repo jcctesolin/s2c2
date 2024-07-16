@@ -1354,18 +1354,18 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Protocol"/>
     </owl:NamedIndividual>
     <rdf:Description>
-        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
-        <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</minStrength>
-    </rdf:Description>
-    <rdf:Description>
-        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
-    </rdf:Description>
-    <rdf:Description>
-        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
-    </rdf:Description>
-    <rdf:Description>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800</maxStrength>
         <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</minStrength>
+    </rdf:Description>
+    <rdf:Description>
+        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
+    </rdf:Description>
+    <rdf:Description>
+        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
+    </rdf:Description>
+    <rdf:Description>
+        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
+        <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</minStrength>
     </rdf:Description>
     
 
@@ -1577,9 +1577,6 @@ According to the Army Glossary:
     <rdf:Description rdf:about="https://purl.org/s2c2/miscon#o1">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://myontology.com/scenario#o1">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
     <rdf:Description rdf:about="http://myontology.com/scenario#g">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
@@ -1601,6 +1598,9 @@ According to the Army Glossary:
     <rdf:Description rdf:about="http://myontology.com/scenario#ompt1">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
+    <rdf:Description rdf:about="http://myontology.com/scenario#o1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
     <rdf:Description rdf:about="http://myontology.com/scenario#o2">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
@@ -1618,50 +1618,6 @@ According to the Army Glossary:
     </rdf:Description>
     <rdf:Description rdf:about="http://myontology.com/scenario#ms2">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment></rdfs:comment>
-        <rdfs:label>MilitaryAsCarrier</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryPerson"/>
-                        <swrl:argument1 rdf:resource="http://myontology.com/scenario#o1"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#CommDeviceCarrier"/>
-                                <swrl:argument1 rdf:resource="http://myontology.com/scenario#o1"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryPersonAsDismounted"/>
-                        <swrl:argument1 rdf:resource="http://myontology.com/scenario#o1"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
     </rdf:Description>
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
@@ -2951,5 +2907,5 @@ According to the Army Glossary:
 
 
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
 
