@@ -160,6 +160,34 @@
                   rdfs:label "dependsOnWSender"@en .
 
 
+###  https://purl.org/s2c2/hint#hasCB
+:hasCB rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf gufo:isComponentOf ;
+       rdfs:domain :CommDevice ;
+       rdfs:range :CommBoard .
+
+
+###  https://purl.org/s2c2/hint#hasCS
+:hasCS rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf gufo:isComponentOf ;
+       rdfs:domain :CommDevice ;
+       rdfs:range :CommSW .
+
+
+###  https://purl.org/s2c2/hint#hasProtocol
+:hasProtocol rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf gufo:inheresIn ;
+             rdfs:domain :Protocol ;
+             rdfs:range :PeerNode .
+
+
+###  https://purl.org/s2c2/hint#isPositionOf
+:isPositionOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf gufo:inheresIn ;
+              rdfs:domain :Position ;
+              rdfs:range :CommDevice .
+
+
 ###  https://purl.org/s2c2/hint#providedBy
 :providedBy rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf gufo:inheresIn ;
