@@ -25,14 +25,6 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
 #    Annotation properties
 #################################################################
 
-###  http://purl.org/nemo/gufo#categorizes
-gufo1:categorizes rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/nemo/gufo#isDerivedFrom
-gufo1:isDerivedFrom rdf:type owl:AnnotationProperty .
-
-
 ###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
 swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
 
@@ -71,7 +63,7 @@ gufo1:mediates rdf:type owl:ObjectProperty .
 :ProtocolOf rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf gufo1:inheresIn ;
             rdfs:domain :Protocol ;
-            rdfs:range :Interface .
+            rdfs:range :CommBoard .
 
 
 ###  https://purl.org/s2c2/miscon#belongsTo
@@ -90,6 +82,14 @@ gufo1:mediates rdf:type owl:ObjectProperty .
          rdfs:label "carries"@en .
 
 
+###  https://purl.org/s2c2/miscon#hasCB
+:hasCB rdf:type owl:ObjectProperty ;
+       rdfs:domain :CommDevice ;
+       rdfs:range :CommBoard ;
+       rdfs:comment "A relationship that establishes that a commdevice has an interface." ;
+       rdfs:label "hasCB"@en .
+
+
 ###  https://purl.org/s2c2/miscon#hasDirectRelationshipWith
 :hasDirectRelationshipWith rdf:type owl:ObjectProperty ,
                                     owl:SymmetricProperty ;
@@ -102,16 +102,8 @@ gufo1:mediates rdf:type owl:ObjectProperty .
 ###  https://purl.org/s2c2/miscon#hasInterfPowerType
 :hasInterfPowerType rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf owl:topObjectProperty ;
-                    rdfs:domain :Interface ;
+                    rdfs:domain :CommBoard ;
                     rdfs:label "hasInterfPowerType" .
-
-
-###  https://purl.org/s2c2/miscon#hasInterface
-:hasInterface rdf:type owl:ObjectProperty ;
-              rdfs:domain :CommDevice ;
-              rdfs:range :Interface ;
-              rdfs:comment "A relationship that establishes that a commdevice has an interface." ;
-              rdfs:label "hasInterface"@en .
 
 
 ###  https://purl.org/s2c2/miscon#hasMOPowerType
@@ -201,7 +193,7 @@ gufo1:mediates rdf:type owl:ObjectProperty .
 ###  https://purl.org/s2c2/miscon#networkHasInterface
 :networkHasInterface rdf:type owl:ObjectProperty ;
                      rdfs:domain :WirelessNetwork ;
-                     rdfs:range :Interface ;
+                     rdfs:range :CommBoard ;
                      rdfs:comment "A relationship that establishes that a WirelessNetwork has an interface." ;
                      rdfs:label "networkHasInterface" .
 
@@ -234,7 +226,7 @@ gufo1:hasQualityValue rdf:type owl:DatatypeProperty .
 ###  https://purl.org/s2c2/miscon#antennaGain
 :antennaGain rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf gufo1:hasQualityValue ;
-             rdfs:domain :Interface ;
+             rdfs:domain :CommBoard ;
              rdfs:range rdfs:Literal ;
              rdfs:comment "Interface antenna gain." ;
              rdfs:label "antennaGain" .
@@ -252,7 +244,7 @@ gufo1:hasQualityValue rdf:type owl:DatatypeProperty .
 ###  https://purl.org/s2c2/miscon#coverage
 :coverage rdf:type owl:DatatypeProperty ;
           rdfs:subPropertyOf gufo1:hasQualityValue ;
-          rdfs:domain :Interface ;
+          rdfs:domain :CommBoard ;
           rdfs:range rdfs:Literal ;
           rdfs:comment "Communication device coverage to share data with other devices. In Mininet-WiFi it is equivalent to the range attribute." ;
           rdfs:label "coverage." .
@@ -261,7 +253,7 @@ gufo1:hasQualityValue rdf:type owl:DatatypeProperty .
 ###  https://purl.org/s2c2/miscon#frequency
 :frequency rdf:type owl:DatatypeProperty ;
            rdfs:subPropertyOf gufo1:hasQualityValue ;
-           rdfs:domain :Interface ;
+           rdfs:domain :CommBoard ;
            rdfs:range rdfs:Literal ;
            rdfs:comment "Frequency used by interface type." ;
            rdfs:label "frequency" .
@@ -278,7 +270,7 @@ gufo1:hasQualityValue rdf:type owl:DatatypeProperty .
 ###  https://purl.org/s2c2/miscon#ip
 :ip rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf gufo1:hasQualityValue ;
-    rdfs:domain :Interface ;
+    rdfs:domain :CommBoard ;
     rdfs:range xsd:string ;
     rdfs:comment "ip address of interface." ;
     rdfs:label "ip" .
@@ -372,7 +364,7 @@ gufo1:hasQualityValue rdf:type owl:DatatypeProperty .
 ###  https://purl.org/s2c2/miscon#txPower
 :txPower rdf:type owl:DatatypeProperty ;
          rdfs:subPropertyOf gufo1:hasQualityValue ;
-         rdfs:domain :Interface ;
+         rdfs:domain :CommBoard ;
          rdfs:range xsd:integer ;
          rdfs:comment "txpower of an interface." ;
          rdfs:label "txPower" .
@@ -449,7 +441,7 @@ gufo1:SubKind rdf:type owl:Class .
 
 ###  https://purl.org/s2c2/miscon#AccessPoint
 :AccessPoint rdf:type owl:Class ;
-             rdfs:subClassOf :Interface .
+             rdfs:subClassOf :CommBoard .
 
 
 ###  https://purl.org/s2c2/miscon#Armored
@@ -475,6 +467,11 @@ gufo1:SubKind rdf:type owl:Class .
 ###  https://purl.org/s2c2/miscon#Cascavel
 :Cascavel rdf:type owl:Class ;
           rdfs:subClassOf :Armored .
+
+
+###  https://purl.org/s2c2/miscon#CommBoard
+:CommBoard rdf:type owl:Class ;
+           rdfs:subClassOf gufo1:FunctionalComplex .
 
 
 ###  https://purl.org/s2c2/miscon#CommDevice
@@ -524,9 +521,9 @@ gufo1:SubKind rdf:type owl:Class .
                       rdfs:label "InstitutionalElement" .
 
 
-###  https://purl.org/s2c2/miscon#Interface
-:Interface rdf:type owl:Class ;
-           rdfs:subClassOf gufo1:FunctionalComplex .
+###  https://purl.org/s2c2/miscon#InternUe
+:InternUe rdf:type owl:Class ;
+          rdfs:subClassOf :Ue .
 
 
 ###  https://purl.org/s2c2/miscon#MilitaryEmployment
@@ -651,17 +648,12 @@ gufo1:SubKind rdf:type owl:Class .
 
 ###  https://purl.org/s2c2/miscon#Ue
 :Ue rdf:type owl:Class ;
-    rdfs:subClassOf :Interface .
+    rdfs:subClassOf :CommBoard .
 
 
 ###  https://purl.org/s2c2/miscon#UeDown
 :UeDown rdf:type owl:Class ;
         rdfs:subClassOf :Ue .
-
-
-###  https://purl.org/s2c2/miscon#UeInternDown
-:UeInternDown rdf:type owl:Class ;
-              rdfs:subClassOf :Ue .
 
 
 ###  https://purl.org/s2c2/miscon#UeOperator
@@ -737,6 +729,11 @@ gufo1:SubKind rdf:type owl:Class .
                    :VehiclePowerType .
 
 
+###  https://purl.org/s2c2/miscon#CommBoard
+:CommBoard rdf:type owl:NamedIndividual ,
+                    gufo1:Kind .
+
+
 ###  https://purl.org/s2c2/miscon#CommDevice
 :CommDevice rdf:type owl:NamedIndividual ,
                      gufo1:Kind .
@@ -773,14 +770,14 @@ gufo1:SubKind rdf:type owl:Class .
                                    gufo1:Role .
 
 
-###  https://purl.org/s2c2/miscon#Interface
-:Interface rdf:type owl:NamedIndividual ,
-                    gufo1:Kind .
-
-
 ###  https://purl.org/s2c2/miscon#InterfacePowerType
 :InterfacePowerType rdf:type owl:NamedIndividual ,
                              gufo1:Kind .
+
+
+###  https://purl.org/s2c2/miscon#InternUe
+:InternUe rdf:type owl:NamedIndividual ,
+                   gufo1:Role .
 
 
 ###  https://purl.org/s2c2/miscon#MilitaryOrganization
@@ -854,11 +851,6 @@ gufo1:SubKind rdf:type owl:Class .
                  gufo1:Role .
 
 
-###  https://purl.org/s2c2/miscon#UeInternDown
-:UeInternDown rdf:type owl:NamedIndividual ,
-                       gufo1:Role .
-
-
 ###  https://purl.org/s2c2/miscon#UeOperator
 :UeOperator rdf:type owl:NamedIndividual ,
                      gufo1:Role .
@@ -910,18 +902,18 @@ gufo1:SubKind rdf:type owl:Class .
                                                 :Protocol .
 
 
-[ :maxStrength 50
-] .
-
-[ :maxStrength 50
- ] .
-
 [ :maxStrength 800 ;
-   :minStrength 500
- ] .
+  :minStrength 500
+] .
 
 [ :maxStrength 50 ;
    :minStrength 20
+ ] .
+
+[ :maxStrength 50
+ ] .
+
+[ :maxStrength 50
  ] .
 
 #################################################################
@@ -949,6 +941,10 @@ gufo1:SubKind rdf:type owl:Class .
 
 :Cascavel rdfs:comment "Cascavel is a type of armored vehicle." ;
           rdfs:label "Cascavel" .
+
+
+:CommBoard rdfs:comment "Device connection point." ;
+           rdfs:label "CommBoard"@en .
 
 
 :CommDevice rdfs:comment "Communication device used for communication." ;
@@ -979,8 +975,8 @@ gufo1:SubKind rdf:type owl:Class .
                           rdfs:label "HierarchicallyEquivalent"@en .
 
 
-:Interface rdfs:comment "Device connection point." ;
-           rdfs:label "Interface"@en .
+:InternUe rdfs:comment "Interface used for communication by the CommanderMilitary to his subordinates and between SubordinateMilitaries." ;
+          rdfs:label "InternUe" .
 
 
 :MilitaryOrganization rdfs:comment """Type that confers a principle of identity to a given organization within the military domain. According to decree N 93,188, of August 29, 1986: Art 22. Units are military organizations called regiment, battalion or group. Art 23. Subunits are military organizations called company, squadron or battery and can be incorporated or independent.
@@ -1035,10 +1031,6 @@ According to the Army Glossary:
         rdfs:label "UeDown" .
 
 
-:UeInternDown rdfs:comment "Interface used for communication by the CommanderMilitary to his subordinates." ;
-              rdfs:label "UeInternDown" .
-
-
 :UeOperator rdfs:label "CommDeviceOperator"@en ,
                        "UeOperator" .
 
@@ -1089,21 +1081,21 @@ According to the Army Glossary:
 #    Rules
 #################################################################
 
-<http://myontology.com/scenario#c2> rdf:type swrl:Variable .
+:o2 rdf:type swrl:Variable .
 
-<http://myontology.com/scenario#i2> rdf:type swrl:Variable .
+:o1 rdf:type swrl:Variable .
 
-<http://myontology.com/scenario#c1> rdf:type swrl:Variable .
+:c2 rdf:type swrl:Variable .
 
-<http://myontology.com/scenario#i1> rdf:type swrl:Variable .
+:i2 rdf:type swrl:Variable .
 
-<http://myontology.com/scenario#m2> rdf:type swrl:Variable .
+:c1 rdf:type swrl:Variable .
 
-<http://myontology.com/scenario#m1> rdf:type swrl:Variable .
+:i1 rdf:type swrl:Variable .
 
-<http://myontology.com/scenario#o1> rdf:type swrl:Variable .
+:m1 rdf:type swrl:Variable .
 
-<http://myontology.com/scenario#o2> rdf:type swrl:Variable .
+:m2 rdf:type swrl:Variable .
 
 <http://myontology.com/scenario#g> rdf:type swrl:Variable .
 
@@ -1113,11 +1105,17 @@ According to the Army Glossary:
 
 <http://myontology.com/scenario#mp> rdf:type swrl:Variable .
 
+<http://myontology.com/scenario#m1> rdf:type swrl:Variable .
+
 <http://myontology.com/scenario#mo> rdf:type swrl:Variable .
 
 <http://myontology.com/scenario#o3> rdf:type swrl:Variable .
 
 <http://myontology.com/scenario#ompt1> rdf:type swrl:Variable .
+
+<http://myontology.com/scenario#o2> rdf:type swrl:Variable .
+
+<http://myontology.com/scenario#o1> rdf:type swrl:Variable .
 
 <http://myontology.com/scenario#ompt2> rdf:type swrl:Variable .
 
@@ -1126,149 +1124,6 @@ According to the Army Glossary:
 <http://myontology.com/scenario#ms1> rdf:type swrl:Variable .
 
 <http://myontology.com/scenario#ms2> rdf:type swrl:Variable .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "communication  rule (same OM)" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate :hasInterface ;
-                           swrl:argument1 <http://myontology.com/scenario#c1> ;
-                           swrl:argument2 <http://myontology.com/scenario#i1>
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate :hasInterface ;
-                                      swrl:argument1 <http://myontology.com/scenario#c2> ;
-                                      swrl:argument2 <http://myontology.com/scenario#i2>
-                                    ] ;
-                          rdf:rest [ rdf:type swrl:AtomList ;
-                                     rdf:first [ rdf:type swrl:DifferentIndividualsAtom ;
-                                                 swrl:argument1 <http://myontology.com/scenario#c1> ;
-                                                 swrl:argument2 <http://myontology.com/scenario#c2>
-                                               ] ;
-                                     rdf:rest [ rdf:type swrl:AtomList ;
-                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                                            swrl:propertyPredicate :militaryPersonHasMilitaryOrganization ;
-                                                            swrl:argument1 <http://myontology.com/scenario#m1> ;
-                                                            swrl:argument2 <http://myontology.com/scenario#o1>
-                                                          ] ;
-                                                rdf:rest [ rdf:type swrl:AtomList ;
-                                                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                                                       swrl:propertyPredicate :militaryPersonHasMilitaryOrganization ;
-                                                                       swrl:argument1 <http://myontology.com/scenario#m2> ;
-                                                                       swrl:argument2 <http://myontology.com/scenario#o2>
-                                                                     ] ;
-                                                           rdf:rest [ rdf:type swrl:AtomList ;
-                                                                      rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                  swrl:classPredicate :MilitaryPerson ;
-                                                                                  swrl:argument1 <http://myontology.com/scenario#m2>
-                                                                                ] ;
-                                                                      rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                 rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                             swrl:classPredicate :MilitaryPerson ;
-                                                                                             swrl:argument1 <http://myontology.com/scenario#m1>
-                                                                                           ] ;
-                                                                                 rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                            rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                                        swrl:classPredicate :CommDevice ;
-                                                                                                        swrl:argument1 <http://myontology.com/scenario#c2>
-                                                                                                      ] ;
-                                                                                            rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                                       rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                                                   swrl:classPredicate :CommDevice ;
-                                                                                                                   swrl:argument1 <http://myontology.com/scenario#c1>
-                                                                                                                 ] ;
-                                                                                                       rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                                                  rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                                                              swrl:classPredicate :UeUp ;
-                                                                                                                              swrl:argument1 <http://myontology.com/scenario#i2>
-                                                                                                                            ] ;
-                                                                                                                  rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                                                             rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                                                                         swrl:classPredicate :UeUp ;
-                                                                                                                                         swrl:argument1 <http://myontology.com/scenario#i1>
-                                                                                                                                       ] ;
-                                                                                                                             rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                                                                        rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                                                                                    swrl:classPredicate :MilitaryOrganization ;
-                                                                                                                                                    swrl:argument1 <http://myontology.com/scenario#o1>
-                                                                                                                                                  ] ;
-                                                                                                                                        rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                                                                                   rdf:first [ rdf:type swrl:SameIndividualAtom ;
-                                                                                                                                                               swrl:argument1 <http://myontology.com/scenario#o1> ;
-                                                                                                                                                               swrl:argument2 <http://myontology.com/scenario#o2>
-                                                                                                                                                             ] ;
-                                                                                                                                                   rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                                                                                              rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                                                                                                          swrl:classPredicate :MilitaryOrganization ;
-                                                                                                                                                                          swrl:argument1 <http://myontology.com/scenario#o2>
-                                                                                                                                                                        ] ;
-                                                                                                                                                              rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                                                                                                         rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                                                                                                                                                                     swrl:propertyPredicate :operates ;
-                                                                                                                                                                                     swrl:argument1 <http://myontology.com/scenario#m1> ;
-                                                                                                                                                                                     swrl:argument2 <http://myontology.com/scenario#i1>
-                                                                                                                                                                                   ] ;
-                                                                                                                                                                         rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                                                                                                                    rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                                                                                                                                                                                swrl:propertyPredicate :operates ;
-                                                                                                                                                                                                swrl:argument1 <http://myontology.com/scenario#m2> ;
-                                                                                                                                                                                                swrl:argument2 <http://myontology.com/scenario#i2>
-                                                                                                                                                                                              ] ;
-                                                                                                                                                                                    rdf:rest rdf:nil
-                                                                                                                                                                                  ]
-                                                                                                                                                                       ]
-                                                                                                                                                            ]
-                                                                                                                                                 ]
-                                                                                                                                      ]
-                                                                                                                           ]
-                                                                                                                ]
-                                                                                                     ]
-                                                                                          ]
-                                                                               ]
-                                                                    ]
-                                                         ]
-                                              ]
-                                   ]
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate :mayTalkTo ;
-                           swrl:argument1 <http://myontology.com/scenario#i1> ;
-                           swrl:argument2 <http://myontology.com/scenario#i2>
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "MilitaryAsCarrier" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:ClassAtom ;
-                           swrl:classPredicate :CommDeviceCarrier ;
-                           swrl:argument1 <http://myontology.com/scenario#o1>
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:ClassAtom ;
-                                      swrl:classPredicate :MilitaryPerson ;
-                                      swrl:argument1 <http://myontology.com/scenario#o1>
-                                    ] ;
-                          rdf:rest rdf:nil
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:ClassAtom ;
-                           swrl:classPredicate :MilitaryPersonAsDismounted ;
-                           swrl:argument1 <http://myontology.com/scenario#o1>
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
 
 [ swrla:isRuleEnabled "true"^^xsd:boolean ;
    rdfs:comment "set guarani data properties" ;
@@ -1632,196 +1487,90 @@ According to the Army Glossary:
  ] .
 
 [ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "" ;
-   rdfs:label "UeInternDown Communication" ;
+   rdfs:comment "mayTalkTo inference" ;
+   rdfs:label "communication rule 1 - between commanders" ;
    rdf:type swrl:Imp ;
    swrl:body [ rdf:type swrl:AtomList ;
                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate :hasInterface ;
-                           swrl:argument1 <http://myontology.com/scenario#c2> ;
-                           swrl:argument2 <http://myontology.com/scenario#i2>
+                           swrl:propertyPredicate :isSubordinateTo ;
+                           swrl:argument1 :o2 ;
+                           swrl:argument2 :o1
                          ] ;
                rdf:rest [ rdf:type swrl:AtomList ;
                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate :hasInterface ;
-                                      swrl:argument1 <http://myontology.com/scenario#c1> ;
-                                      swrl:argument2 <http://myontology.com/scenario#i1>
+                                      swrl:propertyPredicate :hasCB ;
+                                      swrl:argument1 :c2 ;
+                                      swrl:argument2 :i2
                                     ] ;
                           rdf:rest [ rdf:type swrl:AtomList ;
                                      rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                                 swrl:propertyPredicate :militaryPersonIsSubordinateTo ;
-                                                 swrl:argument1 <http://myontology.com/scenario#m2> ;
-                                                 swrl:argument2 <http://myontology.com/scenario#m1>
-                                               ] ;
-                                     rdf:rest [ rdf:type swrl:AtomList ;
-                                                rdf:first [ rdf:type swrl:ClassAtom ;
-                                                            swrl:classPredicate :SubordinateMilitaryPerson ;
-                                                            swrl:argument1 <http://myontology.com/scenario#m2>
-                                                          ] ;
-                                                rdf:rest [ rdf:type swrl:AtomList ;
-                                                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                                                       swrl:propertyPredicate :militaryPersonHasMilitaryOrganization ;
-                                                                       swrl:argument1 <http://myontology.com/scenario#m2> ;
-                                                                       swrl:argument2 <http://myontology.com/scenario#o1>
-                                                                     ] ;
-                                                           rdf:rest [ rdf:type swrl:AtomList ;
-                                                                      rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                                                                  swrl:propertyPredicate :militaryPersonHasMilitaryOrganization ;
-                                                                                  swrl:argument1 <http://myontology.com/scenario#m1> ;
-                                                                                  swrl:argument2 <http://myontology.com/scenario#o1>
-                                                                                ] ;
-                                                                      rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                 rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                             swrl:classPredicate :CommDevice ;
-                                                                                             swrl:argument1 <http://myontology.com/scenario#c2>
-                                                                                           ] ;
-                                                                                 rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                            rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                                        swrl:classPredicate :CommanderMilitaryPerson ;
-                                                                                                        swrl:argument1 <http://myontology.com/scenario#m1>
-                                                                                                      ] ;
-                                                                                            rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                                       rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                                                   swrl:classPredicate :CommDevice ;
-                                                                                                                   swrl:argument1 <http://myontology.com/scenario#c1>
-                                                                                                                 ] ;
-                                                                                                       rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                                                  rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                                                              swrl:classPredicate :UeInternDown ;
-                                                                                                                              swrl:argument1 <http://myontology.com/scenario#i1>
-                                                                                                                            ] ;
-                                                                                                                  rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                                                             rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                                                                         swrl:classPredicate :UeUp ;
-                                                                                                                                         swrl:argument1 <http://myontology.com/scenario#i2>
-                                                                                                                                       ] ;
-                                                                                                                             rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                                                                        rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                                                                                    swrl:classPredicate :MilitaryOrganization ;
-                                                                                                                                                    swrl:argument1 <http://myontology.com/scenario#o1>
-                                                                                                                                                  ] ;
-                                                                                                                                        rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                                                                                   rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                                                                                                                                               swrl:propertyPredicate :operates ;
-                                                                                                                                                               swrl:argument1 <http://myontology.com/scenario#m1> ;
-                                                                                                                                                               swrl:argument2 <http://myontology.com/scenario#i1>
-                                                                                                                                                             ] ;
-                                                                                                                                                   rdf:rest [ rdf:type swrl:AtomList ;
-                                                                                                                                                              rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                                                                                                                                                          swrl:propertyPredicate :operates ;
-                                                                                                                                                                          swrl:argument1 <http://myontology.com/scenario#m2> ;
-                                                                                                                                                                          swrl:argument2 <http://myontology.com/scenario#i2>
-                                                                                                                                                                        ] ;
-                                                                                                                                                              rdf:rest rdf:nil
-                                                                                                                                                            ]
-                                                                                                                                                 ]
-                                                                                                                                      ]
-                                                                                                                           ]
-                                                                                                                ]
-                                                                                                     ]
-                                                                                          ]
-                                                                               ]
-                                                                    ]
-                                                         ]
-                                              ]
-                                   ]
-                        ]
-             ] ;
-   swrl:head [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate :mayTalkTo ;
-                           swrl:argument1 <http://myontology.com/scenario#i1> ;
-                           swrl:argument2 <http://myontology.com/scenario#i2>
-                         ] ;
-               rdf:rest rdf:nil
-             ]
- ] .
-
-[ swrla:isRuleEnabled "true"^^xsd:boolean ;
-   rdfs:comment "mayTalkTo inference to subordinates" ;
-   rdfs:label "communication rule 1" ;
-   rdf:type swrl:Imp ;
-   swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate :hasInterface ;
-                           swrl:argument1 <http://myontology.com/scenario#c2> ;
-                           swrl:argument2 <http://myontology.com/scenario#i2>
-                         ] ;
-               rdf:rest [ rdf:type swrl:AtomList ;
-                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate :hasInterface ;
-                                      swrl:argument1 <http://myontology.com/scenario#c1> ;
-                                      swrl:argument2 <http://myontology.com/scenario#i1>
-                                    ] ;
-                          rdf:rest [ rdf:type swrl:AtomList ;
-                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                                 swrl:propertyPredicate :isSubordinateTo ;
-                                                 swrl:argument1 <http://myontology.com/scenario#o2> ;
-                                                 swrl:argument2 <http://myontology.com/scenario#o1>
+                                                 swrl:propertyPredicate :hasCB ;
+                                                 swrl:argument1 :c1 ;
+                                                 swrl:argument2 :i1
                                                ] ;
                                      rdf:rest [ rdf:type swrl:AtomList ;
                                                 rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
                                                             swrl:propertyPredicate :militaryPersonHasMilitaryOrganization ;
-                                                            swrl:argument1 <http://myontology.com/scenario#m1> ;
-                                                            swrl:argument2 <http://myontology.com/scenario#o1>
+                                                            swrl:argument1 :m1 ;
+                                                            swrl:argument2 :o1
                                                           ] ;
                                                 rdf:rest [ rdf:type swrl:AtomList ;
                                                            rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
                                                                        swrl:propertyPredicate :militaryPersonHasMilitaryOrganization ;
-                                                                       swrl:argument1 <http://myontology.com/scenario#m2> ;
-                                                                       swrl:argument2 <http://myontology.com/scenario#o2>
+                                                                       swrl:argument1 :m2 ;
+                                                                       swrl:argument2 :o2
                                                                      ] ;
                                                            rdf:rest [ rdf:type swrl:AtomList ;
                                                                       rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                  swrl:classPredicate :MilitaryPerson ;
-                                                                                  swrl:argument1 <http://myontology.com/scenario#m2>
+                                                                                  swrl:classPredicate :CommanderMilitaryPerson ;
+                                                                                  swrl:argument1 :m2
                                                                                 ] ;
                                                                       rdf:rest [ rdf:type swrl:AtomList ;
                                                                                  rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                             swrl:classPredicate :MilitaryPerson ;
-                                                                                             swrl:argument1 <http://myontology.com/scenario#m1>
+                                                                                             swrl:classPredicate :CommanderMilitaryPerson ;
+                                                                                             swrl:argument1 :m1
                                                                                            ] ;
                                                                                  rdf:rest [ rdf:type swrl:AtomList ;
                                                                                             rdf:first [ rdf:type swrl:ClassAtom ;
                                                                                                         swrl:classPredicate :CommDevice ;
-                                                                                                        swrl:argument1 <http://myontology.com/scenario#c2>
+                                                                                                        swrl:argument1 :c2
                                                                                                       ] ;
                                                                                             rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                        rdf:first [ rdf:type swrl:ClassAtom ;
                                                                                                                    swrl:classPredicate :CommDevice ;
-                                                                                                                   swrl:argument1 <http://myontology.com/scenario#c1>
+                                                                                                                   swrl:argument1 :c1
                                                                                                                  ] ;
                                                                                                        rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                                   rdf:first [ rdf:type swrl:ClassAtom ;
                                                                                                                               swrl:classPredicate :UeUp ;
-                                                                                                                              swrl:argument1 <http://myontology.com/scenario#i2>
+                                                                                                                              swrl:argument1 :i2
                                                                                                                             ] ;
                                                                                                                   rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                                              rdf:first [ rdf:type swrl:ClassAtom ;
                                                                                                                                          swrl:classPredicate :UeDown ;
-                                                                                                                                         swrl:argument1 <http://myontology.com/scenario#i1>
+                                                                                                                                         swrl:argument1 :i1
                                                                                                                                        ] ;
                                                                                                                              rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                                                         rdf:first [ rdf:type swrl:ClassAtom ;
                                                                                                                                                     swrl:classPredicate :MilitaryOrganization ;
-                                                                                                                                                    swrl:argument1 <http://myontology.com/scenario#o1>
+                                                                                                                                                    swrl:argument1 :o1
                                                                                                                                                   ] ;
                                                                                                                                         rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                                                                    rdf:first [ rdf:type swrl:ClassAtom ;
                                                                                                                                                                swrl:classPredicate :MilitaryOrganization ;
-                                                                                                                                                               swrl:argument1 <http://myontology.com/scenario#o2>
+                                                                                                                                                               swrl:argument1 :o2
                                                                                                                                                              ] ;
                                                                                                                                                    rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                                                                               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
                                                                                                                                                                           swrl:propertyPredicate :operates ;
-                                                                                                                                                                          swrl:argument1 <http://myontology.com/scenario#m1> ;
-                                                                                                                                                                          swrl:argument2 <http://myontology.com/scenario#i1>
+                                                                                                                                                                          swrl:argument1 :m1 ;
+                                                                                                                                                                          swrl:argument2 :i1
                                                                                                                                                                         ] ;
                                                                                                                                                               rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                                                                                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
                                                                                                                                                                                      swrl:propertyPredicate :operates ;
-                                                                                                                                                                                     swrl:argument1 <http://myontology.com/scenario#m2> ;
-                                                                                                                                                                                     swrl:argument2 <http://myontology.com/scenario#i2>
+                                                                                                                                                                                     swrl:argument1 :m2 ;
+                                                                                                                                                                                     swrl:argument2 :i2
                                                                                                                                                                                    ] ;
                                                                                                                                                                          rdf:rest rdf:nil
                                                                                                                                                                        ]
@@ -1842,8 +1591,8 @@ According to the Army Glossary:
    swrl:head [ rdf:type swrl:AtomList ;
                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
                            swrl:propertyPredicate :mayTalkTo ;
-                           swrl:argument1 <http://myontology.com/scenario#i1> ;
-                           swrl:argument2 <http://myontology.com/scenario#i2>
+                           swrl:argument1 :i1 ;
+                           swrl:argument2 :i2
                          ] ;
                rdf:rest rdf:nil
              ]
@@ -1854,91 +1603,91 @@ According to the Army Glossary:
    rdfs:label "hierarquically equivalent MayTalkTo" ;
    rdf:type swrl:Imp ;
    swrl:body [ rdf:type swrl:AtomList ;
-               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate :hasInterface ;
-                           swrl:argument1 <http://myontology.com/scenario#c1> ;
-                           swrl:argument2 <http://myontology.com/scenario#i1>
+               rdf:first [ rdf:type swrl:DifferentIndividualsAtom ;
+                           swrl:argument1 :o1 ;
+                           swrl:argument2 :o2
                          ] ;
                rdf:rest [ rdf:type swrl:AtomList ;
                           rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                      swrl:propertyPredicate :hasInterface ;
-                                      swrl:argument1 <http://myontology.com/scenario#c2> ;
-                                      swrl:argument2 <http://myontology.com/scenario#i2>
+                                      swrl:propertyPredicate :hasCB ;
+                                      swrl:argument1 :c1 ;
+                                      swrl:argument2 :i1
                                     ] ;
                           rdf:rest [ rdf:type swrl:AtomList ;
-                                     rdf:first [ rdf:type swrl:DifferentIndividualsAtom ;
-                                                 swrl:argument1 <http://myontology.com/scenario#o1> ;
-                                                 swrl:argument2 <http://myontology.com/scenario#o2>
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate :hasCB ;
+                                                 swrl:argument1 :c2 ;
+                                                 swrl:argument2 :i2
                                                ] ;
                                      rdf:rest [ rdf:type swrl:AtomList ;
                                                 rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
                                                             swrl:propertyPredicate :hierarchicallyEquivalentWith ;
-                                                            swrl:argument1 <http://myontology.com/scenario#o1> ;
-                                                            swrl:argument2 <http://myontology.com/scenario#o2>
+                                                            swrl:argument1 :o1 ;
+                                                            swrl:argument2 :o2
                                                           ] ;
                                                 rdf:rest [ rdf:type swrl:AtomList ;
                                                            rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
                                                                        swrl:propertyPredicate :militaryPersonHasMilitaryOrganization ;
-                                                                       swrl:argument1 <http://myontology.com/scenario#m1> ;
-                                                                       swrl:argument2 <http://myontology.com/scenario#o1>
+                                                                       swrl:argument1 :m1 ;
+                                                                       swrl:argument2 :o1
                                                                      ] ;
                                                            rdf:rest [ rdf:type swrl:AtomList ;
                                                                       rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
                                                                                   swrl:propertyPredicate :militaryPersonHasMilitaryOrganization ;
-                                                                                  swrl:argument1 <http://myontology.com/scenario#m2> ;
-                                                                                  swrl:argument2 <http://myontology.com/scenario#o2>
+                                                                                  swrl:argument1 :m2 ;
+                                                                                  swrl:argument2 :o2
                                                                                 ] ;
                                                                       rdf:rest [ rdf:type swrl:AtomList ;
                                                                                  rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                             swrl:classPredicate :MilitaryPerson ;
-                                                                                             swrl:argument1 <http://myontology.com/scenario#m2>
+                                                                                             swrl:classPredicate :CommanderMilitaryPerson ;
+                                                                                             swrl:argument1 :m2
                                                                                            ] ;
                                                                                  rdf:rest [ rdf:type swrl:AtomList ;
                                                                                             rdf:first [ rdf:type swrl:ClassAtom ;
-                                                                                                        swrl:classPredicate :MilitaryPerson ;
-                                                                                                        swrl:argument1 <http://myontology.com/scenario#m1>
+                                                                                                        swrl:classPredicate :CommanderMilitaryPerson ;
+                                                                                                        swrl:argument1 :m1
                                                                                                       ] ;
                                                                                             rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                        rdf:first [ rdf:type swrl:ClassAtom ;
                                                                                                                    swrl:classPredicate :CommDevice ;
-                                                                                                                   swrl:argument1 <http://myontology.com/scenario#c2>
+                                                                                                                   swrl:argument1 :c2
                                                                                                                  ] ;
                                                                                                        rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                                   rdf:first [ rdf:type swrl:ClassAtom ;
                                                                                                                               swrl:classPredicate :CommDevice ;
-                                                                                                                              swrl:argument1 <http://myontology.com/scenario#c1>
+                                                                                                                              swrl:argument1 :c1
                                                                                                                             ] ;
                                                                                                                   rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                                              rdf:first [ rdf:type swrl:ClassAtom ;
                                                                                                                                          swrl:classPredicate :UeUp ;
-                                                                                                                                         swrl:argument1 <http://myontology.com/scenario#i2>
+                                                                                                                                         swrl:argument1 :i2
                                                                                                                                        ] ;
                                                                                                                              rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                                                         rdf:first [ rdf:type swrl:ClassAtom ;
                                                                                                                                                     swrl:classPredicate :UeUp ;
-                                                                                                                                                    swrl:argument1 <http://myontology.com/scenario#i1>
+                                                                                                                                                    swrl:argument1 :i1
                                                                                                                                                   ] ;
                                                                                                                                         rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                                                                    rdf:first [ rdf:type swrl:ClassAtom ;
                                                                                                                                                                swrl:classPredicate :MilitaryOrganization ;
-                                                                                                                                                               swrl:argument1 <http://myontology.com/scenario#o1>
+                                                                                                                                                               swrl:argument1 :o1
                                                                                                                                                              ] ;
                                                                                                                                                    rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                                                                               rdf:first [ rdf:type swrl:ClassAtom ;
                                                                                                                                                                           swrl:classPredicate :MilitaryOrganization ;
-                                                                                                                                                                          swrl:argument1 <http://myontology.com/scenario#o2>
+                                                                                                                                                                          swrl:argument1 :o2
                                                                                                                                                                         ] ;
                                                                                                                                                               rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                                                                                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
                                                                                                                                                                                      swrl:propertyPredicate :operates ;
-                                                                                                                                                                                     swrl:argument1 <http://myontology.com/scenario#m1> ;
-                                                                                                                                                                                     swrl:argument2 <http://myontology.com/scenario#i1>
+                                                                                                                                                                                     swrl:argument1 :m1 ;
+                                                                                                                                                                                     swrl:argument2 :i1
                                                                                                                                                                                    ] ;
                                                                                                                                                                          rdf:rest [ rdf:type swrl:AtomList ;
                                                                                                                                                                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
                                                                                                                                                                                                 swrl:propertyPredicate :operates ;
-                                                                                                                                                                                                swrl:argument1 <http://myontology.com/scenario#m2> ;
-                                                                                                                                                                                                swrl:argument2 <http://myontology.com/scenario#i2>
+                                                                                                                                                                                                swrl:argument1 :m2 ;
+                                                                                                                                                                                                swrl:argument2 :i2
                                                                                                                                                                                               ] ;
                                                                                                                                                                                     rdf:rest rdf:nil
                                                                                                                                                                                   ]
@@ -1960,8 +1709,125 @@ According to the Army Glossary:
    swrl:head [ rdf:type swrl:AtomList ;
                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
                            swrl:propertyPredicate :mayTalkTo ;
-                           swrl:argument1 <http://myontology.com/scenario#i1> ;
-                           swrl:argument2 <http://myontology.com/scenario#i2>
+                           swrl:argument1 :i1 ;
+                           swrl:argument2 :i2
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "communication  rule 2 (same OM)" ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :militaryPersonHasMilitaryOrganization ;
+                           swrl:argument1 :m1 ;
+                           swrl:argument2 :o1
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate :militaryPersonHasMilitaryOrganization ;
+                                      swrl:argument1 :m2 ;
+                                      swrl:argument2 :o2
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:ClassAtom ;
+                                                 swrl:classPredicate :CommDevice ;
+                                                 swrl:argument1 :c2
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:ClassAtom ;
+                                                            swrl:classPredicate :InternUe ;
+                                                            swrl:argument1 :i2
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                       swrl:classPredicate :CommDevice ;
+                                                                       swrl:argument1 :c1
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                  swrl:classPredicate :InternUe ;
+                                                                                  swrl:argument1 :i1
+                                                                                ] ;
+                                                                      rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                 rdf:first [ rdf:type swrl:DifferentIndividualsAtom ;
+                                                                                             swrl:argument1 :c1 ;
+                                                                                             swrl:argument2 :c2
+                                                                                           ] ;
+                                                                                 rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                            rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                                        swrl:classPredicate :MilitaryOrganization ;
+                                                                                                        swrl:argument1 :o1
+                                                                                                      ] ;
+                                                                                            rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                       rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                                                   swrl:classPredicate :MilitaryOrganization ;
+                                                                                                                   swrl:argument1 :o2
+                                                                                                                 ] ;
+                                                                                                       rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                  rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                              swrl:propertyPredicate :hasCB ;
+                                                                                                                              swrl:argument1 :c1 ;
+                                                                                                                              swrl:argument2 :i1
+                                                                                                                            ] ;
+                                                                                                                  rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                             rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                         swrl:propertyPredicate :hasCB ;
+                                                                                                                                         swrl:argument1 :c2 ;
+                                                                                                                                         swrl:argument2 :i2
+                                                                                                                                       ] ;
+                                                                                                                             rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                        rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                    swrl:propertyPredicate :operates ;
+                                                                                                                                                    swrl:argument1 :m2 ;
+                                                                                                                                                    swrl:argument2 :i2
+                                                                                                                                                  ] ;
+                                                                                                                                        rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                   rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                                                                                               swrl:propertyPredicate :operates ;
+                                                                                                                                                               swrl:argument1 :m1 ;
+                                                                                                                                                               swrl:argument2 :i1
+                                                                                                                                                             ] ;
+                                                                                                                                                   rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                              rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                                                                                                          swrl:classPredicate :MilitaryPerson ;
+                                                                                                                                                                          swrl:argument1 :m2
+                                                                                                                                                                        ] ;
+                                                                                                                                                              rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                                         rdf:first [ rdf:type swrl:ClassAtom ;
+                                                                                                                                                                                     swrl:classPredicate :MilitaryPerson ;
+                                                                                                                                                                                     swrl:argument1 :m1
+                                                                                                                                                                                   ] ;
+                                                                                                                                                                         rdf:rest [ rdf:type swrl:AtomList ;
+                                                                                                                                                                                    rdf:first [ rdf:type swrl:SameIndividualAtom ;
+                                                                                                                                                                                                swrl:argument1 :o1 ;
+                                                                                                                                                                                                swrl:argument2 :o2
+                                                                                                                                                                                              ] ;
+                                                                                                                                                                                    rdf:rest rdf:nil
+                                                                                                                                                                                  ]
+                                                                                                                                                                       ]
+                                                                                                                                                            ]
+                                                                                                                                                 ]
+                                                                                                                                      ]
+                                                                                                                           ]
+                                                                                                                ]
+                                                                                                     ]
+                                                                                          ]
+                                                                               ]
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate :mayTalkTo ;
+                           swrl:argument1 :i1 ;
+                           swrl:argument2 :i2
                          ] ;
                rdf:rest rdf:nil
              ]
