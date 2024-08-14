@@ -6,10 +6,12 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:gufo="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint">
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#/1.0.0"/>
         <dc:creator>https://orcid.org/0000-0002-0240-4506</dc:creator>
         <dc:creator>https://orcid.org/0000-0002-1153-3879</dc:creator>
         <dc:creator>https://orcid.org/0000-0003-4965-9941</dc:creator>
@@ -27,93 +29,11 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/creator -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/title -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/created -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/license -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
-    
-
-
-    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#date -->
-
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#externallyDependsOn -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#externallyDependsOn"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#inheresIn -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#inheresIn"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#isDerivedFrom -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#isDerivedFrom"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#mediates -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#mediates"/>
     
 
 
@@ -337,12 +257,6 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#hasQualityValue -->
-
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#hasQualityValue"/>
-    
-
-
     <!-- signalGeneration:bandwidth -->
 
     <owl:DatatypeProperty rdf:about="signalGeneration:bandwidth">
@@ -381,72 +295,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Category -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Category"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#ExtrinsicMode -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#ExtrinsicMode"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#FunctionalComplex -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#FunctionalComplex"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#IntrinsicMode -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#IntrinsicMode"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#MaterialRelationshipType -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#MaterialRelationshipType"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Mixin -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Mixin"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Quality -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Quality"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Relator -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Relator"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Role -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Role"/>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#RoleMixin -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#RoleMixin"/>
     
 
 
