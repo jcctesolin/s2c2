@@ -1295,19 +1295,19 @@
 
     <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#detects -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#detects">
+    <!--<owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#detects">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#MaterialRelationshipType"/>
         <gufo:isDerivedFrom rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#DetectedBond"/>
-    </owl:NamedIndividual>
+    </owl:NamedIndividual>-->
     
 
 
     <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#isServedBy -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#isServedBy">
+    <!--<owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#isServedBy">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#MaterialRelationshipType"/>
         <gufo:isDerivedFrom rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/hint#SelectedBond"/>
-    </owl:NamedIndividual>
+    </owl:NamedIndividual>-->
     
 
 
