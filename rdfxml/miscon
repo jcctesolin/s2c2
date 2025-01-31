@@ -551,6 +551,12 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     
 
 
+    <!-- http://purl.org/nemo/gufo#ConcreteIndividualType -->
+
+    <owl:Class rdf:about="http://purl.org/nemo/gufo#ConcreteIndividualType"/>
+    
+
+
     <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Category -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Category"/>
@@ -814,7 +820,7 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganizationPowerType -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganizationPowerType">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#EndurantType"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividualType"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MOTypeIsSubordinateTo"/>
@@ -1004,7 +1010,7 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#VehiclePowerType -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#VehiclePowerType">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#EndurantType"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/nemo/gufo#ConcreteIndividualType"/>
         <rdfs:comment>PowerType of Vehycle.</rdfs:comment>
         <rdfs:label>VehiclePowerType</rdfs:label>
     </owl:Class>
@@ -1377,7 +1383,6 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     </rdf:Description>
     <rdf:Description>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
-        <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</minStrength>
     </rdf:Description>
     <rdf:Description>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800</maxStrength>
@@ -1385,6 +1390,7 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     </rdf:Description>
     <rdf:Description>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
+        <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</minStrength>
     </rdf:Description>
     
 
