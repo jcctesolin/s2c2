@@ -1114,9 +1114,11 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Cascavel">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#SubKind"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#VehiclePowerType"/>
+        <maxAmphibiousSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</maxAmphibiousSpeed>
         <maxLandSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</maxLandSpeed>
         <maxPassengers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</maxPassengers>
         <minPassengers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</minPassengers>
+        <visibilityRange rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8000</visibilityRange>
     </owl:NamedIndividual>
     
 
@@ -1177,9 +1179,11 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Guarani">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#SubKind"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#VehiclePowerType"/>
+        <maxAmphibiousSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</maxAmphibiousSpeed>
         <maxLandSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</maxLandSpeed>
         <maxPassengers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</maxPassengers>
         <minPassengers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</minPassengers>
+        <visibilityRange rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8000</visibilityRange>
     </owl:NamedIndividual>
     
 
@@ -1268,6 +1272,7 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Kind"/>
         <maxAmphibiousSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</maxAmphibiousSpeed>
         <maxLandSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</maxLandSpeed>
+        <visibilityRange rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</visibilityRange>
     </owl:NamedIndividual>
     
 
@@ -1342,9 +1347,11 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Urutu">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#SubKind"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#VehiclePowerType"/>
+        <maxAmphibiousSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</maxAmphibiousSpeed>
         <maxLandSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">110</maxLandSpeed>
         <maxPassengers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</maxPassengers>
         <minPassengers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</minPassengers>
+        <visibilityRange rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8000</visibilityRange>
     </owl:NamedIndividual>
     
 
@@ -1396,17 +1403,17 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     </owl:NamedIndividual>
     <rdf:Description>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
-    </rdf:Description>
-    <rdf:Description>
-        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
-    </rdf:Description>
-    <rdf:Description>
-        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
         <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</minStrength>
     </rdf:Description>
     <rdf:Description>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800</maxStrength>
         <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</minStrength>
+    </rdf:Description>
+    <rdf:Description>
+        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
+    </rdf:Description>
+    <rdf:Description>
+        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
     </rdf:Description>
     
 
