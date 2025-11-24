@@ -777,6 +777,14 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     
 
 
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Division -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Division">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganization"/>
+    </owl:Class>
+    
+
+
     <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Guarani -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Guarani">
@@ -1125,24 +1133,6 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     
 
 
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Cmdo15BdaInfMec -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Cmdo15BdaInfMec">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Commander"/>
-        <SIDC>1003100018 1211020000 0760008192</SIDC>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Cmdo5DE -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Cmdo5DE">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Commander"/>
-        <SIDC>1003100021 0000000000 0760008192</SIDC>
-    </owl:NamedIndividual>
-    
-
-
     <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#CommBoard -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#CommBoard">
@@ -1191,6 +1181,14 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganizationPowerType"/>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</maxStrength>
         <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</minStrength>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Division -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Division">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganizationPowerType"/>
     </owl:NamedIndividual>
     
 
@@ -1422,28 +1420,19 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ueHasCommunicationWithUe">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#MaterialRelationshipType"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#33BIMec -->
-
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#33BIMec">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Battalion"/>
-        <SIDC>1003100016 1211020000 0760000000</SIDC>
-    </owl:NamedIndividual>
+    <rdf:Description>
+        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
+    </rdf:Description>
     <rdf:Description>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800</maxStrength>
         <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</minStrength>
     </rdf:Description>
     <rdf:Description>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
-    </rdf:Description>
-    <rdf:Description>
-        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
-    </rdf:Description>
-    <rdf:Description>
-        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
         <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</minStrength>
+    </rdf:Description>
+    <rdf:Description>
+        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
     </rdf:Description>
     
 
