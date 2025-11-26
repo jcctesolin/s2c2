@@ -1085,6 +1085,7 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Battalion">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#SubKind"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganizationPowerType"/>
+        <owl:differentFrom rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Division"/>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800</maxStrength>
         <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</minStrength>
     </owl:NamedIndividual>
@@ -1096,6 +1097,7 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#BattleGroup">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#SubKind"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganizationPowerType"/>
+        <owl:differentFrom rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Division"/>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</maxStrength>
         <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</minStrength>
     </owl:NamedIndividual>
@@ -1107,6 +1109,7 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Brigade">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#SubKind"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganizationPowerType"/>
+        <owl:differentFrom rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Division"/>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5000</maxStrength>
         <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3000</minStrength>
     </owl:NamedIndividual>
@@ -1179,6 +1182,7 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Company">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#SubKind"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganizationPowerType"/>
+        <owl:differentFrom rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Division"/>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</maxStrength>
         <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</minStrength>
     </owl:NamedIndividual>
@@ -1188,7 +1192,11 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Division -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Division">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#SubKind"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganizationPowerType"/>
+        <owl:differentFrom rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Platoon"/>
+        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20000</maxStrength>
+        <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9000</minStrength>
     </owl:NamedIndividual>
     
 
@@ -1421,18 +1429,18 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#MaterialRelationshipType"/>
     </owl:NamedIndividual>
     <rdf:Description>
-        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
-    </rdf:Description>
-    <rdf:Description>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800</maxStrength>
         <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</minStrength>
     </rdf:Description>
     <rdf:Description>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
-        <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</minStrength>
     </rdf:Description>
     <rdf:Description>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
+    </rdf:Description>
+    <rdf:Description>
+        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
+        <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</minStrength>
     </rdf:Description>
     
 
