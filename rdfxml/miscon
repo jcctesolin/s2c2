@@ -160,8 +160,6 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#hierarchicallyEquivalentWith -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#hierarchicallyEquivalentWith">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#HierarchicallyEquivalent"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#HierarchicallyEquivalent"/>
         <rdfs:comment>A relationship that establishes that a military organization is hierarchically equivalent to another military organization.</rdfs:comment>
         <rdfs:label xml:lang="en">HierarchicallyEquivalentWith</rdfs:label>
     </owl:ObjectProperty>
@@ -172,7 +170,6 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#isCommandedBy">
         <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#isCommanderOf"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Subordinate"/>
         <rdfs:comment>A relationship that establishes that a military organization is subordinate to another military organization.</rdfs:comment>
         <rdfs:label xml:lang="en">isCommandedBy</rdfs:label>
     </owl:ObjectProperty>
@@ -735,14 +732,6 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
     
 
 
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Commander -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Commander">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganization"/>
-    </owl:Class>
-    
-
-
     <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#CommanderMilitaryPerson -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#CommanderMilitaryPerson">
@@ -789,20 +778,6 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Guarani">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Armored_Vehicle"/>
-    </owl:Class>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#HierarchicallyEquivalent -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#HierarchicallyEquivalent">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganization"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#hierarchicallyEquivalentWith"/>
-                <owl:someValuesFrom rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#HierarchicallyEquivalent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -967,14 +942,6 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Protocol">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#IntrinsicMode"/>
-    </owl:Class>
-    
-
-
-    <!-- https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Subordinate -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Subordinate">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganization"/>
     </owl:Class>
     
 
@@ -1164,7 +1131,6 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Commander">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#Role"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganizationPowerType"/>
     </owl:NamedIndividual>
     
 
@@ -1429,18 +1395,18 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
         <rdf:type rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/gufo#MaterialRelationshipType"/>
     </owl:NamedIndividual>
     <rdf:Description>
+        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
+    </rdf:Description>
+    <rdf:Description>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800</maxStrength>
         <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</minStrength>
     </rdf:Description>
     <rdf:Description>
         <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
-    </rdf:Description>
-    <rdf:Description>
-        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
-    </rdf:Description>
-    <rdf:Description>
-        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
         <minStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</minStrength>
+    </rdf:Description>
+    <rdf:Description>
+        <maxStrength rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxStrength>
     </rdf:Description>
     
 
@@ -1500,10 +1466,6 @@ The MiScOn ontology represents concepts related to the Brazilian Armed Forces, b
         <rdfs:comment>Guarani is a type of armored vehicle.</rdfs:comment>
         <rdfs:label>Guarani</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#HierarchicallyEquivalent">
-        <rdfs:comment>Role that two distinct military organizations assume when they find themselves in a position of equivalence in the military hierarchy.</rdfs:comment>
-        <rdfs:label xml:lang="en">HierarchicallyEquivalent</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganization">
         <rdfs:comment>Type that confers a principle of identity to a given organization within the military domain. According to decree N 93,188, of August 29, 1986: Art 22. Units are military organizations called regiment, battalion or group. Art 23. Subunits are military organizations called company, squadron or battery and can be incorporated or independent.
 
@@ -1539,10 +1501,6 @@ According to the Army Glossary:
     <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Platoon">
         <rdfs:comment>A subtype of military organization. A specialization for the Platoon level in the hierarchy of military organizations.</rdfs:comment>
         <rdfs:label>Platoon</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#Subordinate">
-        <rdfs:comment>Role that a military organization assumes when it is directly subordinate to another organization in the hierarchy.</rdfs:comment>
-        <rdfs:label xml:lang="en">Subordinate</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#SubordinateMilitaryPerson">
         <rdfs:comment>Military Person subordinate to CommanderMilitaryPerson, in the hierarchy of military personnel in a Military Organization</rdfs:comment>
@@ -1631,16 +1589,10 @@ According to the Army Glossary:
     <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#mo">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o1">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
     <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o2">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o3">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ompt1">
+    <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o1">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#oe">
@@ -1651,62 +1603,6 @@ According to the Army Glossary:
     </rdf:Description>
     <rdf:Description rdf:about="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ms2">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment></rdfs:comment>
-        <rdfs:label>Scenario restriction</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
-                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ms1"/>
-                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ms2"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryScenario"/>
-                                <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ms1"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryScenario"/>
-                                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ms2"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#SameIndividualAtom"/>
-                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ms1"/>
-                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ms2"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
     </rdf:Description>
     <rdf:Description>
         <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
@@ -1833,163 +1729,6 @@ According to the Army Glossary:
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-    <rdf:Description>
-        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
-        <rdfs:comment>HierarchicalyEquivalentRule</rdfs:comment>
-        <rdfs:label>HierarchicalyEquivalentRule</rdfs:label>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
-                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o1"/>
-                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o2"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#isCommandedBy"/>
-                                <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o1"/>
-                                <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o3"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganizationPowerType"/>
-                                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ompt1"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                        <rdf:first>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganization"/>
-                                                <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o3"/>
-                                            </rdf:Description>
-                                        </rdf:first>
-                                        <rdf:rest>
-                                            <rdf:Description>
-                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                <rdf:first>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganization"/>
-                                                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o2"/>
-                                                    </rdf:Description>
-                                                </rdf:first>
-                                                <rdf:rest>
-                                                    <rdf:Description>
-                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                        <rdf:first>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryOrganization"/>
-                                                                <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o1"/>
-                                                            </rdf:Description>
-                                                        </rdf:first>
-                                                        <rdf:rest>
-                                                            <rdf:Description>
-                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                <rdf:first>
-                                                                    <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#hasMOPowerType"/>
-                                                                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o1"/>
-                                                                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ompt1"/>
-                                                                    </rdf:Description>
-                                                                </rdf:first>
-                                                                <rdf:rest>
-                                                                    <rdf:Description>
-                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                        <rdf:first>
-                                                                            <rdf:Description>
-                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#hasMOPowerType"/>
-                                                                                <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o2"/>
-                                                                                <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ompt1"/>
-                                                                            </rdf:Description>
-                                                                        </rdf:first>
-                                                                        <rdf:rest>
-                                                                            <rdf:Description>
-                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                                                                <rdf:first>
-                                                                                    <rdf:Description>
-                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#isCommandedBy"/>
-                                                                                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o2"/>
-                                                                                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o3"/>
-                                                                                    </rdf:Description>
-                                                                                </rdf:first>
-                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                                                                            </rdf:Description>
-                                                                        </rdf:rest>
-                                                                    </rdf:Description>
-                                                                </rdf:rest>
-                                                            </rdf:Description>
-                                                        </rdf:rest>
-                                                    </rdf:Description>
-                                                </rdf:rest>
-                                            </rdf:Description>
-                                        </rdf:rest>
-                                    </rdf:Description>
-                                </rdf:rest>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#hierarchicallyEquivalentWith"/>
-                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o1"/>
-                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o2"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#HierarchicallyEquivalent"/>
-                                <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o1"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                                <rdf:first>
-                                    <rdf:Description>
-                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#HierarchicallyEquivalent"/>
-                                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#o2"/>
-                                    </rdf:Description>
-                                </rdf:first>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                            </rdf:Description>
-                        </rdf:rest>
-                    </rdf:Description>
-                </rdf:rest>
             </rdf:Description>
         </swrl:head>
     </rdf:Description>
@@ -2217,6 +1956,62 @@ According to the Army Glossary:
                         <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#militaryScenarioHasOperationalElement"/>
                         <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ms"/>
                         <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#oe"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Scenario restriction</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ms1"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ms2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryScenario"/>
+                                <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ms1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#MilitaryScenario"/>
+                                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ms2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#SameIndividualAtom"/>
+                        <swrl:argument1 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ms1"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/jcctesolin/s2c2/main/rdfxml/miscon#ms2"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
